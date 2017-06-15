@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/img_zxxgt_icon"
+        android:drawablePadding="@dimen/dp_10"
+        android:gravity="center"
+        android:text="装修效果"
+        android:textColor="#ff8830"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rg_corners"
+        android:orientation="horizontal"
+        android:padding="1dp">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/select_rb_corners_left"
+            android:button="@null"
+            android:paddingBottom="2dp"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:paddingTop="2dp"
+            android:text="3D图"
+            android:textColor="@color/select_rb_text_color" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/select_rb_corners_right"
+            android:button="@null"
+            android:paddingBottom="2dp"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:paddingTop="2dp"
+            android:text="平面图"
+            android:textColor="@color/select_rb_text_color" />
+
+    </RadioGroup>
+
+
+    <com.android.yt.ehouse.app.ui.view.MyGridView
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:id="@+id/id_gv_decorate_result_container"
+        android:numColumns="2"
+        android:verticalSpacing="@dimen/dp_10"
+        android:horizontalSpacing="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_tv_corners"
+        android:drawablePadding="10dp"
+        android:drawableRight="@drawable/img_qianjian_icon"
+        android:gravity="center"
+        android:paddingBottom="2dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="2dp"
+        android:text="更多装修效果图"
+        android:textColor="@color/gray"
+        android:textSize="12sp" />
+
+</LinearLayout>
