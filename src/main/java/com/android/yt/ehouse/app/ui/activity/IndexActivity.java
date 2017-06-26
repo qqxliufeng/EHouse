@@ -45,6 +45,7 @@ public class IndexActivity extends BaseActivity implements TabLayout.OnTabSelect
         mTabLayout.setTabMode(TabLayout.MODE_FIXED);
         mTabLayout.setSelectedTabIndicatorHeight(0);
         mViewPager.setAdapter(new MyIndexViewPagerAdapter(getSupportFragmentManager()));
+        mViewPager.setOffscreenPageLimit(5);
         mTabLayout.setupWithViewPager(mViewPager);
         mTabLayout.addOnTabSelectedListener(this);
         initTab();

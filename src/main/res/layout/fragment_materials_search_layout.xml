@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        app:cardBackgroundColor="#eee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="0dp">
+
+        <EditText
+            android:id="@+id/id_et_fragment_classify_search_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:drawableLeft="@drawable/img_search_icon"
+            android:drawablePadding="@dimen/dp_10"
+            android:textSize="14sp"
+            android:hint="搜索建材商品"
+            android:paddingLeft="@dimen/dp_10"
+            android:textColorHint="#ccc" />
+
+        <ImageView
+            android:id="@+id/id_iv_fragment_classify_search_content_clear"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right|center"
+            android:src="@drawable/img_close_icon" />
+
+    </android.support.v7.widget.CardView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eee" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/id_rv_fragment_classify_search_left_menu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:background="#eee" />
+
+        <android.support.v7.widget.RecyclerView
+            android:paddingLeft="@dimen/dp_10"
+            android:id="@+id/id_rv_fragment_classify_search_right_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="#fff" />
+
+    </LinearLayout>
+</LinearLayout>

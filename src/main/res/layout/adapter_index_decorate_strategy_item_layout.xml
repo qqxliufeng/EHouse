@@ -13,7 +13,7 @@
 
         <ImageView
             android:layout_width="80dp"
-            android:layout_height="65dp"
+            android:layout_height="70dp"
             android:scaleType="centerCrop"
             android:src="@drawable/img_banner_default_img" />
 
@@ -32,7 +32,7 @@
                 android:maxLines="1"
                 android:text="管道保温材料有哪些？"
                 android:textColor="@color/black"
-                android:textSize="@dimen/sp_12" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/id_tv_adapter_decorate_strategy_content"
@@ -42,12 +42,13 @@
                 android:layout_marginTop="5dp"
                 android:ellipsize="end"
                 android:maxLines="2"
+                android:lineSpacingExtra="1.5dp"
                 android:text="管道保温材料有哪些？管道保温材料有哪些？管道保温材料有哪些？管道保温材料有哪些？管道保温材料有哪些？管道保温材料有哪些？管道保温材料有哪些？管道保温材料有哪些管道保温材料有哪些管道保温材料有哪些管道保温材料有哪些"
                 android:textColor="@color/gray"
-                android:textSize="10sp" />
+                android:textSize="12sp" />
 
             <RelativeLayout
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true">
