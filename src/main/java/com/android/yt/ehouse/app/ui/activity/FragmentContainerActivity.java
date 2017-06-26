@@ -72,7 +72,7 @@ public class FragmentContainerActivity extends BaseActivity {
         mToolBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getSwipeBackLayout().scrollToFinishActivity();
+                scrollToFinishActivity();
             }
         });
         int fragmentId = getIntent().getIntExtra(FRAGMENT_FLAG, 0x0);

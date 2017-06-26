@@ -99,4 +99,8 @@ public abstract class BaseActivity extends AppCompatActivity implements IPresent
         return v;
     }
 
+    @Override
+    public void onBackPressed() {
+        scrollToFinishActivity();
+    }
 }
