@@ -78,7 +78,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp_10"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
@@ -89,6 +88,7 @@
                         android:text="房产大厅" />
 
                     <TextView
+                        android:id="@+id/id_tv_fragment_bottom_one_decorate"
                         style="@style/style_tv_index_menu"
                         android:drawableTop="@drawable/img_zhuangxiu_icon"
                         android:text="装修" />
@@ -111,7 +111,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/dp_10"
-                    android:layout_marginTop="@dimen/dp_10"
                     android:orientation="horizontal">
 
                     <TextView

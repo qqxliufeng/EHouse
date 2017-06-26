@@ -14,6 +14,7 @@ import android.view.View;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.ui.fragment.base.ClassifySearchFragment;
+import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateIndexFragment;
 import com.android.yt.ehouse.app.ui.fragment.house.HouseHallFragment;
 import com.android.yt.ehouse.app.ui.fragment.base.TypeHallFragment;
 
@@ -33,7 +34,7 @@ public class FragmentContainerActivity extends BaseActivity {
     public static final int CLASSIFY_SEARCH_FLAG = 0x1;
     public static final int HOUSE_HALL_FLAG = 0x2;
     public static final int TYPE_HALL_FLAG = 0x3;
-
+    public static final int DECORATE_INDEX_FLAG = 0x4;
 
 
     @BindView(R.id.id_tl_home_tool_bar)
@@ -71,7 +72,7 @@ public class FragmentContainerActivity extends BaseActivity {
         mToolBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                getSwipeBackLayout().scrollToFinishActivity();
             }
         });
         int fragmentId = getIntent().getIntExtra(FRAGMENT_FLAG, 0x0);
@@ -88,6 +89,9 @@ public class FragmentContainerActivity extends BaseActivity {
                 break;
             case TYPE_HALL_FLAG:
                 fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, TypeHallFragment.newInstance());
+                break;
+            case DECORATE_INDEX_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateIndexFragment.newInstance());
                 break;
         }
         fragmentTransaction.commitAllowingStateLoss();

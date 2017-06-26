@@ -19,13 +19,14 @@ import com.android.yt.ehouse.app.interfaces.IPresentListener;
 import com.android.yt.ehouse.app.ui.activity.BaseActivity;
 
 import butterknife.ButterKnife;
+import me.imid.swipebacklayout.lib.app.SwipeBackActivityBase;
 
 
 /**
  * Created by feng on 2016/8/1.
  */
 
-public abstract class LroidBaseFragment extends Fragment implements View.OnClickListener, IPresentListener{
+public abstract class LroidBaseFragment extends Fragment implements View.OnClickListener, IPresentListener {
 
     protected Context mContext;
 
@@ -68,7 +69,7 @@ public abstract class LroidBaseFragment extends Fragment implements View.OnClick
 
     @Override
     public void onRequestFail(int requestID, Throwable e) {
-        if (e!=null && !TextUtils.isEmpty(e.getMessage())){
+        if (e != null && !TextUtils.isEmpty(e.getMessage())) {
             if (e instanceof IllegalStateException) {
                 Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
@@ -88,7 +89,11 @@ public abstract class LroidBaseFragment extends Fragment implements View.OnClick
     }
 
     protected void finishActivity() {
-        ((BaseActivity) mContext).finish();
+        if (mContext instanceof SwipeBackActivityBase) {
+            ((BaseActivity) mContext).scrollToFinishActivity();
+        }else {
+            ((BaseActivity) mContext).finish();
+        }
     }
 
     /**
