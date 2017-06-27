@@ -23,14 +23,15 @@
             android:text="灯饰照明" />
 
         <TextView
+            android:id="@+id/id_tv_adapter_type_hall_right_item_more"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:drawablePadding="@dimen/dp_10"
             android:drawableRight="@drawable/img_enter_icon"
             android:text="更多"
-            android:textColor="#777" />
+            android:textColor="@color/select_click_color1" />
     </RelativeLayout>
 
     <LinearLayout
@@ -57,7 +58,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="adfasasfasdfasdf"
+                    android:text="加厚拉丝水槽"
                     android:textColor="#444"
                     android:textSize="14sp" />
 
@@ -76,7 +77,9 @@
                     <ImageView
                         android:layout_width="85dp"
                         android:layout_height="60dp"
-                        android:layout_alignParentRight="true" />
+                        android:layout_alignParentRight="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_test_bg" />
 
                 </RelativeLayout>
             </LinearLayout>
@@ -96,7 +99,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="adfasasfasdfasdf"
+                    android:text="不锈钢电热水壶"
                     android:textColor="#444"
                     android:textSize="14sp" />
 
@@ -115,7 +118,9 @@
                     <ImageView
                         android:layout_width="85dp"
                         android:layout_height="60dp"
-                        android:layout_alignParentRight="true" />
+                        android:layout_alignParentRight="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_test_bg" />
 
                 </RelativeLayout>
             </LinearLayout>
@@ -150,7 +155,7 @@
                     android:paddingLeft="@dimen/dp_10"
                     android:paddingRight="@dimen/dp_10"
                     android:paddingTop="5dp"
-                    android:text="asdasdfasdf"
+                    android:text="六件套不锈钢刀"
                     android:textColor="#444"
                     android:textSize="12sp" />
 
@@ -173,7 +178,7 @@
                         android:layout_height="wrap_content"
                         android:paddingBottom="5dp"
                         android:paddingTop="5dp"
-                        android:text="asdasdfasdf"
+                        android:text="美观锋利省空"
                         android:textColor="#777"
                         android:textSize="10sp" />
 

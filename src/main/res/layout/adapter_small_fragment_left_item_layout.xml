@@ -23,14 +23,15 @@
             android:text="灯饰照明" />
 
         <TextView
+            android:id="@+id/id_tv_adapter_type_hall_left_item_more"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:drawablePadding="@dimen/dp_10"
             android:drawableRight="@drawable/img_enter_icon"
             android:text="更多"
-            android:textColor="#777" />
+            android:textColor="@color/select_click_color1" />
     </RelativeLayout>
 
     <LinearLayout
@@ -69,7 +70,7 @@
                     android:paddingLeft="@dimen/dp_10"
                     android:paddingRight="@dimen/dp_10"
                     android:paddingTop="5dp"
-                    android:text="asdasdfasdf"
+                    android:text="简约圆形吸顶灯"
                     android:textColor="#444"
                     android:textSize="12sp" />
 
@@ -92,7 +93,7 @@
                         android:layout_height="wrap_content"
                         android:paddingBottom="5dp"
                         android:paddingTop="5dp"
-                        android:text="asdasdfasdf"
+                        android:text="现代时尚风格"
                         android:textColor="#777"
                         android:textSize="10sp" />
 
@@ -125,7 +126,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="adfasasfasdfasdf"
+                    android:text="云石灯全铜欧式吊灯"
                     android:textColor="#444"
                     android:textSize="14sp" />
 
@@ -144,6 +145,8 @@
                     <ImageView
                         android:layout_width="85dp"
                         android:layout_height="60dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_test_bg"
                         android:layout_alignParentRight="true" />
 
                 </RelativeLayout>
@@ -164,7 +167,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="adfasasfasdfasdf"
+                    android:text="美式全铜吸顶灯"
                     android:textColor="#444"
                     android:textSize="14sp" />
 
@@ -183,7 +186,10 @@
                     <ImageView
                         android:layout_width="85dp"
                         android:layout_height="60dp"
-                        android:layout_alignParentRight="true" />
+                        android:layout_alignParentTop="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_test_bg"
+                        android:layout_alignParentEnd="true" />
 
                 </RelativeLayout>
             </LinearLayout>

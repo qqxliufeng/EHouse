@@ -88,7 +88,7 @@ public class FragmentContainerActivity extends BaseActivity {
                 fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, HouseHallFragment.newInstance());
                 break;
             case TYPE_HALL_FLAG:
-                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, TypeHallFragment.newInstance());
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, TypeHallFragment.newInstance(getIntent().getBundleExtra(EXTRA_FLAG)));
                 break;
             case DECORATE_INDEX_FLAG:
                 fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateIndexFragment.newInstance());

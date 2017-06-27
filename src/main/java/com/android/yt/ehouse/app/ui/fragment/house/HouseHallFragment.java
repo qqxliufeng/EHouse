@@ -36,4 +36,9 @@ public class HouseHallFragment extends BaseRecycleViewFragment<HouseItemBean> {
         mBaseQuickAdapter.addHeaderView(headerView);
         mBaseQuickAdapter.notifyDataSetChanged();
     }
+
+    @Override
+    public void onRefresh() {
+        super.onRefresh();
+    }
 }

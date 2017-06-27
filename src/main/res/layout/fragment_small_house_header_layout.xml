@@ -15,12 +15,15 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/id_tv_fragment_type_hall_header_one_flag"
+            android:background="@drawable/select_click_bg"
+            android:clickable="true"
+            android:paddingTop="20dp"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:drawablePadding="15dp"
-            android:drawableTop="@drawable/img_flcx_icon"
+            android:drawableTop="@drawable/img_jc_flcx_icon"
             android:gravity="center"
             android:text="分类查询"
             android:textColor="#777"
@@ -32,12 +35,15 @@
             android:background="#ccc" />
 
         <TextView
+            android:id="@+id/id_tv_fragment_type_hall_header_two_flag"
+            android:background="@drawable/select_click_bg"
+            android:clickable="true"
+            android:paddingTop="20dp"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:drawablePadding="15dp"
-            android:drawableTop="@drawable/img_tmsp_icon"
+            android:drawableTop="@drawable/img_jc_tmsp_icon"
             android:gravity="center"
             android:text="特卖商品"
             android:textColor="#777"
@@ -49,12 +55,15 @@
             android:background="#ccc" />
 
         <TextView
+            android:id="@+id/id_tv_fragment_type_hall_header_three_flag"
+            android:background="@drawable/select_click_bg"
+            android:clickable="true"
+            android:paddingTop="20dp"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:drawablePadding="15dp"
-            android:drawableTop="@drawable/img_gwc_icon"
+            android:drawableTop="@drawable/img_jc_gwc_icon"
             android:gravity="center"
             android:text="购物车"
             android:textColor="#777"
@@ -66,11 +75,25 @@
         android:layout_height="@dimen/dp_10"
         android:background="#eee" />
 
-    <android.support.v7.widget.RecyclerView
+    <TextView
+        android:id="@+id/id_tv_fragment_type_hall_header_sell_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawableLeft="@drawable/img_jj_rxsp_icon"
+        android:drawablePadding="@dimen/dp_10"
+        android:gravity="center"
         android:padding="@dimen/dp_10"
+        android:text="特卖商品"
+        android:textColor="#cf2f66"
+        android:textSize="16sp" />
+
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/id_rv_fragment_type_hall"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_10" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_10"

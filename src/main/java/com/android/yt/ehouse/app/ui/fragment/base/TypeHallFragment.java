@@ -1,6 +1,7 @@
 package com.android.yt.ehouse.app.ui.fragment.base;
 
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,7 +10,10 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.data.bean.BaseTypeItemBean;
@@ -33,6 +37,15 @@ import butterknife.OnClick;
 
 public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> implements AppBarLayout.OnOffsetChangedListener {
 
+    public static final String CURRENT_TYPE_FLAG = "current_type_flag";
+
+    public static final int MATERIALS_FLAG = 0x0;
+    public static final int HOUSE_HOME_FLAG = 0x1;
+    public static final int HOUSEKEEPING_FLAG = 0x2;
+
+    private int currentFlag = 0x0;
+
+
     private RecyclerView rv_hot_sell;
     private ArrayList<TypeHallSellBean> hotList = new ArrayList<>();
 
@@ -44,9 +57,19 @@ public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> 
     ImageView iv_message;
     @BindView(R.id.id_iv_fragment_type_hall_back)
     ImageView iv_back;
+    @BindView(R.id.id_et_fragment_type_hall_search_content)
+    EditText et_search_content;
 
-    public static TypeHallFragment newInstance() {
-        return new TypeHallFragment();
+    public static TypeHallFragment newInstance(Bundle args) {
+        TypeHallFragment fragment = new TypeHallFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        currentFlag = getArguments().getInt(CURRENT_TYPE_FLAG);
     }
 
     @Override
@@ -80,6 +103,7 @@ public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> 
             hotList.add(new TypeHallSellBean());
         }
         View headerView = View.inflate(mContext, R.layout.fragment_small_house_header_layout, null);
+        initDifferentFlagView(headerView);
         rv_hot_sell = (RecyclerView) headerView.findViewById(R.id.id_rv_fragment_type_hall);
         rv_hot_sell.setNestedScrollingEnabled(false);
         rv_hot_sell.setLayoutManager(new MyLinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
@@ -89,6 +113,56 @@ public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> 
         onRequestEnd(-1);
         getChildFragmentManager().beginTransaction().replace(R.id.id_fl_fragment_index_banner_layout, BannerFragment.newInstance()).commit();
         mBaseQuickAdapter.notifyDataSetChanged();
+    }
+
+    private void initDifferentFlagView(View headerView) {
+        TextView tv_one_flag = (TextView) headerView.findViewById(R.id.id_tv_fragment_type_hall_header_one_flag);
+        TextView tv_two_flag = (TextView) headerView.findViewById(R.id.id_tv_fragment_type_hall_header_two_flag);
+        TextView tv_three_flag = (TextView) headerView.findViewById(R.id.id_tv_fragment_type_hall_header_three_flag);
+        TextView tv_sell_title = (TextView) headerView.findViewById(R.id.id_tv_fragment_type_hall_header_sell_title);
+        int currentOneTop = 0;
+        int currentTwoTop = 0;
+        int currentThreeTop = 0;
+        String twoFlagTitle = "";
+        int currentSellTitleLeft = 0;
+        String currentSellTitle = "";
+        String searchContentHint = "";
+        switch (currentFlag) {
+            case MATERIALS_FLAG:
+                currentOneTop = R.drawable.img_jc_flcx_icon;
+                currentTwoTop = R.drawable.img_jc_tmsp_icon;
+                currentThreeTop = R.drawable.img_jc_gwc_icon;
+                currentSellTitleLeft = R.drawable.img_jc_rxsp_icon;
+                currentSellTitle = "热销商品";
+                twoFlagTitle = "特卖商品";
+                searchContentHint = "搜索建材商品";
+                break;
+            case HOUSE_HOME_FLAG:
+                currentOneTop = R.drawable.img_jj_flcx_icon;
+                currentTwoTop = R.drawable.img_jj_tmsp_icon;
+                currentThreeTop = R.drawable.img_jj_gwc_icon;
+                currentSellTitleLeft = R.drawable.img_jj_rxsp_icon;
+                currentSellTitle = "热销商品";
+                twoFlagTitle = "特卖商品";
+                searchContentHint = "搜索家居商品";
+                break;
+            case HOUSEKEEPING_FLAG:
+                currentOneTop = R.drawable.img_jz_flcx_icon;
+                currentTwoTop = R.drawable.img_jz_tmfw_icon;
+                currentThreeTop = R.drawable.img_jz_gwc_icon;
+                currentSellTitleLeft = R.drawable.img_jz_rxsp_icon;
+                currentSellTitle = "热门服务";
+                twoFlagTitle = "特卖服务";
+                searchContentHint = "搜索服务类别";
+                break;
+        }
+        tv_one_flag.setCompoundDrawablesRelativeWithIntrinsicBounds(0, currentOneTop, 0, 0);
+        tv_two_flag.setCompoundDrawablesRelativeWithIntrinsicBounds(0, currentTwoTop, 0, 0);
+        tv_three_flag.setCompoundDrawablesRelativeWithIntrinsicBounds(0, currentThreeTop, 0, 0);
+        tv_sell_title.setCompoundDrawablesRelativeWithIntrinsicBounds(currentSellTitleLeft, 0, 0, 0);
+        tv_two_flag.setText(twoFlagTitle);
+        tv_sell_title.setText(currentSellTitle);
+        et_search_content.setHint(searchContentHint);
     }
 
     @Override
@@ -106,11 +180,16 @@ public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> 
 
 
     @OnClick({R.id.id_iv_fragment_type_hall_back})
-    public void onClick(View view){
-        switch (view.getId()){
+    public void onClick(View view) {
+        switch (view.getId()) {
             case R.id.id_iv_fragment_type_hall_back:
                 finishActivity();
                 break;
         }
+    }
+
+    @Override
+    public void onItemViewChildClick(BaseQuickAdapter adapter, View view, int position) {
+        Toast.makeText(mContext, mArrayList.get(position).getItemType() + "  +" + position, Toast.LENGTH_SHORT).show();
     }
 }

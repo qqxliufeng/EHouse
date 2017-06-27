@@ -1,11 +1,13 @@
 package com.android.yt.ehouse.app.ui.fragment.bottom;
 
+import android.os.Bundle;
 import android.support.v4.widget.NestedScrollView;
 import android.view.View;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseNetFragment;
+import com.android.yt.ehouse.app.ui.fragment.base.TypeHallFragment;
 import com.android.yt.ehouse.app.ui.fragment.house.HouseHallFragment;
 import com.android.yt.ehouse.app.ui.fragment.index.BannerFragment;
 import com.android.yt.ehouse.app.ui.fragment.index.DecorateCaseFragment;
@@ -58,17 +60,34 @@ public class IndexOneFragment extends LroidBaseNetFragment {
     protected void setComponent() {
     }
 
-    @OnClick({R.id.id_tv_fragment_bottom_one_jiancai,R.id.id_tv_fragment_bottom_one_fcdt,R.id.id_tv_fragment_bottom_one_decorate})
-    public void onClick(View view){
-        switch (view.getId()){
+    @OnClick({R.id.id_tv_fragment_bottom_one_jiancai,
+            R.id.id_tv_fragment_bottom_one_fcdt,
+            R.id.id_tv_fragment_bottom_one_decorate,
+            R.id.id_tv_fragment_bottom_one_jiaju,
+            R.id.id_tv_fragment_bottom_one_jiazheng
+    })
+    public void onClick(View view) {
+        switch (view.getId()) {
             case R.id.id_tv_fragment_bottom_one_fcdt:
-                FragmentContainerActivity.startFragmentsActivity(mContext, HouseHallFragment.TITLE,FragmentContainerActivity.HOUSE_HALL_FLAG);
+                FragmentContainerActivity.startFragmentsActivity(mContext, HouseHallFragment.TITLE, FragmentContainerActivity.HOUSE_HALL_FLAG);
                 break;
             case R.id.id_tv_fragment_bottom_one_jiancai:
-                FragmentContainerActivity.startFragmentsActivity(mContext, "",FragmentContainerActivity.TYPE_HALL_FLAG);
+                Bundle bundle = new Bundle();
+                bundle.putInt(TypeHallFragment.CURRENT_TYPE_FLAG, TypeHallFragment.MATERIALS_FLAG);
+                FragmentContainerActivity.startFragmentsActivity(mContext, "", FragmentContainerActivity.TYPE_HALL_FLAG, bundle);
+                break;
+            case R.id.id_tv_fragment_bottom_one_jiaju:
+                Bundle bundle1 = new Bundle();
+                bundle1.putInt(TypeHallFragment.CURRENT_TYPE_FLAG, TypeHallFragment.HOUSE_HOME_FLAG);
+                FragmentContainerActivity.startFragmentsActivity(mContext, "", FragmentContainerActivity.TYPE_HALL_FLAG, bundle1);
+                break;
+            case R.id.id_tv_fragment_bottom_one_jiazheng:
+                Bundle bundle2 = new Bundle();
+                bundle2.putInt(TypeHallFragment.CURRENT_TYPE_FLAG, TypeHallFragment.HOUSEKEEPING_FLAG);
+                FragmentContainerActivity.startFragmentsActivity(mContext, "", FragmentContainerActivity.TYPE_HALL_FLAG, bundle2);
                 break;
             case R.id.id_tv_fragment_bottom_one_decorate:
-                FragmentContainerActivity.startFragmentsActivity(mContext, "装修",FragmentContainerActivity.DECORATE_INDEX_FLAG);
+                FragmentContainerActivity.startFragmentsActivity(mContext, "装修", FragmentContainerActivity.DECORATE_INDEX_FLAG);
                 break;
         }
     }

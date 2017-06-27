@@ -147,14 +147,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#fff"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
                     android:layout_weight="1"
+                    android:clickable="true"
+                    android:background="@drawable/select_click_bg"
                     android:orientation="vertical">
 
                     <TextView
@@ -208,7 +209,9 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_margin="@dimen/dp_10"
+                        android:clickable="true"
+                        android:background="@drawable/select_click_bg"
+                        android:padding="@dimen/dp_10"
                         android:layout_weight="1">
 
                         <LinearLayout
@@ -251,7 +254,9 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_margin="@dimen/dp_10"
+                        android:padding="@dimen/dp_10"
+                        android:clickable="true"
+                        android:background="@drawable/select_click_bg"
                         android:layout_weight="1">
 
                         <LinearLayout

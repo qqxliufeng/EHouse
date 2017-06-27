@@ -30,5 +30,13 @@ public class TypeHallFragmentAdapter extends BaseMultiItemQuickAdapter<BaseTypeI
 
     @Override
     protected void convert(BaseViewHolder helper, BaseTypeItemBean item) {
+        switch (item.getItemType()){
+            case LEFT_FLAG:
+                helper.addOnClickListener(R.id.id_tv_adapter_type_hall_left_item_more);
+                break;
+            case RIGHT_FLAG:
+                helper.addOnClickListener(R.id.id_tv_adapter_type_hall_right_item_more);
+                break;
+        }
     }
 }
