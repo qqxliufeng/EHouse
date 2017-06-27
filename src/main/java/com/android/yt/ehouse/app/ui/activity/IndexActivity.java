@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.ui.fragment.bottom.IndexFiveFragment;
@@ -29,6 +30,7 @@ public class IndexActivity extends BaseActivity implements TabLayout.OnTabSelect
 
     @BindView(R.id.id_tl_activity_index_navigation)
     TabLayout mTabLayout;
+    private long exitTime = 0L;
 
     @Override
     public int getLayoutId() {
@@ -120,6 +122,16 @@ public class IndexActivity extends BaseActivity implements TabLayout.OnTabSelect
         @Override
         public int getCount() {
             return INDEX_BOTTOM_TITLE.length;
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (System.currentTimeMillis() - exitTime > 2000) {
+            exitTime = System.currentTimeMillis();
+            Toast.makeText(this, "再按一次退出客户端", Toast.LENGTH_SHORT).show();
+        } else {
+            finish();
         }
     }
 }
