@@ -3,12 +3,14 @@ package com.android.yt.ehouse.app.ui.fragment.base;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -23,6 +25,7 @@ import com.android.yt.ehouse.app.ui.adapter.TypeHallFragmentAdapter;
 import com.android.yt.ehouse.app.ui.adapter.TypeHallHotSellAdapter;
 import com.android.yt.ehouse.app.ui.fragment.index.BannerFragment;
 import com.android.yt.ehouse.app.ui.view.MyLinearLayoutManager;
+import com.android.yt.ehouse.app.utils.PaletteUtil;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
@@ -119,7 +122,7 @@ public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> 
         TextView tv_one_flag = (TextView) headerView.findViewById(R.id.id_tv_fragment_type_hall_header_one_flag);
         TextView tv_two_flag = (TextView) headerView.findViewById(R.id.id_tv_fragment_type_hall_header_two_flag);
         TextView tv_three_flag = (TextView) headerView.findViewById(R.id.id_tv_fragment_type_hall_header_three_flag);
-        TextView tv_sell_title = (TextView) headerView.findViewById(R.id.id_tv_fragment_type_hall_header_sell_title);
+        final TextView tv_sell_title = (TextView) headerView.findViewById(R.id.id_tv_fragment_type_hall_header_sell_title);
         int currentOneTop = 0;
         int currentTwoTop = 0;
         int currentThreeTop = 0;
@@ -163,6 +166,12 @@ public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> 
         tv_two_flag.setText(twoFlagTitle);
         tv_sell_title.setText(currentSellTitle);
         et_search_content.setHint(searchContentHint);
+        PaletteUtil.getInstance().init(getResources(), currentSellTitleLeft, new PaletteUtil.PatternCallBack() {
+            @Override
+            public void onCallBack(Drawable drawable, int titleColor,int bgColor) {
+                tv_sell_title.setTextColor(bgColor);
+            }
+        });
     }
 
     @Override
@@ -190,6 +199,13 @@ public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> 
 
     @Override
     public void onItemViewChildClick(BaseQuickAdapter adapter, View view, int position) {
-        Toast.makeText(mContext, mArrayList.get(position).getItemType() + "  +" + position, Toast.LENGTH_SHORT).show();
+        switch (currentFlag){
+            case MATERIALS_FLAG:
+                break;
+            case HOUSE_HOME_FLAG:
+                break;
+            case HOUSEKEEPING_FLAG:
+                break;
+        }
     }
 }
