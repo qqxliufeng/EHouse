@@ -10,10 +10,10 @@ import java.util.List;
  * Created by feng on 2017/6/23.
  */
 
-public class HouseHallAdapter extends BaseQuickAdapter<HouseItemBean,BaseViewHolder> {
+public class HouseFragmentItemAdapter extends BaseQuickAdapter<HouseItemBean,BaseViewHolder> {
 
 
-    public HouseHallAdapter(int layoutResId, List<HouseItemBean> data) {
+    public HouseFragmentItemAdapter(int layoutResId, List<HouseItemBean> data) {
         super(layoutResId, data);
     }
 

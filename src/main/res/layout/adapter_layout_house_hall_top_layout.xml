@@ -142,16 +142,17 @@
             android:text="最新房源" />
 
         <TextView
+            android:id="@+id/id_tv_more"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
             android:gravity="center"
             android:drawablePadding="@dimen/dp_10"
             android:clickable="true"
             android:textColor="@color/select_click_color1"
             android:drawableRight="@drawable/img_enter_icon"
-            android:text="更多" />
+            android:text="更多"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
 
 
     </RelativeLayout>

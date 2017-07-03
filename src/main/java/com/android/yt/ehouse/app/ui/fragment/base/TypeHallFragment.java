@@ -7,10 +7,10 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -18,8 +18,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.yt.ehouse.app.R;
+import com.android.yt.ehouse.app.application.EHouseApplication;
 import com.android.yt.ehouse.app.data.bean.BaseTypeItemBean;
 import com.android.yt.ehouse.app.data.bean.TypeHallSellBean;
+import com.android.yt.ehouse.app.interfaces.OnClassifySearchContentClickListener;
 import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.adapter.TypeHallFragmentAdapter;
 import com.android.yt.ehouse.app.ui.adapter.TypeHallHotSellAdapter;
@@ -37,8 +39,7 @@ import butterknife.OnClick;
 /**
  * Created by feng on 2017/6/23.
  */
-
-public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> implements AppBarLayout.OnOffsetChangedListener {
+public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> implements AppBarLayout.OnOffsetChangedListener,OnClassifySearchContentClickListener {
 
     public static final String CURRENT_TYPE_FLAG = "current_type_flag";
 
@@ -188,11 +189,15 @@ public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> 
     }
 
 
-    @OnClick({R.id.id_iv_fragment_type_hall_back})
+    @OnClick({R.id.id_iv_fragment_type_hall_back,R.id.id_et_fragment_type_hall_search_content})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.id_iv_fragment_type_hall_back:
                 finishActivity();
+                break;
+            case R.id.id_et_fragment_type_hall_search_content:
+                EHouseApplication.getInstance().setOnClassifySearchContentClickListener(this);
+                FragmentContainerActivity.startFragmentsActivity(mContext,"",FragmentContainerActivity.CLASSIFY_SEARCH_FLAG);
                 break;
         }
     }
@@ -207,5 +212,10 @@ public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> 
             case HOUSEKEEPING_FLAG:
                 break;
         }
+    }
+
+    @Override
+    public <T> void onSearchContentClick(T t) {
+        Toast.makeText(mContext, t+""+this.toString(), Toast.LENGTH_SHORT).show();
     }
 }

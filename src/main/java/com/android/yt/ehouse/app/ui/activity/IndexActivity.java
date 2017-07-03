@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.yt.ehouse.app.R;
+import com.android.yt.ehouse.app.application.EHouseApplication;
 import com.android.yt.ehouse.app.ui.fragment.bottom.IndexFiveFragment;
 import com.android.yt.ehouse.app.ui.fragment.bottom.IndexFourFragment;
 import com.android.yt.ehouse.app.ui.fragment.bottom.IndexOneFragment;
@@ -131,6 +132,7 @@ public class IndexActivity extends BaseActivity implements TabLayout.OnTabSelect
             exitTime = System.currentTimeMillis();
             Toast.makeText(this, "再按一次退出客户端", Toast.LENGTH_SHORT).show();
         } else {
+            EHouseApplication.getInstance().onDestory();
             finish();
         }
     }

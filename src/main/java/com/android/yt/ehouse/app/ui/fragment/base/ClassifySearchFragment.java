@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.android.yt.ehouse.app.R;
+import com.android.yt.ehouse.app.application.EHouseApplication;
+import com.android.yt.ehouse.app.interfaces.OnClassifySearchContentClickListener;
 import com.android.yt.ehouse.app.ui.adapter.ClassifyContentAdapter;
 import com.android.yt.ehouse.app.ui.adapter.ClassifyMenuAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -50,6 +52,7 @@ public class ClassifySearchFragment extends LroidBaseNetFragment {
         return R.layout.fragment_materials_search_layout;
     }
 
+
     @Override
     protected void initView(View view) {
         for (int i = 0; i < 10; i++) {
@@ -71,11 +74,20 @@ public class ClassifySearchFragment extends LroidBaseNetFragment {
 
         rv_right_content.setAdapter(new ClassifyContentAdapter(R.layout.adapter_classisy_content_layout, rightContentList));
         rv_right_content.setLayoutManager(new GridLayoutManager(mContext, 3));
+        rv_right_content.addOnItemTouchListener(new OnItemClickListener() {
+            @Override
+            public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
+                OnClassifySearchContentClickListener onClassifySearchContentClickListener = EHouseApplication.getInstance().getOnClassifySearchContentClickListener();
+                if (onClassifySearchContentClickListener != null) {
+                    onClassifySearchContentClickListener.onSearchContentClick(rightContentList.get(position));
+                }
+            }
+        });
     }
 
     @OnClick(R.id.id_iv_fragment_classify_search_content_clear)
-    public void onClick(View view){
-        switch (view.getId()){
+    public void onClick(View view) {
+        switch (view.getId()) {
             case R.id.id_iv_fragment_classify_search_content_clear:
                 et_search_content.setText("");
                 break;

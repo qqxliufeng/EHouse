@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/id_ll_fragment_decorate_search_condition_intelligent_order_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#88000000"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/id_rb_fragment_decorate_search_condition_intelligent_order_one"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeightSmall"
+            android:button="@null"
+            android:gravity="center"
+            android:text="智能排序"
+            android:textColor="@color/select_check_color" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#ccc" />
+
+        <RadioButton
+            android:id="@+id/id_rb_fragment_decorate_search_condition_intelligent_order_two"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeightSmall"
+            android:button="@null"
+            android:gravity="center"
+            android:text="口碑最好"
+            android:textColor="@color/select_check_color" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#ccc" />
+
+        <RadioButton
+            android:id="@+id/id_rb_fragment_decorate_search_condition_intelligent_order_three"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeightSmall"
+            android:button="@null"
+            android:gravity="center"
+            android:text="距离优先"
+            android:textColor="@color/select_check_color" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#ccc" />
+
+        <RadioButton
+            android:id="@+id/id_rb_fragment_decorate_search_condition_intelligent_order_four"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeightSmall"
+            android:button="@null"
+            android:gravity="center"
+            android:text="评价最好"
+            android:textColor="@color/select_check_color" />
+    </RadioGroup>
+
+    <View
+        android:id="@+id/id_view_decorate_list_search_condition_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

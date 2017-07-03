@@ -33,7 +33,9 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:maxLines="1"
-                    android:text="济南市金屋装修有限公司"
+                    android:ellipsize="end"
+                    android:layout_marginRight="100dp"
+                    android:text="济南市金屋装修有限公司济南市金屋装修有限公司济南市金屋装修有限公司"
                     android:textSize="14sp" />
 
                 <TextView
@@ -66,17 +68,19 @@
                 android:gravity="center_vertical">
 
                 <RatingBar
+                    android:id="@+id/id_rb_adapter_decorate_item_account"
                     style="?android:ratingBarStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:numStars="5"
-                    android:rating="2" />
+                    android:isIndicator="true"
+                    android:rating="2.5" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dp_10"
-                    android:text="100%好评率"
+                    android:text="100% 好评率"
                     android:textSize="12sp" />
 
             </LinearLayout>

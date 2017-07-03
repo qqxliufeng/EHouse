@@ -4,10 +4,13 @@ import android.view.View;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.data.bean.HouseItemBean;
-import com.android.yt.ehouse.app.ui.adapter.HouseHallAdapter;
+import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.adapter.HouseFragmentItemAdapter;
 import com.android.yt.ehouse.app.ui.fragment.base.BaseRecycleViewFragment;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+
+import butterknife.OnClick;
 
 /**
  * Created by feng on 2017/6/23.
@@ -23,7 +26,7 @@ public class HouseHallFragment extends BaseRecycleViewFragment<HouseItemBean> {
 
     @Override
     protected BaseQuickAdapter<HouseItemBean, BaseViewHolder> createAdapter() {
-        return new HouseHallAdapter(R.layout.adapter_house_hall_item_layout, mArrayList);
+        return new HouseFragmentItemAdapter(R.layout.adapter_house_fragment_item_layout, mArrayList);
     }
 
     @Override
@@ -33,6 +36,12 @@ public class HouseHallFragment extends BaseRecycleViewFragment<HouseItemBean> {
             mArrayList.add(new HouseItemBean());
         }
         View headerView = View.inflate(mContext, R.layout.adapter_layout_house_hall_top_layout, null);
+        headerView.findViewById(R.id.id_tv_more).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentContainerActivity.startFragmentsActivity(mContext,"",FragmentContainerActivity.HOUSE_LIST_FLAG);
+            }
+        });
         mBaseQuickAdapter.addHeaderView(headerView);
         mBaseQuickAdapter.notifyDataSetChanged();
     }
@@ -41,4 +50,6 @@ public class HouseHallFragment extends BaseRecycleViewFragment<HouseItemBean> {
     public void onRefresh() {
         super.onRefresh();
     }
+
+
 }

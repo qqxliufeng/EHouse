@@ -10,13 +10,16 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-
+import android.widget.FrameLayout;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.ui.fragment.base.ClassifySearchFragment;
+import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseFragment;
+import com.android.yt.ehouse.app.ui.fragment.base.TypeHallFragment;
+import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCompanyListFragment;
 import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateIndexFragment;
 import com.android.yt.ehouse.app.ui.fragment.house.HouseHallFragment;
-import com.android.yt.ehouse.app.ui.fragment.base.TypeHallFragment;
+import com.android.yt.ehouse.app.ui.fragment.house.HouseListFragment;
 
 import butterknife.BindView;
 
@@ -35,6 +38,8 @@ public class FragmentContainerActivity extends BaseActivity {
     public static final int HOUSE_HALL_FLAG = 0x2;
     public static final int TYPE_HALL_FLAG = 0x3;
     public static final int DECORATE_INDEX_FLAG = 0x4;
+    public static final int HOUSE_LIST_FLAG = 0x5;
+    public static final int DECORATE_COMPANY_LIST_FLAG = 0x6;
 
 
     @BindView(R.id.id_tl_home_tool_bar)
@@ -42,12 +47,17 @@ public class FragmentContainerActivity extends BaseActivity {
     @BindView(R.id.id_abl_home_tool_bar_container)
     AppBarLayout mAppBarLayout;
 
+    @BindView(R.id.id_fl_activity_fragment_container)
+    FrameLayout fl_container;
+
+    private LroidBaseFragment currentFragment;
+
     @Override
     public int getLayoutId() {
         return R.layout.activity_fragment_container_layout;
     }
 
-    public void setAppBarVisibility(int visibility){
+    public void setAppBarVisibility(int visibility) {
         mAppBarLayout.setVisibility(visibility);
         setSupportActionBar(null);
     }
@@ -93,6 +103,16 @@ public class FragmentContainerActivity extends BaseActivity {
             case DECORATE_INDEX_FLAG:
                 fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateIndexFragment.newInstance());
                 break;
+            case HOUSE_LIST_FLAG:
+                HouseListFragment houseListFragment = HouseListFragment.newInstance();
+                currentFragment = houseListFragment;
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, houseListFragment);
+                break;
+            case DECORATE_COMPANY_LIST_FLAG:
+                DecorateCompanyListFragment decorateCompanyListFragment = DecorateCompanyListFragment.newInstance();
+                currentFragment = decorateCompanyListFragment;
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, decorateCompanyListFragment);
+                break;
         }
         fragmentTransaction.commitAllowingStateLoss();
     }
@@ -113,4 +133,22 @@ public class FragmentContainerActivity extends BaseActivity {
         context.startActivity(intent);
     }
 
+    @Override
+    public void onBackPressed() {
+        if (currentFragment != null) {
+            if (currentFragment.onBackPress()) {
+                currentFragment.onBackPressProcess();
+                return;
+            }
+        }
+        super.onBackPressed();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (currentFragment != null) {
+            currentFragment = null;
+        }
+    }
 }

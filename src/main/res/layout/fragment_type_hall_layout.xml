@@ -67,7 +67,7 @@
                             android:background="@null"
                             android:drawableLeft="@drawable/img_search_icon"
                             android:drawablePadding="@dimen/dp_10"
-                            android:enabled="false"
+                            android:focusable="false"
                             android:hint="搜索建材商品"
                             android:paddingBottom="10dp"
                             android:paddingLeft="@dimen/dp_10"

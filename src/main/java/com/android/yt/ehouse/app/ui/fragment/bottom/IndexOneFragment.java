@@ -74,20 +74,20 @@ public class IndexOneFragment extends LroidBaseNetFragment {
             case R.id.id_tv_fragment_bottom_one_jiancai:
                 Bundle bundle = new Bundle();
                 bundle.putInt(TypeHallFragment.CURRENT_TYPE_FLAG, TypeHallFragment.MATERIALS_FLAG);
-                FragmentContainerActivity.startFragmentsActivity(mContext, "", FragmentContainerActivity.TYPE_HALL_FLAG, bundle);
+                FragmentContainerActivity.startFragmentsActivity(mContext, getString(R.string.string_empty), FragmentContainerActivity.TYPE_HALL_FLAG, bundle);
                 break;
             case R.id.id_tv_fragment_bottom_one_jiaju:
                 Bundle bundle1 = new Bundle();
                 bundle1.putInt(TypeHallFragment.CURRENT_TYPE_FLAG, TypeHallFragment.HOUSE_HOME_FLAG);
-                FragmentContainerActivity.startFragmentsActivity(mContext, "", FragmentContainerActivity.TYPE_HALL_FLAG, bundle1);
+                FragmentContainerActivity.startFragmentsActivity(mContext, getString(R.string.string_empty), FragmentContainerActivity.TYPE_HALL_FLAG, bundle1);
                 break;
             case R.id.id_tv_fragment_bottom_one_jiazheng:
                 Bundle bundle2 = new Bundle();
                 bundle2.putInt(TypeHallFragment.CURRENT_TYPE_FLAG, TypeHallFragment.HOUSEKEEPING_FLAG);
-                FragmentContainerActivity.startFragmentsActivity(mContext, "", FragmentContainerActivity.TYPE_HALL_FLAG, bundle2);
+                FragmentContainerActivity.startFragmentsActivity(mContext, getString(R.string.string_empty), FragmentContainerActivity.TYPE_HALL_FLAG, bundle2);
                 break;
             case R.id.id_tv_fragment_bottom_one_decorate:
-                FragmentContainerActivity.startFragmentsActivity(mContext, "装修", FragmentContainerActivity.DECORATE_INDEX_FLAG);
+                FragmentContainerActivity.startFragmentsActivity(mContext, getString(R.string.string_decorate), FragmentContainerActivity.DECORATE_INDEX_FLAG);
                 break;
         }
     }

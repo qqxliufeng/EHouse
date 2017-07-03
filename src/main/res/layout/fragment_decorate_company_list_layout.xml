@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/id_ll_fragment_decorate_company_list_condition_area"
+            style="@style/style_ll_house_search">
+
+            <CheckedTextView
+                style="@style/style_tv_house_search"
+                android:drawableLeft="@drawable/select_decorate_area_left"
+                android:text="槐荫" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="#ccc" />
+
+        <LinearLayout
+            android:id="@+id/id_ll_fragment_decorate_company_list_condition_filter"
+            style="@style/style_ll_house_search">
+
+            <CheckedTextView
+                android:drawableLeft="@drawable/select_decorate_filter_left"
+                style="@style/style_tv_house_search"
+                android:text="筛选" />
+        </LinearLayout>
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="#ccc" />
+        <LinearLayout
+            android:id="@+id/id_ll_fragment_decorate_company_list_condition_intelligent_order"
+            style="@style/style_ll_house_search">
+
+            <CheckedTextView
+                android:drawableLeft="@drawable/select_decorate_order_left"
+                style="@style/style_tv_house_search"
+                android:text="智能排序" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#ccc" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/fragment_base_recycle_view_layout" />
+
+        <FrameLayout
+            android:id="@+id/id_fl_fragment_decorate_company_list_condition_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+</LinearLayout>

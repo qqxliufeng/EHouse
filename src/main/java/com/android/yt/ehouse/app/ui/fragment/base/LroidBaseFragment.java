@@ -91,7 +91,7 @@ public abstract class LroidBaseFragment extends Fragment implements View.OnClick
     protected void finishActivity() {
         if (mContext instanceof SwipeBackActivityBase) {
             ((BaseActivity) mContext).scrollToFinishActivity();
-        }else {
+        } else {
             ((BaseActivity) mContext).finish();
         }
     }
@@ -123,6 +123,22 @@ public abstract class LroidBaseFragment extends Fragment implements View.OnClick
     }
 
     protected void onPermissionFail(int code) {
+    }
+
+    /**
+     * 是否要自已处理返回事件
+     *
+     * @return false 不处理 true 处理
+     */
+    public boolean onBackPress() {
+        return false;
+    }
+
+    /**
+     * 自己处理返回事件
+     */
+    public void onBackPressProcess() {
+
     }
 
 }
