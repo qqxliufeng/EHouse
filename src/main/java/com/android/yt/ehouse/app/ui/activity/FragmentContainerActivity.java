@@ -19,7 +19,9 @@ import com.android.yt.ehouse.app.ui.fragment.base.TypeHallFragment;
 import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCompanyListFragment;
 import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateIndexFragment;
 import com.android.yt.ehouse.app.ui.fragment.house.HouseHallFragment;
+import com.android.yt.ehouse.app.ui.fragment.house.HouseInfoFragment;
 import com.android.yt.ehouse.app.ui.fragment.house.HouseListFragment;
+import com.android.yt.ehouse.app.ui.fragment.materials.MaterialsListFragment;
 
 import butterknife.BindView;
 
@@ -40,6 +42,8 @@ public class FragmentContainerActivity extends BaseActivity {
     public static final int DECORATE_INDEX_FLAG = 0x4;
     public static final int HOUSE_LIST_FLAG = 0x5;
     public static final int DECORATE_COMPANY_LIST_FLAG = 0x6;
+    public static final int MATERIALS_LIST_FLAG = 0x7;
+    public static final int HOUSE_INFO_FLAG = 0x8;
 
 
     @BindView(R.id.id_tl_home_tool_bar)
@@ -112,6 +116,12 @@ public class FragmentContainerActivity extends BaseActivity {
                 DecorateCompanyListFragment decorateCompanyListFragment = DecorateCompanyListFragment.newInstance();
                 currentFragment = decorateCompanyListFragment;
                 fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, decorateCompanyListFragment);
+                break;
+            case MATERIALS_LIST_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, MaterialsListFragment.newInstance());
+                break;
+            case HOUSE_INFO_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, HouseInfoFragment.newInstance());
                 break;
         }
         fragmentTransaction.commitAllowingStateLoss();

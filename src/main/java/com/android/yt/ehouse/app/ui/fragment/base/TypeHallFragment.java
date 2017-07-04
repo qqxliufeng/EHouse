@@ -7,7 +7,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -34,12 +33,13 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
  * Created by feng on 2017/6/23.
  */
-public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> implements AppBarLayout.OnOffsetChangedListener,OnClassifySearchContentClickListener {
+public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> implements AppBarLayout.OnOffsetChangedListener, OnClassifySearchContentClickListener {
 
     public static final String CURRENT_TYPE_FLAG = "current_type_flag";
 
@@ -64,12 +64,6 @@ public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> 
     @BindView(R.id.id_et_fragment_type_hall_search_content)
     EditText et_search_content;
 
-    public static TypeHallFragment newInstance(Bundle args) {
-        TypeHallFragment fragment = new TypeHallFragment();
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -77,14 +71,20 @@ public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> 
     }
 
     @Override
-    public int getLayoutId() {
-        return R.layout.fragment_type_hall_layout;
-    }
-
-    @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         ((FragmentContainerActivity) mContext).setAppBarVisibility(View.GONE);
+    }
+
+    public static TypeHallFragment newInstance(Bundle args) {
+        TypeHallFragment fragment = new TypeHallFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.fragment_type_hall_layout;
     }
 
     @Override
@@ -123,6 +123,12 @@ public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> 
         TextView tv_one_flag = (TextView) headerView.findViewById(R.id.id_tv_fragment_type_hall_header_one_flag);
         TextView tv_two_flag = (TextView) headerView.findViewById(R.id.id_tv_fragment_type_hall_header_two_flag);
         TextView tv_three_flag = (TextView) headerView.findViewById(R.id.id_tv_fragment_type_hall_header_three_flag);
+        tv_one_flag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onMyClick(v);
+            }
+        });
         final TextView tv_sell_title = (TextView) headerView.findViewById(R.id.id_tv_fragment_type_hall_header_sell_title);
         int currentOneTop = 0;
         int currentTwoTop = 0;
@@ -169,7 +175,7 @@ public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> 
         et_search_content.setHint(searchContentHint);
         PaletteUtil.getInstance().init(getResources(), currentSellTitleLeft, new PaletteUtil.PatternCallBack() {
             @Override
-            public void onCallBack(Drawable drawable, int titleColor,int bgColor) {
+            public void onCallBack(Drawable drawable, int titleColor, int bgColor) {
                 tv_sell_title.setTextColor(bgColor);
             }
         });
@@ -188,23 +194,34 @@ public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> 
         }
     }
 
-
-    @OnClick({R.id.id_iv_fragment_type_hall_back,R.id.id_et_fragment_type_hall_search_content})
-    public void onClick(View view) {
+    @OnClick({R.id.id_iv_fragment_type_hall_back,
+            R.id.id_et_fragment_type_hall_search_content})
+    public void onMyClick(View view) {
         switch (view.getId()) {
             case R.id.id_iv_fragment_type_hall_back:
                 finishActivity();
                 break;
             case R.id.id_et_fragment_type_hall_search_content:
                 EHouseApplication.getInstance().setOnClassifySearchContentClickListener(this);
-                FragmentContainerActivity.startFragmentsActivity(mContext,"",FragmentContainerActivity.CLASSIFY_SEARCH_FLAG);
+                FragmentContainerActivity.startFragmentsActivity(mContext, "", FragmentContainerActivity.CLASSIFY_SEARCH_FLAG);
+                break;
+            case R.id.id_tv_fragment_type_hall_header_one_flag:
+                switch (currentFlag){
+                    case MATERIALS_FLAG:
+                        FragmentContainerActivity.startFragmentsActivity(mContext,"",FragmentContainerActivity.MATERIALS_LIST_FLAG);
+                        break;
+                }
+                break;
+            case R.id.id_tv_fragment_type_hall_header_two_flag:
+                break;
+            case R.id.id_tv_fragment_type_hall_header_three_flag:
                 break;
         }
     }
 
     @Override
     public void onItemViewChildClick(BaseQuickAdapter adapter, View view, int position) {
-        switch (currentFlag){
+        switch (currentFlag) {
             case MATERIALS_FLAG:
                 break;
             case HOUSE_HOME_FLAG:
@@ -216,6 +233,6 @@ public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> 
 
     @Override
     public <T> void onSearchContentClick(T t) {
-        Toast.makeText(mContext, t+""+this.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(mContext, t + "" + this.toString(), Toast.LENGTH_SHORT).show();
     }
 }

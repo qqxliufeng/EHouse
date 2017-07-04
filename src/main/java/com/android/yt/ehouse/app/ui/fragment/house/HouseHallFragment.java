@@ -52,4 +52,8 @@ public class HouseHallFragment extends BaseRecycleViewFragment<HouseItemBean> {
     }
 
 
+    @Override
+    public void onMySimpleItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+        FragmentContainerActivity.startFragmentsActivity(mContext,"",FragmentContainerActivity.HOUSE_INFO_FLAG);
+    }
 }

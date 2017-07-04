@@ -38,7 +38,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1px"
-                android:background="#333" />
+                android:background="#ccc" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -92,7 +92,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/dp_10"
-                    android:background="@drawable/shape_bt_gradient"
+                    android:background="@drawable/shape_bt_gradient1"
                     android:text="确定"
                     android:textColor="#fff" />
             </RelativeLayout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:orientation="horizontal"
+    android:padding="@dimen/dp_10">
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_weight="2"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_test_bg" />
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_weight="4">
+
+        <TextView
+            android:id="@+id/id_tv_adapter_materials_list_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="正品苏泊尔刀具套装 厨房不锈钢套装 菜刀切菜刀"
+            android:textColor="#444"
+            android:lineSpacingExtra="2dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_tv_adapter_materials_list_item_title"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_tv_stroke"
+                android:paddingBottom="2dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="2dp"
+                android:text="新品"
+                android:textColor="@color/yellow"
+                android:textSize="10sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/shape_tv_stroke"
+                android:paddingBottom="2dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="2dp"
+                android:text="包邮"
+                android:textColor="@color/yellow"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥156.00"
+                android:textColor="#f00"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text="已售1234件"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

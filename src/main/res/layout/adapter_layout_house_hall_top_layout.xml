@@ -67,7 +67,7 @@
                 android:layout_marginTop="10dp"
                 android:drawableBottom="@drawable/img_house_hall_wymf_go_icon"
                 android:drawablePadding="@dimen/dp_10"
-                android:text="我在卖房"
+                android:text="我要卖房"
                 android:textColor="#ff8830"
                 android:textSize="14sp" />
 

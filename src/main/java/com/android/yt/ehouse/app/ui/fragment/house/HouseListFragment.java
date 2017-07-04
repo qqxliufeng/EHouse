@@ -1,5 +1,7 @@
 package com.android.yt.ehouse.app.ui.fragment.house;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -7,6 +9,7 @@ import android.widget.Toast;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.data.bean.HouseItemBean;
+import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.adapter.HouseFragmentItemAdapter;
 import com.android.yt.ehouse.app.ui.fragment.base.BaseFragmentWithSearchConditionFragment;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -81,6 +84,12 @@ public class HouseListFragment extends BaseFragmentWithSearchConditionFragment<H
     }
 
     @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        ((FragmentContainerActivity) mContext).setAppBarVisibility(View.GONE);
+    }
+
+    @Override
     public void initView(View view) {
         super.initView(view);
         mBaseQuickAdapter.addData(0, new HouseItemBean());
@@ -93,7 +102,7 @@ public class HouseListFragment extends BaseFragmentWithSearchConditionFragment<H
             R.id.id_ll_house_list_condition_price,
             R.id.id_ll_house_list_condition_fx,
             R.id.id_ll_house_list_condition_more})
-    public void onClick(final LinearLayout view) {
+    public void onConditionClick(final LinearLayout view) {
         switch (view.getId()) {
             case R.id.id_ll_house_list_condition_area:
                 currentFragment = areaFragment;
@@ -115,6 +124,16 @@ public class HouseListFragment extends BaseFragmentWithSearchConditionFragment<H
                 refreshTextView(view);
             }
         });
+    }
+
+
+    @OnClick({R.id.id_iv_fragment_house_list_back})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.id_iv_fragment_house_list_back:
+                finishActivity();
+                break;
+        }
     }
 
     @Override

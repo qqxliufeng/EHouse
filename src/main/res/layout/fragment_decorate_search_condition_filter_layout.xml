@@ -118,7 +118,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"
-            android:background="#333" />
+            android:background="#ccc" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -135,7 +135,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/dp_10"
                 android:layout_weight="1"
-                android:background="#eee"
+                android:background="@drawable/shape_bt_gradient2"
                 android:text="重置"
                 android:textColor="#444" />
 
@@ -144,7 +144,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/dp_10"
                 android:layout_weight="1"
-                android:background="@color/yellow"
+                android:background="@drawable/shape_bt_gradient1"
                 android:text="确定"
                 android:textColor="#fff" />
 
