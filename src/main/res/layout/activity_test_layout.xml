@@ -1,69 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sliding_container"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:default_panel="front"
+    app:duration="500"
+    app:percent="0.4">
 
-    <com.android.yt.ehouse.app.ui.view.SwipeLayout
-        android:layout_marginTop="50dp"
+    <ScrollView
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="200dp">
+        android:layout_height="match_parent" >
 
         <LinearLayout
+            android:id="@+id/slidedetails_front"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#ffffff">
-
-            <TextView android:text="hello_world"
-                android:textSize="20sp"
-                android:paddingLeft="20dp"
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/img_test_bg"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/img_test_bg"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/img_test_bg"/>
+            <WebView
+                android:id="@+id/slidedetails_behind"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="150dp"
-            android:layout_height="50dp">
-            <RelativeLayout
-                android:id="@+id/delete_button"
-                android:clickable="true"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="#ff0000">
-                <View
-                    android:layout_centerInParent="true"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:background="#f00"/>
-            </RelativeLayout>
+    </ScrollView>
 
-            <RelativeLayout
-                android:id="@+id/view_button"
-                android:clickable="true"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="#c2c2c2">
-                <View
-                    android:layout_centerInParent="true"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:background="#000"/>
-            </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/star_button"
-                android:clickable="true"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="#aaffff">
-                <View
-                    android:layout_centerInParent="true"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:background="#0f0"/>
-            </RelativeLayout>
-        </LinearLayout>
-    </com.android.yt.ehouse.app.ui.view.SwipeLayout>
 
 </LinearLayout>
+

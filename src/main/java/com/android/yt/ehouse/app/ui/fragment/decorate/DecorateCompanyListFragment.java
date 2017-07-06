@@ -1,10 +1,12 @@
 package com.android.yt.ehouse.app.ui.fragment.decorate;
 
 
+import android.view.View;
 import android.widget.LinearLayout;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.data.bean.DecorateCompanyItemBean;
+import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.adapter.IndexDecorateFragmentAdapter;
 import com.android.yt.ehouse.app.ui.fragment.base.BaseFragmentWithSearchConditionFragment;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -88,5 +90,10 @@ public class DecorateCompanyListFragment extends BaseFragmentWithSearchCondition
                 refreshTextView(view);
             }
         });
+    }
+
+    @Override
+    public void onMySimpleItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+        FragmentContainerActivity.startFragmentsActivity(mContext,"公司详情",FragmentContainerActivity.DECORATE_COMPANY_INFO_FLAG);
     }
 }

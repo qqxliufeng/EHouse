@@ -64,7 +64,9 @@ public class IndexOneFragment extends LroidBaseNetFragment {
             R.id.id_tv_fragment_bottom_one_fcdt,
             R.id.id_tv_fragment_bottom_one_decorate,
             R.id.id_tv_fragment_bottom_one_jiaju,
-            R.id.id_tv_fragment_bottom_one_jiazheng
+            R.id.id_tv_fragment_bottom_one_jiazheng,
+            R.id.id_tv_fragment_bottom_one_licai,
+            R.id.id_tv_fragment_bottom_one_zhanhui
     })
     public void onClick(View view) {
         switch (view.getId()) {
@@ -88,6 +90,12 @@ public class IndexOneFragment extends LroidBaseNetFragment {
                 break;
             case R.id.id_tv_fragment_bottom_one_decorate:
                 FragmentContainerActivity.startFragmentsActivity(mContext, getString(R.string.string_decorate), FragmentContainerActivity.DECORATE_INDEX_FLAG);
+                break;
+            case R.id.id_tv_fragment_bottom_one_licai:
+                FragmentContainerActivity.startFragmentsActivity(mContext,"购物车",FragmentContainerActivity.SHOPPING_CAR_FLAG);
+                break;
+            case R.id.id_tv_fragment_bottom_one_zhanhui:
+                FragmentContainerActivity.startFragmentsActivity(mContext,"购物车",FragmentContainerActivity.SHOPPING_CAR_EMPTY_FLAG);
                 break;
         }
     }

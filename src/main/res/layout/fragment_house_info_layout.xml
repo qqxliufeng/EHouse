@@ -23,7 +23,6 @@
                 android:id="@+id/id_fl_fragment_index_banner_layout"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
-                android:background="@drawable/img_test_bg"
                 app:layout_collapseMode="parallax" />
 
             <android.support.v7.widget.Toolbar

@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseNetFragment;
+import com.android.yt.ehouse.app.ui.fragment.index.BannerFragment;
 
 import butterknife.BindView;
 
@@ -34,7 +35,6 @@ public class HouseInfoFragment extends LroidBaseNetFragment implements AppBarLay
     @BindView(R.id.id_tv_fragment_house_info_title)
     TextView tv_title;
 
-
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -53,6 +53,7 @@ public class HouseInfoFragment extends LroidBaseNetFragment implements AppBarLay
         iv_message.setColorFilter(Color.WHITE);
         getChildFragmentManager()
                 .beginTransaction()
+                .replace(R.id.id_fl_fragment_index_banner_layout, BannerFragment.newInstance())
                 .replace(R.id.id_fl_fragment_house_info_house_generalize_container, HouseInfoHouseGeneralizeFragment.newInstance())
                 .replace(R.id.id_fl_fragment_house_info_village_generalize_container, HouseInfoVillageGeneralizeFragment.newInstance())
                 .commit();

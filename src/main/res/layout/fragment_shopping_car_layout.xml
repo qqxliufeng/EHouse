@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/id_fl_fragment_shopping_car_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/id_fl_fragment_base_recycle_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="61dp">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/id_srl_fragment_base_recycle_view_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/id_rv_fragment_base_recycle_view_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="60dp"
+        android:background="#eee" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom"
+        android:background="#fff"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/id_cb_fragment_shopping_car_all_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:button="@drawable/select_cb_button1"
+            android:padding="@dimen/dp_10"
+            android:text="全选"
+            android:textColor="#777"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/id_bt_fragment_shopping_car_calculate"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/shape_bt_gradient4"
+            android:enabled="false"
+            android:text="结算(0)"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/id_bt_fragment_shopping_car_calculate"
+            android:orientation="vertical"
+            android:paddingRight="@dimen/dp_10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal"
+                android:paddingTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="合计："
+                    android:textColor="#444"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="1235"
+                    android:textColor="@color/yellow"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="right"
+                android:text="不含运费"
+                android:textColor="#777"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>
+

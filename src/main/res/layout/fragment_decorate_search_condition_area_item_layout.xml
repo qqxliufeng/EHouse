@@ -8,6 +8,7 @@
     android:ellipsize="end"
     android:maxLines="1"
     android:padding="8dp"
-    android:textSize="14sp">
+    android:textSize="14sp"
+    android:background="@drawable/select_cb_bg1">
 
 </CheckBox>

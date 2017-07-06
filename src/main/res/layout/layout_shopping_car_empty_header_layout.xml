@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="30dp"
+        android:paddingTop="@dimen/dp_10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_weight="1"
+                android:background="#eee" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/img_shopping_car_large_icon" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="40dp"
+                android:layout_weight="1"
+                android:background="#eee" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="购物车还是空的，快去挑几件中意的商品吧！"
+            android:textColor="#777"
+            android:textSize="16sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_bt_gradient"
+            android:text="去逛逛"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_10"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="40dp"
+        android:background="#eee" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:paddingTop="10dp"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10">
+
+        <View
+
+            android:layout_centerVertical="true"
+            android:layout_width="5dp"
+            android:layout_height="20dp"
+            android:background="@color/main_color" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="5dp"
+            android:text="大家都在看"
+            android:textColor="#444"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableRight="@drawable/img_enter_icon"
+            android:text="更多"
+            android:textColor="@color/select_click_color1"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+
+</FrameLayout>

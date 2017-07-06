@@ -34,7 +34,6 @@ public class DecorateIndexFragment extends BaseRecycleViewFragment<DecorateCompa
         for (int i = 0; i < 10; i++) {
             mArrayList.add(new DecorateCompanyItemBean());
         }
-//        mRecyclerView.addItemDecoration(new DividerItemDecoration(mContext, DividerItemDecoration.VERTICAL));
         View headerView = View.inflate(mContext, R.layout.layout_index_decorate_header_layout, null);
         EHouseApplication.getInstance().setOnClassifySearchContentClickListener(this);
         headerView.findViewById(R.id.id_et_fragment_classify_search_content).setOnClickListener(new View.OnClickListener() {
@@ -58,5 +57,10 @@ public class DecorateIndexFragment extends BaseRecycleViewFragment<DecorateCompa
     @Override
     public <T> void onSearchContentClick(T t) {
         Toast.makeText(mContext, t+""+this.toString(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onMySimpleItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+        FragmentContainerActivity.startFragmentsActivity(mContext,"公司详情",FragmentContainerActivity.DECORATE_COMPANY_INFO_FLAG);
     }
 }
