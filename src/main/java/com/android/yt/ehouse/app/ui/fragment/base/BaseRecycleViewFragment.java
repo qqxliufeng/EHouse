@@ -217,6 +217,14 @@ public abstract class BaseRecycleViewFragment<T> extends LroidBaseNetFragment im
     }
 
 
+    /**
+     * 处理后台返回的数据
+     *
+     * @param result    数据源
+     * @param clazz     对应的JavaBean.class
+     * @param isReverse 是否要进行逆向排序
+     * @throws Exception 抛出异常
+     */
     protected void defaultDealData(Map<String, Object> result, Class<T> clazz, boolean isReverse) throws Exception {
         try {
             HashMap<String, Object> map = (HashMap<String, Object>) result;
@@ -258,7 +266,7 @@ public abstract class BaseRecycleViewFragment<T> extends LroidBaseNetFragment im
         mBaseQuickAdapter.notifyDataSetChanged();
     }
 
-    public TextView getEmptyView(){
+    public TextView getEmptyView() {
         return (TextView) mEmptyView.getChildAt(0);
     }
 

@@ -13,6 +13,15 @@ public class GoodsItemBean {
     private boolean sectionSelected;
     private boolean itemSelected;
     private int index;
+    private Long addTime;
+
+    public Long getAddTime() {
+        return addTime;
+    }
+
+    public void setAddTime(Long addTime) {
+        this.addTime = addTime;
+    }
 
     public boolean isItemSelected() {
         return itemSelected;

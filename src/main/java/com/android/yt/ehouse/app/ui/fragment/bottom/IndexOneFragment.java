@@ -5,6 +5,7 @@ import android.support.v4.widget.NestedScrollView;
 import android.view.View;
 
 import com.android.yt.ehouse.app.R;
+import com.android.yt.ehouse.app.data.bean.GoodsItemBean;
 import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseNetFragment;
 import com.android.yt.ehouse.app.ui.fragment.base.TypeHallFragment;
@@ -15,6 +16,7 @@ import com.android.yt.ehouse.app.ui.fragment.index.DecorateNoteFragment;
 import com.android.yt.ehouse.app.ui.fragment.index.DecorateResultFragment;
 import com.android.yt.ehouse.app.ui.fragment.index.DecorateStrategyFragment;
 import com.android.yt.ehouse.app.ui.fragment.index.MallSpecialFragment;
+import com.android.yt.ehouse.app.ui.fragment.shoppingcar.ShoppingCarManager;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -66,7 +68,9 @@ public class IndexOneFragment extends LroidBaseNetFragment {
             R.id.id_tv_fragment_bottom_one_jiaju,
             R.id.id_tv_fragment_bottom_one_jiazheng,
             R.id.id_tv_fragment_bottom_one_licai,
-            R.id.id_tv_fragment_bottom_one_zhanhui
+            R.id.id_tv_fragment_bottom_one_zhanhui,
+            R.id.id_tv_fragment_bottom_one_tsjy,
+            R.id.id_ll_fragment_bottom_one_fengshui
     })
     public void onClick(View view) {
         switch (view.getId()) {
@@ -92,10 +96,14 @@ public class IndexOneFragment extends LroidBaseNetFragment {
                 FragmentContainerActivity.startFragmentsActivity(mContext, getString(R.string.string_decorate), FragmentContainerActivity.DECORATE_INDEX_FLAG);
                 break;
             case R.id.id_tv_fragment_bottom_one_licai:
-                FragmentContainerActivity.startFragmentsActivity(mContext,"购物车",FragmentContainerActivity.SHOPPING_CAR_FLAG);
+                FragmentContainerActivity.startFragmentsActivity(mContext, "购物车", FragmentContainerActivity.SHOPPING_CAR_FLAG);
                 break;
             case R.id.id_tv_fragment_bottom_one_zhanhui:
-                FragmentContainerActivity.startFragmentsActivity(mContext,"购物车",FragmentContainerActivity.SHOPPING_CAR_EMPTY_FLAG);
+                FragmentContainerActivity.startFragmentsActivity(mContext, "购物车", FragmentContainerActivity.SHOPPING_CAR_EMPTY_FLAG);
+                break;
+            case R.id.id_tv_fragment_bottom_one_tsjy:
+                break;
+            case R.id.id_ll_fragment_bottom_one_fengshui:
                 break;
         }
     }

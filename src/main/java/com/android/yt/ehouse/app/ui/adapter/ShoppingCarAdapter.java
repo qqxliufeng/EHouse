@@ -36,16 +36,17 @@ public class ShoppingCarAdapter extends BaseQuickAdapter<GoodsItemBean, BaseView
     @Override
     protected void convert(BaseViewHolder helper, final GoodsItemBean item) {
         LinearLayout ll_header_container = helper.getView(R.id.id_ll_adapter_shopping_car_header_container);
-        helper.addOnClickListener(R.id.id_tv_adapter_shopping_car_header_shop);
+        helper.addOnClickListener(R.id.id_tv_adapter_shopping_car_header_shop_title);
         helper.addOnClickListener(R.id.id_tv_adapter_shopping_car_inner_item);
         helper.addOnClickListener(R.id.id_bt_adapter_shopping_car_inner_item_delete);
-        helper.setText(R.id.id_tv_adapter_shopping_car_inner_item_title, item.getTitle());
+        helper.setText(R.id.id_tv_adapter_shopping_car_header_shop_title,item.getTitle());
+        helper.setText(R.id.id_tv_adapter_shopping_car_inner_item_title, item.getAddTime().toString()+item.getTitle());
         if (item.getIndex() == 1) {
             ll_header_container.setVisibility(View.VISIBLE);
         } else {
             ll_header_container.setVisibility(View.GONE);
         }
-        TextView tv_shop_title = helper.getView(R.id.id_tv_adapter_shopping_car_header_shop);
+        TextView tv_shop_title = helper.getView(R.id.id_tv_adapter_shopping_car_header_shop_title);
         TextView tv_item = helper.getView(R.id.id_tv_adapter_shopping_car_inner_item);
         if (item.isSectionSelected()) {
             tv_shop_title.setCompoundDrawablesWithIntrinsicBounds(leftSelectedDrawable, null, rightDrawable, null);

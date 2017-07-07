@@ -132,7 +132,6 @@ public class IndexActivity extends BaseActivity implements TabLayout.OnTabSelect
             exitTime = System.currentTimeMillis();
             Toast.makeText(this, "再按一次退出客户端", Toast.LENGTH_SHORT).show();
         } else {
-            EHouseApplication.getInstance().onDestory();
             finish();
         }
     }

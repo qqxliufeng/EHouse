@@ -3,8 +3,11 @@ package com.android.yt.ehouse.app.ui.fragment.shoppingcar;
 import com.android.yt.ehouse.app.data.bean.GoodsItemBean;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by feng on 2017/7/6.
@@ -13,6 +16,7 @@ import java.util.Map;
 public class ShoppingCarManager {
 
     private ShoppingCarManager() {
+        addTestItem();
     }
 
     private static ShoppingCarManager shoppingCarManager;
@@ -64,6 +68,7 @@ public class ShoppingCarManager {
                     goodsItemBean.setFlag(6);
             }
             goodsItemBean.setTitle("item  " + i);
+            goodsItemBean.setAddTime(System.currentTimeMillis());
             goodsList.add(goodsItemBean);
         }
         sortListAndSetSection();
@@ -96,7 +101,8 @@ public class ShoppingCarManager {
      */
     private void setSectionByFlag(GoodsItemBean goodsItemBean) {
         if (listMap.containsKey(goodsItemBean.getFlag())) {
-            listMap.get(goodsItemBean.getFlag()).add(goodsItemBean);
+            ArrayList<GoodsItemBean> goodsItemBeans = listMap.get(goodsItemBean.getFlag());
+            goodsItemBeans.add(goodsItemBean);
         } else {
             ArrayList<GoodsItemBean> tempList = new ArrayList<>();
             tempList.add(goodsItemBean);
@@ -121,14 +127,31 @@ public class ShoppingCarManager {
      * 将商品进行分组
      */
     private void sortListAndSetSection() {
-        setFirstItemFlag();
         for (GoodsItemBean goodsItemBean : goodsList) {
             setSectionByFlag(goodsItemBean);
+        }
+        setFirstItemByFlag();
+    }
+
+    /**
+     * 根据添加的时间进行排序
+     *
+     * @param list 要进行排序的集合
+     */
+    private void sortListByAddTime(ArrayList<GoodsItemBean> list) {
+        if (list != null && !list.isEmpty()) {
+            Collections.sort(list, new Comparator<GoodsItemBean>() {
+                @Override
+                public int compare(GoodsItemBean o1, GoodsItemBean o2) {
+                    return o2.getAddTime().compareTo(o1.getAddTime());
+                }
+            });
         }
     }
 
 
     /**=======================================manager item======================================================**/
+
     /**
      * 添加新的商品
      *
@@ -138,6 +161,7 @@ public class ShoppingCarManager {
         if (goodsItemBean != null) {
             goodsList.add(goodsItemBean);
             setSectionByFlag(goodsItemBean);
+            setPreviousItemIndexByFlag(goodsItemBean.getFlag());
         }
     }
 
@@ -177,22 +201,20 @@ public class ShoppingCarManager {
     }
 
     /**
-     * 把集合的第一个元素的Index设置为1 其余的设置为2
+     * 把分好组的集合的第一个元素的Index设置为1 其余的设置为2
      */
-    private void setFirstItemFlag() {
-        if (goodsList.isEmpty()) {
-            return;
-        } else {
-            goodsList.get(0).setIndex(1);
-        }
-        int size = goodsList.size();
-        for (int i = 1; i < size; i++) {
-            GoodsItemBean goodsItemBean = goodsList.get(i);
-            GoodsItemBean nextItemBean = goodsList.get(i - 1);
-            if (goodsItemBean.getFlag() == nextItemBean.getFlag()) {
-                goodsItemBean.setIndex(2);
-            } else {
-                goodsItemBean.setIndex(1);
+    private void setFirstItemByFlag() {
+        Set<Map.Entry<Integer, ArrayList<GoodsItemBean>>> entries = listMap.entrySet();
+        for (Map.Entry<Integer, ArrayList<GoodsItemBean>> entry : entries) {
+            ArrayList<GoodsItemBean> value = entry.getValue();
+            int size = value.size();
+            for (int i = 0; i < size; i++) {
+                GoodsItemBean goodsItemBean = value.get(i);
+                if (i == 0) {
+                    goodsItemBean.setIndex(1);
+                } else {
+                    goodsItemBean.setIndex(2);
+                }
             }
         }
     }
@@ -223,9 +245,23 @@ public class ShoppingCarManager {
     private void setNextItemIndexByFlag(ArrayList<GoodsItemBean> sectionList) {
         for (GoodsItemBean item : sectionList) {
             if (item.getIndex() == 2) {
+                item.setSectionSelected(item.isItemSelected());
                 item.setIndex(1);
                 break;
             }
+        }
+    }
+
+    /**
+     * 把某一个集合的第一个Item的Index设置为1
+     *
+     * @param flag
+     */
+    private void setPreviousItemIndexByFlag(int flag) {
+        ArrayList<GoodsItemBean> sectionList = listMap.get(flag);
+        sectionList.get(0).setIndex(1);
+        for (int i = 1; i < sectionList.size(); i++) {
+            sectionList.get(i).setIndex(2);
         }
     }
 
@@ -240,6 +276,7 @@ public class ShoppingCarManager {
     public void setSelectedByGoodItemFlag(GoodsItemBean goodsItemBean) {
         GoodsItemBean firstItem = getFirstGoodsItemByFlag(goodsItemBean.getFlag());
         goodsItemBean.setItemSelected(!goodsItemBean.isItemSelected());
+        goodsItemBean.setSectionSelected(goodsItemBean.isItemSelected());
         ArrayList<GoodsItemBean> sectionList = getSectionListByFlag(goodsItemBean.getFlag());
         if (sectionList != null) {
             int size = sectionList.size();
@@ -289,6 +326,7 @@ public class ShoppingCarManager {
 
     /**
      * 获取所有的选中的商品
+     *
      * @return 所有的商品
      */
     public ArrayList<GoodsItemBean> getSelectedList() {
@@ -300,5 +338,4 @@ public class ShoppingCarManager {
         }
         return selectedList;
     }
-
 }

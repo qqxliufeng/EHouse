@@ -12,6 +12,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnCheckedChanged;
@@ -42,7 +43,7 @@ public class ShoppingCarFragment extends BaseRecycleViewFragment<GoodsItemBean> 
     @Override
     public void initView(View view) {
         super.initView(view);
-        ShoppingCarManager.getInstance().addTestItem();
+//        ShoppingCarManager.getInstance().addTestItem();
         mArrayList.addAll(ShoppingCarManager.getInstance().getGoodsList());
         mBaseQuickAdapter.setEnableLoadMore(false);
         onRequestEnd(-1);
@@ -58,12 +59,12 @@ public class ShoppingCarFragment extends BaseRecycleViewFragment<GoodsItemBean> 
             case R.id.id_tv_adapter_shopping_car_inner_item:
                 ShoppingCarManager.getInstance().setSelectedByGoodItemFlag(goodsItemBean);
                 break;
-            case R.id.id_tv_adapter_shopping_car_header_shop:
+            case R.id.id_tv_adapter_shopping_car_header_shop_title:
                 ShoppingCarManager.getInstance().setAllSelectedByGoodsItemFlag(goodsItemBean);
                 break;
             case R.id.id_bt_adapter_shopping_car_inner_item_delete:
-                ShoppingCarManager.getInstance().removeItem(goodsItemBean);
                 mArrayList.remove(goodsItemBean);
+                ShoppingCarManager.getInstance().removeItem(goodsItemBean);
                 break;
         }
         refreshView();
@@ -86,5 +87,10 @@ public class ShoppingCarFragment extends BaseRecycleViewFragment<GoodsItemBean> 
         ArrayList<GoodsItemBean> selectedItems = ShoppingCarManager.getInstance().getSelectedList();
         bt_calculate.setEnabled(!selectedItems.isEmpty());
         bt_calculate.setText("结算(" + selectedItems.size() + ")");
+    }
+
+    @Override
+    protected void defaultDealData(Map<String, Object> result, Class<GoodsItemBean> clazz, boolean isReverse) throws Exception {
+        super.defaultDealData(result, clazz, isReverse);
     }
 }

@@ -17,7 +17,7 @@
             android:background="#eee" />
 
         <TextView
-            android:id="@+id/id_tv_adapter_shopping_car_header_shop"
+            android:id="@+id/id_tv_adapter_shopping_car_header_shop_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawablePadding="@dimen/dp_10"
