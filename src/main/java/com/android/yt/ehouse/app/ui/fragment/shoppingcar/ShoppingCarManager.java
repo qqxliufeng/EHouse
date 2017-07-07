@@ -185,7 +185,7 @@ public class ShoppingCarManager {
      * @param flag
      * @return
      */
-    public GoodsItemBean getFirstGoodsItemByFlag(int flag) {
+    public GoodsItemBean getFirstItemByFlag(int flag) {
         ArrayList<GoodsItemBean> sectionList = listMap.get(flag);
         GoodsItemBean firstItem = null;
         int size = sectionList.size();
@@ -217,23 +217,6 @@ public class ShoppingCarManager {
                 }
             }
         }
-    }
-
-    /**
-     * 根据商品的分类Flag 设置下一个商品为第一个商品
-     *
-     * @param flag 商品分类Flag
-     * @return 返回已经设置Flag为1 的商品
-     */
-    private GoodsItemBean setNextItemIndexByFlag(int flag) {
-        ArrayList<GoodsItemBean> sectionList = listMap.get(flag);
-        for (GoodsItemBean item : sectionList) {
-            if (item.getIndex() == 2) {
-                item.setIndex(1);
-                return item;
-            }
-        }
-        return null;
     }
 
     /**
@@ -273,8 +256,8 @@ public class ShoppingCarManager {
      *
      * @param goodsItemBean 选中的商品
      */
-    public void setSelectedByGoodItemFlag(GoodsItemBean goodsItemBean) {
-        GoodsItemBean firstItem = getFirstGoodsItemByFlag(goodsItemBean.getFlag());
+    public void setItemSelectedByGoodItemFlag(GoodsItemBean goodsItemBean) {
+        GoodsItemBean firstItem = getFirstItemByFlag(goodsItemBean.getFlag());
         goodsItemBean.setItemSelected(!goodsItemBean.isItemSelected());
         goodsItemBean.setSectionSelected(goodsItemBean.isItemSelected());
         ArrayList<GoodsItemBean> sectionList = getSectionListByFlag(goodsItemBean.getFlag());
@@ -299,8 +282,8 @@ public class ShoppingCarManager {
      *
      * @param goodsItemBean
      */
-    public void setAllSelectedByGoodsItemFlag(GoodsItemBean goodsItemBean) {
-        GoodsItemBean firstItem = getFirstGoodsItemByFlag(goodsItemBean.getFlag());
+    public void setSectionSelectedByGoodsItemFlag(GoodsItemBean goodsItemBean) {
+        GoodsItemBean firstItem = getFirstItemByFlag(goodsItemBean.getFlag());
         ArrayList<GoodsItemBean> sectionList = getSectionListByFlag(goodsItemBean.getFlag());
         if (firstItem != null && sectionList != null) {
             firstItem.setSectionSelected(!firstItem.isSectionSelected());

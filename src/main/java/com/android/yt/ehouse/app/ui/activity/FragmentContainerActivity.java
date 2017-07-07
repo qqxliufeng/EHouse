@@ -22,6 +22,7 @@ import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateIndexFragment;
 import com.android.yt.ehouse.app.ui.fragment.house.HouseHallFragment;
 import com.android.yt.ehouse.app.ui.fragment.house.HouseInfoFragment;
 import com.android.yt.ehouse.app.ui.fragment.house.HouseListFragment;
+import com.android.yt.ehouse.app.ui.fragment.house.HouseSellFragment;
 import com.android.yt.ehouse.app.ui.fragment.materials.MaterialsListFragment;
 import com.android.yt.ehouse.app.ui.fragment.shoppingcar.ShoppingCarEmptyFragment;
 import com.android.yt.ehouse.app.ui.fragment.shoppingcar.ShoppingCarFragment;
@@ -50,6 +51,7 @@ public class FragmentContainerActivity extends BaseActivity {
     public static final int DECORATE_COMPANY_INFO_FLAG = 0x9;
     public static final int SHOPPING_CAR_FLAG = 0x10;
     public static final int SHOPPING_CAR_EMPTY_FLAG = 0x11;
+    public static final int HOUSE_SELL_FLAG = 0x12;
 
 
     @BindView(R.id.id_tl_home_tool_bar)
@@ -137,6 +139,9 @@ public class FragmentContainerActivity extends BaseActivity {
                 break;
             case SHOPPING_CAR_EMPTY_FLAG:
                 fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, ShoppingCarEmptyFragment.newInstance());
+                break;
+            case HOUSE_SELL_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, HouseSellFragment.newInstance());
                 break;
         }
         fragmentTransaction.commitAllowingStateLoss();

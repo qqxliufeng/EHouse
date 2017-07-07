@@ -5,4 +5,23 @@
     <string name="title_notifications">Notifications</string>
     <string name="string_empty">""</string>
     <string name="string_decorate">装修</string>
+
+    <string-array name="string_array_sp_sell_house_direction">
+        <item>南北朝向</item>
+        <item>东西朝向</item>
+    </string-array>
+    <string-array name="string_array_sp_sell_house_decorate">
+        <item>毛坯</item>
+        <item>精装</item>
+        <item>豪装</item>
+    </string-array>
+    <string-array name="string_array_sp_sell_house_property_right">
+        <item>70年产权</item>
+        <item>40年产权</item>
+    </string-array>
+    <string-array name="string_array_sp_sell_house_type">
+        <item>商品房</item>
+        <item>普通住宅</item>
+    </string-array>
+
 </resources>

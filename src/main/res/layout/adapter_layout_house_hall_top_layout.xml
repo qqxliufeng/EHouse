@@ -52,6 +52,7 @@
             android:background="#eee" />
 
         <RelativeLayout
+            android:id="@+id/id_rl_fragment_adapter_house_hall_top_sell"
             android:clickable="true"
             android:background="@drawable/select_click_bg"
             android:layout_width="0dp"

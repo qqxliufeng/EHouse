@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eee"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:background="@drawable/shape_ll_corners_solid_bg"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/style_ll_sell_house">
+
+                <TextView
+                    style="@style/style1_tv_sell_house"
+                    android:text="小区名称" />
+
+                <EditText
+                    android:id="@+id/id_et_fragment_house_sell_name"
+                    style="@style/style_et_sell_house"
+                    android:gravity="left|center_vertical"
+                    android:hint="请输入小区名称" />
+
+            </LinearLayout>
+
+            <include layout="@layout/layout_sell_house_line" />
+
+            <LinearLayout style="@style/style_ll_sell_house">
+
+                <TextView
+                    style="@style/style1_tv_sell_house"
+                    android:text="楼栋号" />
+
+                <EditText
+                    android:id="@+id/id_et_fragment_house_sell_building"
+                    style="@style/style_et_sell_house"
+                    android:layout_width="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/style2_tv_sell_house"
+                    android:layout_width="wrap_content"
+                    android:text="栋" />
+
+                <EditText
+                    android:id="@+id/id_et_fragment_house_sell_no"
+                    style="@style/style_et_sell_house"
+                    android:layout_width="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/style2_tv_sell_house"
+                    android:text="单元" />
+
+                <EditText
+                    android:id="@+id/id_et_fragment_house_sell_room"
+                    style="@style/style_et_sell_house"
+                    android:layout_width="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/style2_tv_sell_house"
+                    android:text="室" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_sell_house_line" />
+
+            <LinearLayout style="@style/style_ll_sell_house">
+
+                <TextView
+                    style="@style/style1_tv_sell_house"
+                    android:text="户型" />
+
+                <EditText
+                    style="@style/style_et_sell_house"
+                    android:layout_width="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/style2_tv_sell_house"
+                    android:layout_width="wrap_content"
+                    android:text="室" />
+
+                <EditText
+                    style="@style/style_et_sell_house"
+                    android:layout_width="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/style2_tv_sell_house"
+                    android:text="厅" />
+
+                <EditText
+                    style="@style/style_et_sell_house"
+                    android:layout_width="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/style2_tv_sell_house"
+                    android:text="卫" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_sell_house_line" />
+
+            <LinearLayout style="@style/style_ll_sell_house">
+
+                <TextView
+                    style="@style/style1_tv_sell_house"
+                    android:text="楼层" />
+
+                <TextView
+                    style="@style/style2_tv_sell_house"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="第" />
+
+                <EditText
+                    style="@style/style_et_sell_house"
+                    android:layout_width="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/style2_tv_sell_house"
+                    android:layout_width="wrap_content"
+                    android:text="层" />
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:background="#eee" />
+
+                <TextView
+                    style="@style/style2_tv_sell_house"
+                    android:text="共" />
+
+                <EditText
+                    style="@style/style_et_sell_house"
+                    android:layout_width="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/style2_tv_sell_house"
+                    android:text="层" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_sell_house_line" />
+
+            <LinearLayout style="@style/style_ll_sell_house">
+
+                <TextView
+                    style="@style/style1_tv_sell_house"
+                    android:text="建筑面积" />
+
+                <EditText
+                    style="@style/style_et_sell_house"
+                    android:layout_width="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/style2_tv_sell_house"
+                    android:text="㎡" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_sell_house_line" />
+
+            <LinearLayout style="@style/style_ll_sell_house">
+
+                <TextView
+                    style="@style/style1_tv_sell_house"
+                    android:text="朝向" />
+
+                <Spinner
+                    android:id="@+id/id_sp_fragment_house_sell_house_direction"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_sell_house_line" />
+
+            <LinearLayout style="@style/style_ll_sell_house">
+
+                <TextView
+                    style="@style/style1_tv_sell_house"
+                    android:text="售价" />
+
+                <EditText
+                    style="@style/style_et_sell_house"
+                    android:layout_width="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/style2_tv_sell_house"
+                    android:text="万" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_sell_house_line" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:background="@drawable/shape_ll_corners_solid_bg"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_10">
+
+                <TextView
+                    style="@style/style1_tv_sell_house"
+                    android:text="装修" />
+
+                <Spinner
+                    android:id="@+id/id_sp_fragment_house_sell_house_decorate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_sell_house_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_10">
+
+                <TextView
+                    style="@style/style1_tv_sell_house"
+                    android:text="产权" />
+
+                <Spinner
+                    android:id="@+id/id_sp_fragment_house_sell_house_property_right"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_sell_house_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_10">
+
+                <TextView
+                    style="@style/style1_tv_sell_house"
+                    android:text="类型" />
+
+                <Spinner
+                    android:id="@+id/id_sp_fragment_house_sell_house_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_sell_house_line" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:background="@drawable/shape_ll_corners_solid_bg"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/style_ll_sell_house"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/style1_tv_sell_house"
+                    android:gravity="top"
+                    android:text="房源描述" />
+
+                <EditText
+                    style="@style/style_et_sell_house"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="top"
+                    android:hint="个性且详尽的描述可以加速出售您的房子哦"
+                    android:minLines="3" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_sell_house_line" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:background="@drawable/shape_ll_corners_solid_bg"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/style_ll_sell_house">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="联系人" />
+
+                <EditText
+                    style="@style/style_et_sell_house"
+                    android:gravity="left|center_vertical"
+                    android:hint="请输入房源联系人姓名"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_sell_house_line" />
+
+            <LinearLayout style="@style/style_ll_sell_house">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="手机号" />
+
+                <EditText
+                    style="@style/style_et_sell_house"
+                    android:gravity="left|center_vertical"
+                    android:hint="请输入联系人手机号码"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_sell_house_line" />
+
+            <LinearLayout style="@style/style_ll_sell_house">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="验证码" />
+
+                <EditText
+                    style="@style/style_et_sell_house"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:gravity="left|center_vertical"
+                    android:hint="请输入验证码"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp" />
+
+                <TextView
+                    android:id="@+id/id_tv_fragment_house_sell_code"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/shape_bt_gradient5"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="获取验证码"
+                    android:textColor="@color/select_enable_color"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_sell_house_line" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/id_cb_fragment_house_sell_protocol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="我已阅读并同意"
+                android:textColor="#777"
+                android:textSize="14sp"
+                android:theme="@style/style_cb_sell_house" />
+
+            <TextView
+                android:id="@+id/id_tv_fragment_house_sell_protocol"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="《房屋委托出售协议》"
+                android:textColor="#444"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/id_tv_fragment_house_sell_submit"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/shape_bt_gradient3"
+            android:gravity="center"
+            android:text="发布"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

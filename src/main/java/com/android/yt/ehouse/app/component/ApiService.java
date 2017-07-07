@@ -24,10 +24,10 @@ public interface ApiService {
 
 //    @Multipart
 //    @POST(Constants.BASE_IP_POSTFIX)
-//    Observable<String> uploadImages(@FieldMap HashMap<String, String> params, @Part("description") String description, @PartMap HashMap<String, RequestBody> images, @Query("__CLIENT_TYPE__") String type, @Query("PHPSESSID") String session);
+//    Observable<String> uploadImages(@FieldMap HashMap<String, String> params, @Part("Description") String Description, @PartMap HashMap<String, RequestBody> images, @Query("__CLIENT_TYPE__") String type, @Query("PHPSESSID") String session);
 //
 //    @Multipart
 //    @POST(Constants.BASE_IP_POSTFIX)
-//    Observable<String> uploadImages(@Query("mod")String mod,@Query("act")String act,@Query("groupid")String groupid,@Query("filename")String filename,@Query("verify")String verify, @Part("description") String description, @PartMap HashMap<String, RequestBody> images, @Query("__CLIENT_TYPE__") String type, @Query("PHPSESSID") String session);
+//    Observable<String> uploadImages(@Query("mod")String mod,@Query("act")String act,@Query("groupid")String groupid,@Query("filename")String filename,@Query("verify")String verify, @Part("Description") String Description, @PartMap HashMap<String, RequestBody> images, @Query("__CLIENT_TYPE__") String type, @Query("PHPSESSID") String session);
 
 }

@@ -57,10 +57,10 @@ public class ShoppingCarFragment extends BaseRecycleViewFragment<GoodsItemBean> 
         GoodsItemBean goodsItemBean = mArrayList.get(position);
         switch (view.getId()) {
             case R.id.id_tv_adapter_shopping_car_inner_item:
-                ShoppingCarManager.getInstance().setSelectedByGoodItemFlag(goodsItemBean);
+                ShoppingCarManager.getInstance().setItemSelectedByGoodItemFlag(goodsItemBean);
                 break;
             case R.id.id_tv_adapter_shopping_car_header_shop_title:
-                ShoppingCarManager.getInstance().setAllSelectedByGoodsItemFlag(goodsItemBean);
+                ShoppingCarManager.getInstance().setSectionSelectedByGoodsItemFlag(goodsItemBean);
                 break;
             case R.id.id_bt_adapter_shopping_car_inner_item_delete:
                 mArrayList.remove(goodsItemBean);

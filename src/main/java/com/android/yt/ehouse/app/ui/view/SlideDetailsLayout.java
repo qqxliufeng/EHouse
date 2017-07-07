@@ -139,7 +139,7 @@ public class SlideDetailsLayout extends ViewGroup {
     }
 
     /**
-     * Set the float value for indicate the moment of switch panel
+     * Set the float description for indicate the moment of switch panel
      *
      * @param percent (0.0, 1.0)
      */

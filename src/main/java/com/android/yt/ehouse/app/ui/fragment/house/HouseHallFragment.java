@@ -42,6 +42,12 @@ public class HouseHallFragment extends BaseRecycleViewFragment<HouseItemBean> {
                 FragmentContainerActivity.startFragmentsActivity(mContext,"",FragmentContainerActivity.HOUSE_LIST_FLAG);
             }
         });
+        headerView.findViewById(R.id.id_rl_fragment_adapter_house_hall_top_sell).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentContainerActivity.startFragmentsActivity(mContext,"我要卖房",FragmentContainerActivity.HOUSE_SELL_FLAG);
+            }
+        });
         mBaseQuickAdapter.addHeaderView(headerView);
         mBaseQuickAdapter.notifyDataSetChanged();
     }
