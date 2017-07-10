@@ -23,6 +23,7 @@ import com.android.yt.ehouse.app.ui.fragment.house.HouseHallFragment;
 import com.android.yt.ehouse.app.ui.fragment.house.HouseInfoFragment;
 import com.android.yt.ehouse.app.ui.fragment.house.HouseListFragment;
 import com.android.yt.ehouse.app.ui.fragment.house.HouseSellFragment;
+import com.android.yt.ehouse.app.ui.fragment.materials.MaterialsInfoFragment;
 import com.android.yt.ehouse.app.ui.fragment.materials.MaterialsListFragment;
 import com.android.yt.ehouse.app.ui.fragment.shoppingcar.ShoppingCarEmptyFragment;
 import com.android.yt.ehouse.app.ui.fragment.shoppingcar.ShoppingCarFragment;
@@ -52,6 +53,7 @@ public class FragmentContainerActivity extends BaseActivity {
     public static final int SHOPPING_CAR_FLAG = 0x10;
     public static final int SHOPPING_CAR_EMPTY_FLAG = 0x11;
     public static final int HOUSE_SELL_FLAG = 0x12;
+    public static final int MATERIALS_INFO_FLAG = 0x13;
 
 
     @BindView(R.id.id_tl_home_tool_bar)
@@ -127,6 +129,9 @@ public class FragmentContainerActivity extends BaseActivity {
                 break;
             case MATERIALS_LIST_FLAG:
                 fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, MaterialsListFragment.newInstance());
+                break;
+            case MATERIALS_INFO_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, MaterialsInfoFragment.newInstance());
                 break;
             case HOUSE_INFO_FLAG:
                 fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, HouseInfoFragment.newInstance());

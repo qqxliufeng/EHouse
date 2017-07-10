@@ -11,6 +11,9 @@ import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 /**
@@ -18,6 +21,8 @@ import java.util.Comparator;
  */
 
 public class FormBeanManager<T> {
+
+    public String phonePattern = "(13\\d|14[57]|15[^4,\\D]|17[13678]|18\\d)\\d{8}|170[0589]\\d{7}";
 
     private T t;
     private final ArrayList<Field> descriptionFields;
@@ -48,20 +53,50 @@ public class FormBeanManager<T> {
     }
 
     @SuppressLint("WrongConstant")
-    public String isEmptyField() {
+    public String checkField() {
         try {
             for (Field field : descriptionFields) {
                 if (field.getModifiers() == Modifier.PRIVATE) {
                     field.setAccessible(true);
                 }
                 Object o = field.get(t);
+                Description description = field.getAnnotation(Description.class);
                 if (o == null || TextUtils.isEmpty(o.toString())) {
-                    return field.getAnnotation(Description.class).description();
+                    return description.description();
+                }
+                if (description.isPhone()) {
+                    Pattern r = Pattern.compile(phonePattern);
+                    Matcher m = r.matcher(o.toString());
+                    if (!m.matches()) {
+                        return "正确的手机号";
+                    }
                 }
             }
         } catch (Exception e) {
             return e.getMessage();
         }
         return "";
+    }
+
+
+    public HashMap<String, Object> form(HashMap<String, Object> apiParams) {
+        try {
+            if (apiParams == null) {
+                apiParams = new HashMap<>();
+            }
+            for (Field field : descriptionFields) {
+                if (field.getModifiers() == Modifier.PRIVATE) {
+                    field.setAccessible(true);
+                }
+                String key = field.getAnnotation(Description.class).formAlias();
+                if ("".equals(key)) {
+                    key = field.getName();
+                }
+                apiParams.put(key, field.get(t));
+            }
+            return apiParams;
+        } catch (IllegalAccessException e) {
+            return null;
+        }
     }
 }

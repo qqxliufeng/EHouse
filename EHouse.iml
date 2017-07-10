@@ -123,6 +123,7 @@
     <orderEntry type="library" exported="" scope="TEST" name="javawriter-2.1.1" level="project" />
     <orderEntry type="library" exported="" name="support-v4-25.3.1" level="project" />
     <orderEntry type="library" exported="" name="support-media-compat-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="flowlayout-lib-1.0.3" level="project" />
     <orderEntry type="library" exported="" name="okhttp-3.3.0" level="project" />
     <orderEntry type="library" exported="" name="butterknife-annotations-8.4.0" level="project" />
     <orderEntry type="library" exported="" name="butterknife-8.4.0" level="project" />

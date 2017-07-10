@@ -50,4 +50,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.android.support:palette-v7:25.1.0'
     compile 'ca.barrenechea.header-decor:header-decor:0.2.8'
+    compile 'com.zhy:flowlayout-lib:1.0.3'
 }

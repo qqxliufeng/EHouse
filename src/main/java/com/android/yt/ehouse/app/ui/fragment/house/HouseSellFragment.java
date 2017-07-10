@@ -87,15 +87,21 @@ public class HouseSellFragment extends LroidBaseNetFragment {
             case R.id.id_tv_fragment_house_sell_protocol:
                 break;
             case R.id.id_tv_fragment_house_sell_submit:
-                sellHouseFormBean.setHouseName(et_name.getText().toString());
-                sellHouseFormBean.setHouseBuilding(et_building.getText().toString());
-                sellHouseFormBean.setHouseNo(et_no.getText().toString());
-                sellHouseFormBean.setHouseRoom(et_room.getText().toString());
-                String result = formBeanFormBeanManager.isEmptyField();
+//                sellHouseFormBean.setHouseName(et_name.getText().toString());
+//                sellHouseFormBean.setHouseBuilding(et_building.getText().toString());
+//                sellHouseFormBean.setHouseNo(et_no.getText().toString());
+//                sellHouseFormBean.setHouseRoom(et_room.getText().toString());
+                sellHouseFormBean.setHouseName("this is house name");
+                sellHouseFormBean.setHouseBuilding("this is house building");
+                sellHouseFormBean.setHouseNo("this is house no ");
+                sellHouseFormBean.setHouseRoom("this is house room");
+                sellHouseFormBean.setHousePersonPhone("15910101117");
+                String result = formBeanFormBeanManager.checkField();
                 if (!"".equals(result)) {
                     Toast.makeText(mContext, "请输入 " + result, Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(mContext, "验证通过", Toast.LENGTH_SHORT).show();
+                    formBeanFormBeanManager.form(null);
                 }
                 break;
         }

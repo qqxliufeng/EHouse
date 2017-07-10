@@ -87,4 +87,9 @@ public class MaterialsListFragment extends BaseRecycleViewFragment<String> {
                 break;
         }
     }
+
+    @Override
+    public void onMySimpleItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+        FragmentContainerActivity.startFragmentsActivity(mContext,"",FragmentContainerActivity.MATERIALS_INFO_FLAG);
+    }
 }
