@@ -1,15 +1,11 @@
 package com.android.yt.ehouse.app.ui.fragment.base;
 
 
-import android.graphics.Color;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.CheckedTextView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import com.android.yt.ehouse.app.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 

@@ -299,7 +299,6 @@ public class SlideDetailsLayout extends ViewGroup {
             }
 
         }
-        Log.e("TAG",shouldIntercept+"");
         return shouldIntercept;
     }
 

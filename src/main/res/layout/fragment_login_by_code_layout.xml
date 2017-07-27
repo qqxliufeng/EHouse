@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/shape_et_bg"
+        android:drawableLeft="@drawable/img_login_user_name_icon"
+        android:drawablePadding="@dimen/dp_10"
+        android:hint="请输入您的手机号"
+        android:padding="@dimen/dp_10"
+        android:textSize="14sp"
+        android:textColor="#333" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/shape_et_bg"
+            android:drawableLeft="@drawable/img_login_user_code_icon"
+            android:drawablePadding="@dimen/dp_10"
+            android:hint="请输入验证码"
+            android:padding="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:textSize="14sp"
+            android:textColor="#333" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/shape_tv_corners3"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:text="获取验证码"
+            android:textColor="#fff" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/id_tv_fragment_login_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:padding="@dimen/dp_10"
+        android:text="免费注册" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bt_gradient3"
+        android:text="登录"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+</LinearLayout>

@@ -6,6 +6,7 @@ import android.widget.CompoundButton;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.data.bean.GoodsItemBean;
+import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.adapter.ShoppingCarAdapter;
 import com.android.yt.ehouse.app.ui.fragment.base.BaseRecycleViewFragment;
 import com.chad.library.adapter.base.BaseQuickAdapter;

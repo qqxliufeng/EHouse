@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:cardCornerRadius="0dp">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <View
+                android:id="@+id/id_view_fragment_bottom_two_top_sliding"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:background="@drawable/shape_view_corners_sliding" />
+
+            <RadioGroup
+                android:id="@+id/id_rg_fragment_bottom_two_top_container"
+                android:layout_width="180dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@drawable/shape_rg_corners1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/id_rb_fragment_bottom_two_general_image"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="全景"
+                    android:textColor="@color/select_check_color2"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:id="@+id/id_rb_fragment_bottom_two_map_image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="套图"
+                    android:textColor="@color/select_check_color2" />
+
+                <RadioButton
+                    android:id="@+id/id_rb_fragment_bottom_two_single_image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="单图"
+                    android:textColor="@color/select_check_color2" />
+            </RadioGroup>
+        </FrameLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/id_vp_fragment_bottom_two_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>

@@ -54,6 +54,8 @@ public class MaterialsListFragment extends BaseRecycleViewFragment<String> {
     @Override
     public void initView(View view) {
         super.initView(view);
+        onRequestEnd(-1);
+        mSwipeRefreshLayout.setEnabled(false);
         mRecyclerView.addItemDecoration(new DividerItemDecoration(mContext, DividerItemDecoration.VERTICAL));
         for (int i = 0; i < 10; i++) {
             mArrayList.add("");

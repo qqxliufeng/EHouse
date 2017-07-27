@@ -21,6 +21,7 @@
     <android.support.design.widget.TabLayout
         android:id="@+id/id_tl_activity_index_navigation"
         android:layout_width="match_parent"
+        android:background="#fff"
         android:layout_height="50dp"/>
 
 </LinearLayout>

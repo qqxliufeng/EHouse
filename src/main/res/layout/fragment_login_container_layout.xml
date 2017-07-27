@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingTop="16dp"
+    android:background="@drawable/img_login_bg_icon"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:src="@drawable/ic_back_icon" />
+
+    <ImageView
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        android:layout_gravity="center"
+        android:src="@drawable/img_logo_icon" />
+
+    <android.support.design.widget.TabLayout
+        android:layout_marginTop="20dp"
+        android:id="@+id/id_tl_fragment_login_container_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:tabIndicatorColor="@color/main_color"
+        app:tabIndicatorHeight="3dp"
+        app:tabSelectedTextColor="@color/main_color"
+        app:tabTextAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
+        app:tabTextColor="#333" />
+
+    <android.support.v4.view.ViewPager
+        android:layout_marginTop="50dp"
+        android:id="@+id/id_vp_fragment_login_container_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

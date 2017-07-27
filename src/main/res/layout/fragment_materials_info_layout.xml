@@ -8,8 +8,7 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/id_abl_materials_info_container"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="#fff">
+        android:layout_height="250dp">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
@@ -84,7 +83,6 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="60dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -212,8 +210,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="振兴街道"
                     android:drawableRight="@drawable/img_enter1_icon"
+                    android:text="振兴街道"
                     android:textColor="#444"
                     android:textSize="14sp" />
 
@@ -241,7 +239,7 @@
             <FrameLayout
                 android:id="@+id/id_fl_fragment_materials_info_web_container"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 

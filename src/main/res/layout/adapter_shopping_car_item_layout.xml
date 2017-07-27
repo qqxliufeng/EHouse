@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#fff"
     android:orientation="vertical">
 
     <LinearLayout
@@ -19,12 +18,12 @@
         <TextView
             android:id="@+id/id_tv_adapter_shopping_car_header_shop_title"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:drawablePadding="@dimen/dp_10"
             android:drawableRight="@drawable/img_enter1_icon"
             android:padding="@dimen/dp_10"
-            android:textColor="#444"
             android:text="this is title"
+            android:textColor="#444"
             android:textSize="18sp" />
 
         <View
@@ -131,16 +130,16 @@
             android:id="@+id/id_bt_adapter_shopping_car_inner_item_delete"
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:textColor="#fff"
-            android:textSize="18sp"
             android:background="@color/red"
-            android:text="删除" />
+            android:text="删除"
+            android:textColor="#fff"
+            android:textSize="18sp" />
 
     </com.android.yt.ehouse.app.ui.view.SwipeLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#eee"/>
+        android:background="#eee" />
 
 </LinearLayout>

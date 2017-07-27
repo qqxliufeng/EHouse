@@ -18,7 +18,10 @@ import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseFragment;
 import com.android.yt.ehouse.app.ui.fragment.base.TypeHallFragment;
 import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCompanyInfoFragment;
 import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCompanyListFragment;
+import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateFengShuiFragment;
 import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateIndexFragment;
+import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateSelectMaterialFragment;
+import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateVideoListFragment;
 import com.android.yt.ehouse.app.ui.fragment.house.HouseHallFragment;
 import com.android.yt.ehouse.app.ui.fragment.house.HouseInfoFragment;
 import com.android.yt.ehouse.app.ui.fragment.house.HouseListFragment;
@@ -27,6 +30,8 @@ import com.android.yt.ehouse.app.ui.fragment.materials.MaterialsInfoFragment;
 import com.android.yt.ehouse.app.ui.fragment.materials.MaterialsListFragment;
 import com.android.yt.ehouse.app.ui.fragment.shoppingcar.ShoppingCarEmptyFragment;
 import com.android.yt.ehouse.app.ui.fragment.shoppingcar.ShoppingCarFragment;
+import com.android.yt.ehouse.app.ui.fragment.user.LoginFragment;
+import com.android.yt.ehouse.app.ui.fragment.user.RegisterFragment;
 
 import butterknife.BindView;
 
@@ -54,6 +59,11 @@ public class FragmentContainerActivity extends BaseActivity {
     public static final int SHOPPING_CAR_EMPTY_FLAG = 0x11;
     public static final int HOUSE_SELL_FLAG = 0x12;
     public static final int MATERIALS_INFO_FLAG = 0x13;
+    public static final int LOGIN_FLAG = 0x14;
+    public static final int REGISTER_FLAG = 0x15;
+    public static final int DECORATE_VIDEO_LIST_FLAG = 0x16;
+    public static final int DECORATE_FENG_SHUI_FLAG = 0x17;
+    public static final int DECORATE_SELECT_MATERIAL_ARTICLE_FLAG = 0x18;
 
 
     @BindView(R.id.id_tl_home_tool_bar)
@@ -147,6 +157,21 @@ public class FragmentContainerActivity extends BaseActivity {
                 break;
             case HOUSE_SELL_FLAG:
                 fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, HouseSellFragment.newInstance());
+                break;
+            case LOGIN_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, LoginFragment.newInstance());
+                break;
+            case REGISTER_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, RegisterFragment.newInstance());
+                break;
+            case DECORATE_VIDEO_LIST_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateVideoListFragment.newInstance());
+                break;
+            case DECORATE_FENG_SHUI_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateFengShuiFragment.newInstance());
+                break;
+            case DECORATE_SELECT_MATERIAL_ARTICLE_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateSelectMaterialFragment.newInstance());
                 break;
         }
         fragmentTransaction.commitAllowingStateLoss();

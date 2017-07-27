@@ -7,6 +7,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="180dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/img_banner_default_img" />
 
     <LinearLayout
@@ -62,6 +63,4 @@
                 android:textSize="@dimen/sp_12" />
         </RelativeLayout>
     </LinearLayout>
-
-
 </FrameLayout>

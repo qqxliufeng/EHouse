@@ -52,6 +52,8 @@ public class MaterialsInfoFragment extends LroidBaseNetFragment implements AppBa
     private MaterialsInfoParametersDialogFragment parametersDialogFragment;
     private MaterialsInfoFormatDialogFragment formatDialogFragment;
 
+    private WebContentFragment webContentFragment;
+    private BannerFragment bannerFragment;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -69,10 +71,12 @@ public class MaterialsInfoFragment extends LroidBaseNetFragment implements AppBa
         al_container.addOnOffsetChangedListener(this);
         Bundle bundle = new Bundle();
         bundle.putString(WebContentFragment.WEB_LOAD_URL, "http://www.baidu.com");
+//        webContentFragment = WebContentFragment.newInstance(bundle);
+        bannerFragment = BannerFragment.newInstance();
         getChildFragmentManager()
                 .beginTransaction()
-                .replace(R.id.id_fl_fragment_index_banner_layout, BannerFragment.newInstance())
-                .replace(R.id.id_fl_fragment_materials_info_web_container, WebContentFragment.newInstance(bundle))
+                .replace(R.id.id_fl_fragment_index_banner_layout, bannerFragment)
+//                .replace(R.id.id_fl_fragment_materials_info_web_container, webContentFragment)
                 .commit();
         tv_old_price.getPaint().setFlags(TextPaint.ANTI_ALIAS_FLAG | Paint.STRIKE_THRU_TEXT_FLAG);
     }

@@ -3,19 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
+    android:background="#fff"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:drawableLeft="@drawable/img_sctm_icon"
-        android:drawablePadding="@dimen/dp_10"
-        android:gravity="center"
-        android:text="商城特卖"
-        android:textColor="#9c40eb"
-        android:textSize="16sp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/img_sctm_icon"
+            android:drawablePadding="@dimen/dp_10"
+            android:gravity="center"
+            android:text="商城特卖"
+            android:textColor="#9c40eb"
+            android:textSize="16sp" />
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -85,16 +92,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <View
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:background="#ddd" />
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:scaleType="centerCrop"
-                android:src="@drawable/img_banner_default_img" />
 
             <View
                 android:layout_width="1px"
@@ -131,6 +128,19 @@
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
                 android:src="@drawable/img_banner_default_img" />
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="#ddd" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_banner_default_img" />
+
             <View
                 android:layout_width="1px"
                 android:layout_height="match_parent"
@@ -143,6 +153,7 @@
             android:background="#ddd" />
 
     </LinearLayout>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -160,5 +171,4 @@
         android:text="更多特卖产品"
         android:textColor="@color/gray"
         android:textSize="12sp" />
-
 </LinearLayout>

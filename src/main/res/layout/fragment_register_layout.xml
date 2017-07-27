@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="16dp"
+    android:background="@drawable/img_login_bg_icon">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:src="@drawable/ic_back_icon" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_10"
+        android:scaleType="center"
+        android:src="@drawable/img_logo_icon" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_et_bg"
+        android:drawableLeft="@drawable/img_login_user_phone_icon"
+        android:drawablePadding="@dimen/dp_10"
+        android:hint="请输入您的手机号"
+        android:padding="@dimen/dp_10"
+        android:textColor="#333"
+        android:textSize="14sp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/shape_et_bg"
+            android:drawableLeft="@drawable/img_login_user_code_icon"
+            android:drawablePadding="@dimen/dp_10"
+            android:hint="请输入验证码"
+            android:padding="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:textColor="#333"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/shape_tv_corners3"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:text="获取验证码"
+            android:textColor="#fff" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/shape_et_bg"
+            android:drawableLeft="@drawable/img_login_user_password_icon"
+            android:drawablePadding="@dimen/dp_10"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:padding="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:textColor="#333"
+            android:textSize="14sp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right"
+            android:layout_marginRight="@dimen/dp_10"
+            android:button="@drawable/img_login_user_password_see_icon" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right"
+            android:layout_marginRight="@dimen/dp_10"
+            android:text="（非必填）"
+            android:textColor="#ccc"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/shape_et_bg"
+            android:drawableLeft="@drawable/img_login_user_e_house_card_icon"
+            android:drawablePadding="@dimen/dp_10"
+            android:hint="请输入易房卡号"
+            android:padding="@dimen/dp_10"
+            android:textColor="#333"
+            android:textSize="14sp" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/id_tv_fragment_register_to_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:padding="@dimen/dp_10"
+        android:textColor="@color/gray"
+        android:text="已有账号，切换登录" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bt_gradient3"
+        android:text="立即注册"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+    </LinearLayout>
+</LinearLayout>
