@@ -5,7 +5,6 @@ import android.support.v4.widget.NestedScrollView;
 import android.view.View;
 
 import com.android.yt.ehouse.app.R;
-import com.android.yt.ehouse.app.data.bean.GoodsItemBean;
 import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseNetFragment;
 import com.android.yt.ehouse.app.ui.fragment.base.TypeHallFragment;
@@ -16,7 +15,6 @@ import com.android.yt.ehouse.app.ui.fragment.index.DecorateNoteFragment;
 import com.android.yt.ehouse.app.ui.fragment.index.DecorateResultFragment;
 import com.android.yt.ehouse.app.ui.fragment.index.DecorateStrategyFragment;
 import com.android.yt.ehouse.app.ui.fragment.index.MallSpecialFragment;
-import com.android.yt.ehouse.app.ui.fragment.shoppingcar.ShoppingCarManager;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -57,6 +55,22 @@ public class IndexOneFragment extends LroidBaseNetFragment {
                 .replace(R.id.id_fl_fragment_index_sctm_container, MallSpecialFragment.newInstance())
                 .commit();
     }
+
+//    @Override
+//    public void setUserVisibleHint(boolean isVisibleToUser) {
+//        super.setUserVisibleHint(isVisibleToUser);
+//        if (isVisibleToUser) {
+//            if (nestedScrollView!=null && nestedScrollView.getScrollY() == 0) {
+//                nestedScrollView.post(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        nestedScrollView.fullScroll(NestedScrollView.FOCUS_UP);
+//                    }
+//                });
+//            }
+//        }
+//    }
+
 
     @Override
     protected void setComponent() {
@@ -102,9 +116,10 @@ public class IndexOneFragment extends LroidBaseNetFragment {
                 FragmentContainerActivity.startFragmentsActivity(mContext, "购物车", FragmentContainerActivity.SHOPPING_CAR_EMPTY_FLAG);
                 break;
             case R.id.id_tv_fragment_bottom_one_tsjy:
-                FragmentContainerActivity.startFragmentsActivity(mContext,"",FragmentContainerActivity.LOGIN_FLAG);
+                FragmentContainerActivity.startFragmentsActivity(mContext, "", FragmentContainerActivity.LOGIN_FLAG);
                 break;
             case R.id.id_ll_fragment_bottom_one_fengshui:
+                FragmentContainerActivity.startFragmentsActivity(mContext, "", FragmentContainerActivity.NOTE_DECORATE_STEP_FLAG);
                 break;
         }
     }

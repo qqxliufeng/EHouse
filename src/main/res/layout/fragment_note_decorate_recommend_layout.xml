@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/id_ll_fragment_decorate_select_material_light"
+            style="@style/style_ll_house_search">
+
+            <CheckedTextView
+                android:id="@+id/id_ctv_fragment_decorate_select_material_light"
+                style="@style/style_tv_house_search"
+                android:drawableRight="@drawable/select_house_condition_right"
+                android:text="灯具" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#eee" />
+
+        <LinearLayout
+            android:id="@+id/id_ll_fragment_decorate_select_material_furniture"
+            style="@style/style_ll_house_search">
+
+            <CheckedTextView
+                android:id="@+id/id_ctv_fragment_decorate_select_material_furniture"
+                style="@style/style_tv_house_search"
+                android:drawableRight="@drawable/select_house_condition_right"
+                android:text="家具" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#eee" />
+
+        <LinearLayout
+            android:id="@+id/id_ll_fragment_decorate_select_material_soft"
+            style="@style/style_ll_house_search">
+
+            <CheckedTextView
+                android:id="@+id/id_ctv_fragment_decorate_select_material_soft"
+                style="@style/style_tv_house_search"
+                android:drawableRight="@drawable/select_house_condition_right"
+                android:text="软装" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eee" />
+
+    <include layout="@layout/fragment_base_recycle_view_layout" />
+
+</LinearLayout>

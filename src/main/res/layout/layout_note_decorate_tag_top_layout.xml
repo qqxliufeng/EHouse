@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/id_tv_note_decorate_tag_top_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:text="拆改阶段常用标签"
+            android:textColor="#777"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/id_tv_note_decorate_tag_top_title"
+            android:background="#eee" />
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/id_tv_note_decorate_tag_top_title"
+            android:background="#eee" />
+    </RelativeLayout>
+
+    <com.zhy.view.flowlayout.TagFlowLayout
+        android:id="@+id/id_tfl_note_decorate_tag_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/id_tv_note_decorate_tag_top_other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:text="其它标签"
+            android:textColor="#777"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/id_tv_note_decorate_tag_top_other"
+            android:background="#eee" />
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/id_tv_note_decorate_tag_top_other"
+            android:background="#eee" />
+    </RelativeLayout>
+</LinearLayout>

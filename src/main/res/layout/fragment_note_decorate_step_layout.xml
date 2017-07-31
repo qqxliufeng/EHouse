@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="horizontal">
+
+        <CheckedTextView
+            android:id="@+id/id_ctv_fragment_note_decorate_step_zb"
+            style="@style/style_ctv"
+            android:drawableTop="@drawable/select_note_decorate_zb"
+            android:text="准备" />
+
+       <CheckedTextView
+           android:id="@+id/id_ctv_fragment_note_decorate_step_cg"
+            style="@style/style_ctv"
+            android:drawableTop="@drawable/select_note_decorate_cg"
+            android:text="拆改" />
+
+        <CheckedTextView
+            android:id="@+id/id_ctv_fragment_note_decorate_step_sd"
+            style="@style/style_ctv"
+            android:drawableTop="@drawable/select_note_decorate_sd"
+            android:text="水电" />
+
+        <CheckedTextView
+            android:id="@+id/id_ctv_fragment_note_decorate_step_nm"
+            style="@style/style_ctv"
+            android:drawableTop="@drawable/select_note_decorate_nm"
+            android:text="泥木" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="horizontal">
+
+        <CheckedTextView
+            android:id="@+id/id_ctv_fragment_note_decorate_step_yq"
+            style="@style/style_ctv"
+            android:drawableTop="@drawable/select_note_decorate_yq"
+            android:text="油漆" />
+
+        <CheckedTextView
+            android:id="@+id/id_ctv_fragment_note_decorate_step_jg"
+            style="@style/style_ctv"
+            android:drawableTop="@drawable/select_note_decorate_jg"
+            android:text="竣工" />
+
+        <CheckedTextView
+            android:id="@+id/id_ctv_fragment_note_decorate_step_rz"
+            style="@style/style_ctv"
+            android:drawableTop="@drawable/select_note_decorate_rz"
+            android:text="软装" />
+
+        <CheckedTextView
+            android:id="@+id/id_ctv_fragment_note_decorate_step_rz1"
+            style="@style/style_ctv"
+            android:drawableTop="@drawable/select_note_decorate_rz1"
+            android:text="入住" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eee"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:text="拆改"
+            android:textColor="@color/main_color"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp_10"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:text="adadfasdfasjdfasdasd"
+            android:textColor="#444"
+            android:textSize="@dimen/sp_14" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_bt_gradient3"
+            android:text="保存"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>

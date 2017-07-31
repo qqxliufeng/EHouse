@@ -25,7 +25,9 @@ public abstract class BaseFragmentWithSearchConditionFragment<T> extends BaseRec
     protected abstract BaseQuickAdapter<T, BaseViewHolder> createAdapter();
 
     protected abstract int getConditionFragmentContainer();
+
     protected abstract void addConditionFragments();
+
     protected abstract void addLinearLayouts();
 
     @Override
@@ -43,10 +45,14 @@ public abstract class BaseFragmentWithSearchConditionFragment<T> extends BaseRec
     protected void refreshTextView(LinearLayout view) {
         for (LinearLayout ll : linearLayouts) {
             if (ll == view) {
-                if (currentFragment.isAdded()) {
+                if (currentFragment == null){
                     ((CheckedTextView) ll.getChildAt(0)).setChecked(true);
-                } else {
-                    ((CheckedTextView) ll.getChildAt(0)).setChecked(false);
+                }else {
+                    if (currentFragment.isAdded()) {
+                        ((CheckedTextView) ll.getChildAt(0)).setChecked(true);
+                    } else {
+                        ((CheckedTextView) ll.getChildAt(0)).setChecked(false);
+                    }
                 }
             } else {
                 ((CheckedTextView) ll.getChildAt(0)).setChecked(false);
@@ -56,20 +62,24 @@ public abstract class BaseFragmentWithSearchConditionFragment<T> extends BaseRec
 
     protected void managerFragment() {
         removeAllFragment();
-        FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
-        if (currentFragment.isAdded()) {
-            fragmentTransaction.remove(currentFragment);
-        } else {
-            fragmentTransaction.add(getConditionFragmentContainer(), currentFragment);
+        if (currentFragment != null) {
+            FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+            if (currentFragment.isAdded()) {
+                fragmentTransaction.remove(currentFragment);
+            } else {
+                fragmentTransaction.add(getConditionFragmentContainer(), currentFragment);
+            }
+            fragmentTransaction.commit();
         }
-        fragmentTransaction.commit();
     }
 
     protected void removeAllFragment() {
         for (LroidBaseFragment fragment : fragments) {
-            if (fragment != currentFragment) {
-                if (fragment.isAdded()) {
-                    getChildFragmentManager().beginTransaction().remove(fragment).commit();
+            if (fragment != null) {
+                if (fragment != currentFragment) {
+                    if (fragment.isAdded()) {
+                        getChildFragmentManager().beginTransaction().remove(fragment).commit();
+                    }
                 }
             }
         }

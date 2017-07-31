@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_test_bg" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1px"
+        android:layout_marginLeft="1px"
+        android:layout_marginRight="1px"
+        android:background="#fff"
+        android:padding="@dimen/dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="简约三居"
+            android:textColor="#333"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8.5万"
+            android:textColor="#777"
+            android:textSize="@dimen/sp_14" />
+    </RelativeLayout>
+</LinearLayout>

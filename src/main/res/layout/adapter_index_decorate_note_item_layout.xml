@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/dp_10"
                 android:layout_toLeftOf="@+id/id_tv_adapter_decorate_note_item_collect_num"
-                android:drawableLeft="@drawable/img_liulan_icon"
+                android:drawableLeft="@drawable/img_liulan1_icon"
                 android:drawablePadding="@dimen/dp_10"
                 android:text="2536"
                 android:textColor="#fff"

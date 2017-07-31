@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:cardCornerRadius="0dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="论坛"
+            android:textColor="#333"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/id_iv_fragment_bottom_four_crate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="@dimen/dp_10"
+            android:src="@drawable/img_fatie_icon" />
+
+    </android.support.v7.widget.CardView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#fff">
+        <LinearLayout
+            android:id="@+id/id_ll_fragment_bottom_four_area"
+            style="@style/style_ll_house_search">
+
+            <CheckedTextView
+                style="@style/style_tv_house_search"
+                android:drawableRight="@drawable/select_house_condition_right"
+                android:text="济南" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#eee" />
+
+        <LinearLayout
+            android:id="@+id/id_ll_fragment_bottom_four_time"
+            style="@style/style_ll_house_search">
+
+            <CheckedTextView
+                android:id="@+id/id_ctv_fragment_decorate_select_material_soft"
+                style="@style/style_tv_house_search"
+                android:drawableRight="@drawable/select_house_condition_right"
+                android:text="时间" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#eee" />
+
+        <LinearLayout
+            android:id="@+id/id_ll_fragment_bottom_four_order"
+            style="@style/style_ll_house_search">
+
+            <CheckedTextView
+                android:id="@+id/id_ctv_fragment_decorate_select_material_electrical"
+                style="@style/style_tv_house_search"
+                android:drawableRight="@drawable/select_house_condition_right"
+                android:text="排序" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#eee" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/fragment_base_recycle_view_layout" />
+
+        <FrameLayout
+            android:id="@+id/id_fl_fragment_bottom_four_condition_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+</LinearLayout>

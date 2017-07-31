@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_test_bg" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_10">
+
+            <TextView
+                android:id="@+id/id_tv_adapter_bbs_item_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="小柒印尼堂"
+                android:textColor="#333"
+                android:textSize="@dimen/sp_14" />
+
+            <TextView
+                android:drawablePadding="@dimen/dp_10"
+                android:drawableLeft="@drawable/img_renqi_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/id_tv_adapter_bbs_item_user_name"
+                android:text="人气旺"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/yellow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2017-02-01"
+                android:textColor="#777"
+                android:textSize="14sp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_new_icon"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/img_tupian_icon"
+        android:drawablePadding="@dimen/dp_10"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:padding="@dimen/dp_10"
+        android:text="家里老房装修，想换暖气片，不知道什么样的好"
+        android:textColor="#333"
+        android:textSize="@dimen/sp_14" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_10">
+
+        <TextView
+            android:textSize="12sp"
+            android:textColor="#777"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2017-07-12 15:33回复" />
+
+        <TextView
+            android:id="@+id/id_tv_adapter_bbs_item_user_reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="24"
+            android:textColor="#777"
+            android:layout_alignParentRight="true"
+            android:drawablePadding="@dimen/dp_10"
+            android:gravity="center"
+            android:drawableLeft="@drawable/img_pinglun_icon"/>
+
+        <TextView
+            android:layout_toLeftOf="@+id/id_tv_adapter_bbs_item_user_reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="24"
+            android:layout_marginRight="@dimen/dp_10"
+            android:textColor="#777"
+            android:drawablePadding="@dimen/dp_10"
+            android:gravity="center"
+            android:drawableLeft="@drawable/img_liulan1_icon"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eee" />
+</LinearLayout>

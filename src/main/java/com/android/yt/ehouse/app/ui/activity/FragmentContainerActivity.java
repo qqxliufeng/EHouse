@@ -13,6 +13,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.android.yt.ehouse.app.R;
+import com.android.yt.ehouse.app.ui.fragment.bbs.BBSCreateFragment;
+import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCaseListFragment;
+import com.android.yt.ehouse.app.ui.fragment.index.DecorateCaseFragment;
+import com.android.yt.ehouse.app.ui.fragment.note.NoteDecorateTagFragment;
+import com.android.yt.ehouse.app.ui.fragment.note.NoteEditFragment;
 import com.android.yt.ehouse.app.ui.fragment.base.ClassifySearchFragment;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseFragment;
 import com.android.yt.ehouse.app.ui.fragment.base.TypeHallFragment;
@@ -28,6 +33,10 @@ import com.android.yt.ehouse.app.ui.fragment.house.HouseListFragment;
 import com.android.yt.ehouse.app.ui.fragment.house.HouseSellFragment;
 import com.android.yt.ehouse.app.ui.fragment.materials.MaterialsInfoFragment;
 import com.android.yt.ehouse.app.ui.fragment.materials.MaterialsListFragment;
+import com.android.yt.ehouse.app.ui.fragment.note.NoteDecorateListFragment;
+import com.android.yt.ehouse.app.ui.fragment.note.NoteDecorateStepFragment;
+import com.android.yt.ehouse.app.ui.fragment.note.NoteInfoFragment;
+import com.android.yt.ehouse.app.ui.fragment.note.NoteInfoImageFragment;
 import com.android.yt.ehouse.app.ui.fragment.shoppingcar.ShoppingCarEmptyFragment;
 import com.android.yt.ehouse.app.ui.fragment.shoppingcar.ShoppingCarFragment;
 import com.android.yt.ehouse.app.ui.fragment.user.LoginFragment;
@@ -64,6 +73,14 @@ public class FragmentContainerActivity extends BaseActivity {
     public static final int DECORATE_VIDEO_LIST_FLAG = 0x16;
     public static final int DECORATE_FENG_SHUI_FLAG = 0x17;
     public static final int DECORATE_SELECT_MATERIAL_ARTICLE_FLAG = 0x18;
+    public static final int NOTE_IMAGES_FLAG = 0x19;
+    public static final int NOTE_DECORATE_STEP_FLAG = 0x20;
+    public static final int NOTE_DECORATE_LIST_FLAG = 0x21;
+    public static final int NOTE_EDIT_FlAG = 0x22;
+    public static final int NOTE_DECORATE_TAG_FLAG = 0x23;
+    public static final int NOTE_DECORATE_INFO_FLAG = 0x24;
+    public static final int BBS_CREATE_FLAG = 0x25;
+    public static final int DECORATE_CASE_LIST_FLAG = 0x26;
 
 
     @BindView(R.id.id_tl_home_tool_bar)
@@ -172,6 +189,30 @@ public class FragmentContainerActivity extends BaseActivity {
                 break;
             case DECORATE_SELECT_MATERIAL_ARTICLE_FLAG:
                 fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateSelectMaterialFragment.newInstance());
+                break;
+            case NOTE_IMAGES_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, NoteInfoImageFragment.newInstance());
+                break;
+            case NOTE_DECORATE_STEP_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, NoteDecorateStepFragment.newInstance());
+                break;
+            case NOTE_DECORATE_LIST_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, NoteDecorateListFragment.newInstance());
+                break;
+            case NOTE_EDIT_FlAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, NoteEditFragment.newInstance());
+                break;
+            case NOTE_DECORATE_TAG_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, NoteDecorateTagFragment.newInstance());
+                break;
+            case NOTE_DECORATE_INFO_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, NoteInfoFragment.newInstance());
+                break;
+            case BBS_CREATE_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, BBSCreateFragment.newInstance());
+                break;
+            case DECORATE_CASE_LIST_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateCaseListFragment.newInstance());
                 break;
         }
         fragmentTransaction.commitAllowingStateLoss();

@@ -36,6 +36,18 @@ public class DecorateIndexFragment extends BaseRecycleViewFragment<DecorateCompa
         }
         View headerView = View.inflate(mContext, R.layout.layout_index_decorate_header_layout, null);
         EHouseApplication.getInstance().setOnClassifySearchContentClickListener(this);
+        headerView.findViewById(R.id.id_tv_fragment_decorate_index_note).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentContainerActivity.startFragmentsActivity(mContext,"",FragmentContainerActivity.NOTE_DECORATE_LIST_FLAG);
+            }
+        });
+        headerView.findViewById(R.id.id_tv_fragment_decorate_index_image).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentContainerActivity.startFragmentsActivity(mContext,"日记图集",FragmentContainerActivity.NOTE_IMAGES_FLAG);
+            }
+        });
         headerView.findViewById(R.id.id_et_fragment_classify_search_content).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

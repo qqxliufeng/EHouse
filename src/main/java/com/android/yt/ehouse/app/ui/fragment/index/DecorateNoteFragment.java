@@ -31,6 +31,7 @@ public class DecorateNoteFragment extends LroidBaseNetFragment{
 
     @Override
     protected void initView(View view) {
+        mGridView.setFocusable(false);
         mGridView.setAdapter(new MyDecorateNoteGridViewAdapter());
     }
 

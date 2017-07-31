@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/shape_tv_corners7"
+    android:orientation="vertical"
+    android:paddingBottom="5dp"
+    android:paddingLeft="@dimen/dp_10"
+    android:paddingRight="@dimen/dp_10"
+    android:paddingTop="5dp"
+    android:text="前期准备"
+    android:textColor="#333"
+    android:textSize="@dimen/sp_14">
+
+</TextView>
