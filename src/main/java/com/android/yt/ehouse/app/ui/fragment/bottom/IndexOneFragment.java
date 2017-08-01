@@ -110,7 +110,8 @@ public class IndexOneFragment extends LroidBaseNetFragment {
                 FragmentContainerActivity.startFragmentsActivity(mContext, getString(R.string.string_decorate), FragmentContainerActivity.DECORATE_INDEX_FLAG);
                 break;
             case R.id.id_tv_fragment_bottom_one_licai:
-                FragmentContainerActivity.startFragmentsActivity(mContext, "购物车", FragmentContainerActivity.SHOPPING_CAR_FLAG);
+//                FragmentContainerActivity.startFragmentsActivity(mContext, "购物车", FragmentContainerActivity.SHOPPING_CAR_FLAG);
+                FragmentContainerActivity.startFragmentsActivity(mContext, "理财", FragmentContainerActivity.FINANCING_LIST_FLAG);
                 break;
             case R.id.id_tv_fragment_bottom_one_zhanhui:
                 FragmentContainerActivity.startFragmentsActivity(mContext, "购物车", FragmentContainerActivity.SHOPPING_CAR_EMPTY_FLAG);

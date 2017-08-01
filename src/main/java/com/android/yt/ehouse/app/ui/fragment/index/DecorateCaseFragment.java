@@ -1,6 +1,5 @@
 package com.android.yt.ehouse.app.ui.fragment.index;
 
-import android.support.v4.app.Fragment;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -49,7 +48,7 @@ public class DecorateCaseFragment extends LroidBaseNetFragment implements Adapte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(mContext, "", Toast.LENGTH_SHORT).show();
+        FragmentContainerActivity.startFragmentsActivity(mContext,"案例详情",FragmentContainerActivity.DECORATE_CASE_INFO_FLAG);
     }
 
 

@@ -14,7 +14,9 @@ import android.widget.FrameLayout;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.ui.fragment.bbs.BBSCreateFragment;
+import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCaseInfoFragment;
 import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCaseListFragment;
+import com.android.yt.ehouse.app.ui.fragment.financing.FinancingListFragment;
 import com.android.yt.ehouse.app.ui.fragment.index.DecorateCaseFragment;
 import com.android.yt.ehouse.app.ui.fragment.note.NoteDecorateTagFragment;
 import com.android.yt.ehouse.app.ui.fragment.note.NoteEditFragment;
@@ -81,6 +83,8 @@ public class FragmentContainerActivity extends BaseActivity {
     public static final int NOTE_DECORATE_INFO_FLAG = 0x24;
     public static final int BBS_CREATE_FLAG = 0x25;
     public static final int DECORATE_CASE_LIST_FLAG = 0x26;
+    public static final int DECORATE_CASE_INFO_FLAG = 0x27;
+    public static final int FINANCING_LIST_FLAG = 0x28;
 
 
     @BindView(R.id.id_tl_home_tool_bar)
@@ -213,6 +217,12 @@ public class FragmentContainerActivity extends BaseActivity {
                 break;
             case DECORATE_CASE_LIST_FLAG:
                 fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateCaseListFragment.newInstance());
+                break;
+            case DECORATE_CASE_INFO_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateCaseInfoFragment.newInstance());
+                break;
+            case FINANCING_LIST_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, FinancingListFragment.newInstance());
                 break;
         }
         fragmentTransaction.commitAllowingStateLoss();

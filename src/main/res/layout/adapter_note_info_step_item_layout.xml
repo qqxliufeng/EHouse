@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:id="@+id/id_ll_adapter_note_info_step_item_container"
     android:paddingLeft="40dp"
     android:paddingBottom="3dp">
 
@@ -18,11 +19,11 @@
             android:background="@drawable/shape_circle_1" />
 
         <TextView
+            android:id="@+id/id_tv_adapter_note_info_step_item_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_10"
             android:drawablePadding="@dimen/dp_10"
-            android:text="准备（5）"
             android:textColor="#444"
             android:textSize="@dimen/sp_14" />
     </LinearLayout>
