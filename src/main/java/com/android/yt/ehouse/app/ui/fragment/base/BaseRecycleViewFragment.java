@@ -111,7 +111,7 @@ public abstract class BaseRecycleViewFragment<T> extends LroidBaseNetFragment im
 
     protected void setItemDecoration() {
         DividerItemDecoration itemDecoration = new DividerItemDecoration(mContext, DividerItemDecoration.VERTICAL);
-        itemDecoration.setDrawable(ActivityCompat.getDrawable(mContext, R.drawable.recyclerview_devider_one));
+//        itemDecoration.setDrawable(ActivityCompat.getDrawable(mContext, R.drawable.divider_bg));
         mRecyclerView.addItemDecoration(itemDecoration);
     }
 

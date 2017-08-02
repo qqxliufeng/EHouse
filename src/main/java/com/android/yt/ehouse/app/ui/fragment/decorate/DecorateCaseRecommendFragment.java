@@ -1,6 +1,5 @@
 package com.android.yt.ehouse.app.ui.fragment.decorate;
 
-import android.os.Bundle;
 import android.view.View;
 
 import com.android.yt.ehouse.app.R;

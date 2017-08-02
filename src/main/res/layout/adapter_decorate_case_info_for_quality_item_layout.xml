@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#fff"
+    android:background="@drawable/select_click_bg"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -84,10 +84,4 @@
         android:numColumns="3"
         android:horizontalSpacing="@dimen/dp_10"
         android:verticalSpacing="@dimen/dp_10"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#eeee" />
-
 </LinearLayout>

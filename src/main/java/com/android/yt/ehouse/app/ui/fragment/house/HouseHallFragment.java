@@ -32,6 +32,7 @@ public class HouseHallFragment extends BaseRecycleViewFragment<HouseItemBean> {
     @Override
     public void initView(View view) {
         super.initView(view);
+        setItemDecoration();
         for (int i = 0; i < 10; i++) {
             mArrayList.add(new HouseItemBean());
         }

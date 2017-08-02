@@ -31,6 +31,7 @@ public class DecorateIndexFragment extends BaseRecycleViewFragment<DecorateCompa
     @Override
     public void initView(View view) {
         super.initView(view);
+        setItemDecoration();
         for (int i = 0; i < 10; i++) {
             mArrayList.add(new DecorateCompanyItemBean());
         }

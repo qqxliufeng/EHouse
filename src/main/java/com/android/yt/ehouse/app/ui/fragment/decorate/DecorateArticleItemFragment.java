@@ -1,6 +1,7 @@
 package com.android.yt.ehouse.app.ui.fragment.decorate;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.ui.adapter.DecorateArticleItemAdapter;
@@ -28,6 +29,12 @@ public class DecorateArticleItemFragment extends BaseRecycleViewFragment<String>
     @Override
     protected BaseQuickAdapter<String, BaseViewHolder> createAdapter() {
         return new DecorateArticleItemAdapter(R.layout.adapter_decorate_article_item_layout, mArrayList);
+    }
+
+    @Override
+    public void initView(View view) {
+        super.initView(view);
+        setItemDecoration();
     }
 
     @Override

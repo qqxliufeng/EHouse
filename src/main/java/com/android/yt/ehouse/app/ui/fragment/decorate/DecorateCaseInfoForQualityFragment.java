@@ -1,6 +1,7 @@
 package com.android.yt.ehouse.app.ui.fragment.decorate;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.ui.adapter.DecorateCaseInfoForDesignAdapter;
@@ -26,6 +27,11 @@ public class DecorateCaseInfoForQualityFragment extends BaseRecycleViewFragment<
         return new DecorateCaseInfoForDesignAdapter(R.layout.adapter_decorate_case_info_for_quality_item_layout,mArrayList);
     }
 
+    @Override
+    public void initView(View view) {
+        super.initView(view);
+        setItemDecoration();
+    }
 
     @Override
     public void onRefresh() {
