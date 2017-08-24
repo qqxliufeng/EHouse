@@ -20,6 +20,7 @@ import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCompanyCommentList
 import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCompanyDesignListFragment;
 import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCompanyInfoForCertificateFragment;
 import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCompanyInfoForIntroduceAndBusinessFragment;
+import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCompanyNoteListFragment;
 import com.android.yt.ehouse.app.ui.fragment.financing.FinancingListFragment;
 import com.android.yt.ehouse.app.ui.fragment.note.NoteDecorateTagFragment;
 import com.android.yt.ehouse.app.ui.fragment.note.NoteEditFragment;
@@ -100,6 +101,7 @@ public class FragmentContainerActivity extends BaseActivity {
     public static final int DECORATE_COMPANY_INFO_CERTIFICATE_FLAG = 0x34;
     public static final int DECORATE_COMPANY_DESIGN_LIST_FRAGMENT_FLAG = 0x35;
     public static final int DECORATE_COMPANY_COMMENT_LIST_FRAGMENT_FLAG = 0x36;
+    public static final int DECORATE_COMPANY_NOTE_LIST_FRAGMENT_FLAG = 0x37;
 
 
     @BindView(R.id.id_tl_home_tool_bar)
@@ -260,8 +262,8 @@ public class FragmentContainerActivity extends BaseActivity {
             case DECORATE_COMPANY_DESIGN_LIST_FRAGMENT_FLAG:
                 fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateCompanyDesignListFragment.newInstance(getIntent().getBundleExtra(EXTRA_FLAG)));
                 break;
-            case DECORATE_COMPANY_COMMENT_LIST_FRAGMENT_FLAG:
-                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateCompanyCommentListFragment.newInstance(getIntent().getBundleExtra(EXTRA_FLAG)));
+            case DECORATE_COMPANY_NOTE_LIST_FRAGMENT_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateCompanyNoteListFragment.newInstance(getIntent().getBundleExtra(EXTRA_FLAG)));
                 break;
         }
         fragmentTransaction.commitAllowingStateLoss();

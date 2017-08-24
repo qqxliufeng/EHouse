@@ -73,12 +73,48 @@
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:maxLines="2"
+        android:paddingBottom="@dimen/dp_10"
         android:paddingLeft="@dimen/dp_10"
         android:paddingRight="@dimen/dp_10"
-        android:paddingBottom="@dimen/dp_10"
         android:text="asdadasdfasdfijasodfjlaksdasdadasdfasdfijasodfjlaksdasdadasdfasdfijasodfjlaksdasdadasdfasdfijasodfjlaksdasdadasdfasdfijasodfjlaksd"
         android:textColor="#333"
         android:textSize="@dimen/sp_14" />
+
+    <LinearLayout
+        android:id="@+id/id_ll_adapter_note_decorate_all_item_image_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/dp_10"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10">
+
+        <ImageView
+            android:id="@+id/id_iv_adapter_note_decorate_all_item_image1"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_test_bg" />
+
+        <ImageView
+            android:id="@+id/id_iv_adapter_note_decorate_all_item_image2"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_test_bg" />
+
+        <ImageView
+            android:id="@+id/id_iv_adapter_note_decorate_all_item_image3"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_test_bg" />
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -135,5 +171,4 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#eeee" />
-
 </LinearLayout>
