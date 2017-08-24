@@ -2,7 +2,6 @@ package com.android.yt.ehouse.app.ui.fragment.base;
 
 
 import android.support.annotation.CallSuper;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -129,7 +128,6 @@ public abstract class BaseRecycleViewFragment<T> extends LroidBaseNetFragment im
     public void onRequestStart(int requestID) {
     }
 
-    @CallSuper
     @Override
     public void onRequestFail(int requestID, Throwable e) {
         super.onRequestFail(requestID, e);

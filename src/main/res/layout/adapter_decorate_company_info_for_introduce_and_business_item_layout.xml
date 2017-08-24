@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/id_tv_adapter_decorate_company_info_for_introduce_and_business_item_key"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_10"
+        android:layout_weight="1.5"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_10"
+        android:textColor="#444"
+        android:textSize="14sp"
+        android:paddingRight="@dimen/dp_10"
+        android:text="as" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="#ccc" />
+
+    <TextView
+        android:id="@+id/id_tv_adapter_decorate_company_info_for_introduce_and_business_item_value"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_10"
+        android:layout_gravity="center_vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:gravity="left|center_vertical"
+        android:text="asdasdfasdfasd" />
+
+</LinearLayout>

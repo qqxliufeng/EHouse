@@ -1,21 +1,30 @@
 package com.android.yt.ehouse.app.ui.fragment.decorate;
 
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextUtils;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RatingBar;
+import android.widget.TextView;
 
 import com.android.yt.ehouse.app.R;
+import com.android.yt.ehouse.app.data.bean.DecorateCompanyCommentBean;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseFragment;
-import com.bumptech.glide.Glide;
+import com.android.yt.ehouse.app.ui.view.RoundedNoNetImageView;
+import com.android.yt.ehouse.app.utils.Constants;
+import com.android.yt.ehouse.app.utils.GlideManager;
 
 import butterknife.BindView;
-import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 /**
  * Created by feng on 2017/7/5.
  */
 
-public class DecorateCompanyInfoCommentFragment extends LroidBaseFragment{
+public class DecorateCompanyInfoCommentFragment extends LroidBaseFragment {
 
     public static DecorateCompanyInfoCommentFragment newInstance() {
         Bundle args = new Bundle();
@@ -24,8 +33,24 @@ public class DecorateCompanyInfoCommentFragment extends LroidBaseFragment{
         return fragment;
     }
 
+    @BindView(R.id.id_tv_fragment_decorate_company_info_comment_all_count)
+    TextView tv_count;
+    @BindView(R.id.id_tv_fragment_decorate_company_info_comment_time)
+    TextView tv_time;
+    @BindView(R.id.id_tv_fragment_decorate_company_info_comment_user_name)
+    TextView tv_name;
+    @BindView(R.id.id_tv_fragment_decorate_company_info_comment_content)
+    TextView tv_content;
+    @BindView(R.id.id_rb_fragment_decorate_company_info_comment_design_score)
+    RatingBar rb_design_score;
+    @BindView(R.id.id_rb_fragment_decorate_company_info_comment_service_score)
+    RatingBar rb_service_score;
+    @BindView(R.id.id_rb_fragment_decorate_company_info_comment_work_score)
+    RatingBar rb_work_score;
+
+
     @BindView(R.id.id_iv_fragment_decorate_comment_user_face)
-    ImageView iv_face;
+    RoundedNoNetImageView iv_face;
 
 
     @Override
@@ -35,10 +60,28 @@ public class DecorateCompanyInfoCommentFragment extends LroidBaseFragment{
 
     @Override
     protected void initView(View view) {
-        Glide.with(this).load(R.drawable.img_test_bg).bitmapTransform(new CropCircleTransformation(mContext)).into(iv_face);
+        iv_face.setOval(true);
     }
 
     @Override
     protected void setComponent() {
+    }
+
+    public void refresh(DecorateCompanyCommentBean decorateCompanyCommentBean) {
+        String count = decorateCompanyCommentBean.getCount();
+        SpannableString spannableString = new SpannableString("全部" + (TextUtils.isEmpty(count) ? "0" : count) + "条");
+        spannableString.setSpan(new ForegroundColorSpan(ContextCompat.getColor(mContext, R.color.main_color)),2, 2 + count.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        tv_count.setText(spannableString);
+        tv_content.setText(decorateCompanyCommentBean.getContent());
+        tv_name.setText(decorateCompanyCommentBean.getEvaluate_type_name());
+        tv_time.setText(decorateCompanyCommentBean.getTime_str());
+        String designScore = decorateCompanyCommentBean.getGoods_score();
+        String serviceScore = decorateCompanyCommentBean.getService_score();
+        float designScoreFloat = Float.parseFloat(designScore);
+        float serviceScoreFloat = Float.parseFloat(serviceScore);
+        rb_design_score.setRating(designScoreFloat);
+        rb_work_score.setRating(designScoreFloat);
+        rb_service_score.setRating(serviceScoreFloat);
+        GlideManager.loadImage(this, Constants.DEFAULT_IMAGE_URL, iv_face);
     }
 }

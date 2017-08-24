@@ -26,6 +26,5 @@ public class ExampleUnitTest {
         sellHouseFormBean.setHouseBuilding("this is house building");
         sellHouseFormBean.setHouseNo("this is house no ");
         sellHouseFormBean.setHouseRoom("this is house room");
-        formBeanFormBeanManager.form();
     }
 }

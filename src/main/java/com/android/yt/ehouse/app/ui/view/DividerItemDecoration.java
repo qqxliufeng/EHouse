@@ -3,9 +3,13 @@ package com.android.yt.ehouse.app.ui.view;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -20,11 +24,13 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 
     private int rightPadding = 0;
     private int leftPadding = 0;
+    private Paint paint;
 
     public DividerItemDecoration(Context context) {
         TypedArray a = context.obtainStyledAttributes(ATTRS);
         mDivider = a.getDrawable(0);
         a.recycle();
+        paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     }
 
     public void setLeftPadding(int leftPadding) {
@@ -55,5 +61,17 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
             mDivider.setBounds(left, top, right, bottom);
             mDivider.draw(c);
         }
+    }
+
+    @Override
+    public void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.State state) {
+        int left = parent.getPaddingLeft();
+        int right = parent.getMeasuredWidth() - parent.getPaddingRight();
+        int top = parent.getPaddingTop();
+        int bottom = top + 30;
+        paint.setColor(Color.RED);
+        c.drawRect(left,top,right,bottom,paint);
+        int pos = ((LinearLayoutManager)(parent.getLayoutManager())).findFirstVisibleItemPosition();
+        Log.e("TAG",pos+"");
     }
 }

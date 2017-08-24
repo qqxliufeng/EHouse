@@ -22,19 +22,19 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
-            android:text="设计方案"
+            android:text="业主日记"
             android:textColor="#444"
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/id_tv_fragment_decorate_company_info_design_all_design"
+            android:id="@+id/id_tv_fragment_decorate_company_info_note_all_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:drawablePadding="@dimen/dp_10"
             android:drawableRight="@drawable/img_enter_icon"
-            android:text="全部34个"
+            android:text="全部0篇"
             android:textColor="#777"
             android:textSize="14sp" />
     </RelativeLayout>
@@ -48,37 +48,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="@dimen/dp_10"
-        android:paddingBottom="@dimen/dp_10">
+        android:paddingBottom="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_10">
 
-        <ImageView
+        <com.android.yt.ehouse.app.ui.view.RoundedNoNetImageView
             android:id="@+id/id_iv_fragment_decorate_note_user_face"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/img_test_bg" />
+            android:scaleType="centerCrop"/>
 
         <RelativeLayout
-            android:layout_marginLeft="@dimen/dp_10"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_10">
 
             <TextView
+                android:id="@+id/id_tv_fragment_decorate_company_info_note_user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="123456的新家"
+                android:text="暂无"
                 android:textColor="#444"
                 android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/id_tv_fragment_decorate_company_info_note_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:text="140/北欧"
+                android:text="暂无"
                 android:textColor="#777"
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/id_tv_fragment_decorate_company_info_note_tag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -88,18 +90,18 @@
                 android:paddingLeft="@dimen/dp_10"
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
-                android:text="水电改造"
+                android:text="暂无"
                 android:textColor="#fff" />
         </RelativeLayout>
     </LinearLayout>
 
     <TextView
+        android:id="@+id/id_tv_fragment_decorate_company_info_note_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:maxLines="2"
         android:ellipsize="end"
-        android:textColor="#444"
-        android:textSize="14sp"
         android:lineSpacingExtra="3dp"
-        android:text="目前进行到水电改造，都说水电改造是个大坑，最容易超出预算的地方，但是没办法，我们是十几年的老房子，只有照明和"/>
+        android:maxLines="2"
+        android:textColor="#444"
+        android:textSize="14sp" />
 </LinearLayout>

@@ -31,7 +31,7 @@ public class NoteImagesAdapter extends StatelessSection {
 
     @Override
     public int getContentItemsTotal() {
-        return list.isEmpty() ? 0 : list.size();
+        return list.size();
     }
 
     @Override

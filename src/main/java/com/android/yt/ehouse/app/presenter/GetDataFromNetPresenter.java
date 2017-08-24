@@ -75,7 +75,8 @@ public class GetDataFromNetPresenter extends BasePresenter {
                     }
                 })
                 .subscribeOn(AndroidSchedulers.mainThread())
-                .observeOn(AndroidSchedulers.mainThread()).subscribe(new Subscriber<Map<String, Object>>() {
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<Map<String, Object>>() {
             @Override
             public void onCompleted() {
                 if (checkNullPresent()) {

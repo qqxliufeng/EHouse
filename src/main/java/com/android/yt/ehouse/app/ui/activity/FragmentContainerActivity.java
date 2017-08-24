@@ -16,8 +16,9 @@ import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.ui.fragment.bbs.BBSCreateFragment;
 import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCaseInfoFragment;
 import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCaseListFragment;
+import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCompanyInfoForCertificateFragment;
+import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCompanyInfoForIntroduceAndBusinessFragment;
 import com.android.yt.ehouse.app.ui.fragment.financing.FinancingListFragment;
-import com.android.yt.ehouse.app.ui.fragment.index.DecorateCaseFragment;
 import com.android.yt.ehouse.app.ui.fragment.note.NoteDecorateTagFragment;
 import com.android.yt.ehouse.app.ui.fragment.note.NoteEditFragment;
 import com.android.yt.ehouse.app.ui.fragment.base.ClassifySearchFragment;
@@ -42,6 +43,10 @@ import com.android.yt.ehouse.app.ui.fragment.note.NoteInfoImageFragment;
 import com.android.yt.ehouse.app.ui.fragment.shoppingcar.ShoppingCarEmptyFragment;
 import com.android.yt.ehouse.app.ui.fragment.shoppingcar.ShoppingCarFragment;
 import com.android.yt.ehouse.app.ui.fragment.user.LoginFragment;
+import com.android.yt.ehouse.app.ui.fragment.user.MyMessageFragment;
+import com.android.yt.ehouse.app.ui.fragment.user.MyNewHouseStepFragment;
+import com.android.yt.ehouse.app.ui.fragment.user.MyUserInfoAddressFragment;
+import com.android.yt.ehouse.app.ui.fragment.user.MyUserInfoFragment;
 import com.android.yt.ehouse.app.ui.fragment.user.RegisterFragment;
 
 import butterknife.BindView;
@@ -85,6 +90,12 @@ public class FragmentContainerActivity extends BaseActivity {
     public static final int DECORATE_CASE_LIST_FLAG = 0x26;
     public static final int DECORATE_CASE_INFO_FLAG = 0x27;
     public static final int FINANCING_LIST_FLAG = 0x28;
+    public static final int MY_NEW_HOUSE_STEP_FLAG = 0x29;
+    public static final int MY_MESSAGE_FLAG = 0x30;
+    public static final int MY_INFO_FLAG = 0x31;
+    public static final int MY_INFO_ADDRESS_FLAG = 0x32;
+    public static final int DECORATE_COMPANY_INFO_INTRODUCE_AND_BUSINESS_FLAG = 0x33;
+    public static final int DECORATE_COMPANY_INFO_CERTIFICATE_FLAG = 0x34;
 
 
     @BindView(R.id.id_tl_home_tool_bar)
@@ -168,7 +179,7 @@ public class FragmentContainerActivity extends BaseActivity {
                 fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, HouseInfoFragment.newInstance());
                 break;
             case DECORATE_COMPANY_INFO_FLAG:
-                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateCompanyInfoFragment.newInstance());
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateCompanyInfoFragment.newInstance(getIntent().getBundleExtra(EXTRA_FLAG)));
                 break;
             case SHOPPING_CAR_FLAG:
                 fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, ShoppingCarFragment.newInstance());
@@ -223,6 +234,24 @@ public class FragmentContainerActivity extends BaseActivity {
                 break;
             case FINANCING_LIST_FLAG:
                 fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, FinancingListFragment.newInstance());
+                break;
+            case MY_NEW_HOUSE_STEP_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, MyNewHouseStepFragment.newInstance());
+                break;
+            case MY_MESSAGE_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, MyMessageFragment.newInstance());
+                break;
+            case MY_INFO_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, MyUserInfoFragment.newInstance());
+                break;
+            case MY_INFO_ADDRESS_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, MyUserInfoAddressFragment.newInstance());
+                break;
+            case DECORATE_COMPANY_INFO_INTRODUCE_AND_BUSINESS_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateCompanyInfoForIntroduceAndBusinessFragment.newInstance(getIntent().getBundleExtra(EXTRA_FLAG)));
+                break;
+            case DECORATE_COMPANY_INFO_CERTIFICATE_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateCompanyInfoForCertificateFragment.newInstance(getIntent().getBundleExtra(EXTRA_FLAG)));
                 break;
         }
         fragmentTransaction.commitAllowingStateLoss();

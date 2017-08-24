@@ -4,12 +4,16 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.text.SpannableString;
 import android.text.Spanned;
+import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.yt.ehouse.app.R;
+import com.android.yt.ehouse.app.data.bean.DecorateCompanyDesignBean;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseFragment;
+import com.android.yt.ehouse.app.utils.GlideManager;
 
 import butterknife.BindView;
 
@@ -28,6 +32,12 @@ public class DecorateCompanyInfoDesignFragment extends LroidBaseFragment {
 
     @BindView(R.id.id_tv_fragment_decorate_company_info_design_all_design)
     TextView tv_all_design;
+    @BindView(R.id.id_tv_fragment_decorate_company_info_design_name)
+    TextView tv_name;
+    @BindView(R.id.id_tv_fragment_decorate_company_info_design_desc)
+    TextView tv_desc;
+    @BindView(R.id.id_iv_fragment_decorate_company_info_design_image)
+    ImageView iv_image;
 
 
     @Override
@@ -37,13 +47,25 @@ public class DecorateCompanyInfoDesignFragment extends LroidBaseFragment {
 
     @Override
     protected void initView(View view) {
-        SpannableString spannableString = new SpannableString("全部34个");
-        spannableString.setSpan(new ForegroundColorSpan(ContextCompat.getColor(mContext, R.color.main_color)),
-                2, 4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        tv_all_design.setText(spannableString);
     }
 
     @Override
     protected void setComponent() {
+    }
+
+    public void refresh(DecorateCompanyDesignBean decorateCompanyDesignBean) {
+        String count = decorateCompanyDesignBean.getCount();
+        SpannableString spannableString = new SpannableString("全部" + (TextUtils.isEmpty(count) ? "0" : count) + "篇");
+        spannableString.setSpan(new ForegroundColorSpan(ContextCompat.getColor(mContext, R.color.main_color)),
+                2, 2 + count.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        tv_all_design.setText(spannableString);
+        tv_name.setText(decorateCompanyDesignBean.getName());
+        GlideManager.loadImage(mContext, decorateCompanyDesignBean.getThumb(), R.drawable.img_banner_default_img, R.drawable.img_banner_default_img, iv_image);
+        if (!TextUtils.isEmpty(decorateCompanyDesignBean.getHouse_type_name())) {
+            tv_desc.setText(decorateCompanyDesignBean.getHouse_type_name() + " | ");
+        }
+        if (!TextUtils.isEmpty(decorateCompanyDesignBean.getDesign_style_name())) {
+            tv_desc.setText(tv_desc.getText() + decorateCompanyDesignBean.getDesign_style_name() + " | ");
+        }
     }
 }

@@ -6,6 +6,7 @@
 
 
     <TextView
+        android:id="@+id/id_tv_fragment_decorate_company_info_jiajie"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/select_click_bg"
@@ -25,6 +26,7 @@
         android:background="#eee" />
 
     <TextView
+        android:id="@+id/id_tv_fragment_decorate_company_info_zhengshu"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/select_click_bg"
@@ -44,6 +46,7 @@
         android:background="#eee" />
 
     <TextView
+        android:id="@+id/id_tv_fragment_decorate_company_info_gongshang"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/select_click_bg"
