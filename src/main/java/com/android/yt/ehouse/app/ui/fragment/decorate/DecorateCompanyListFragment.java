@@ -102,7 +102,7 @@ public class DecorateCompanyListFragment extends BaseFragmentWithSearchCondition
         fillDataFromNet();
     }
 
-    private void fillDataFromNet() {
+    protected void fillDataFromNet() {
         mGetDataFromNetPresenter.getData(0x1, RequestParamsHelper.RequestMod_ORGANIZATION.getDecoCompanyList(null, null, null, null, null, current_page));
     }
 

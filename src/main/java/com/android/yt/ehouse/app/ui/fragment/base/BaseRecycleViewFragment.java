@@ -124,6 +124,11 @@ public abstract class BaseRecycleViewFragment<T> extends LroidBaseNetFragment im
         return new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false);
     }
 
+    protected void fillDataFromNet(){
+
+    }
+
+
     @Override
     public void onRequestStart(int requestID) {
     }

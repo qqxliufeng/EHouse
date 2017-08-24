@@ -7,18 +7,18 @@ import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.data.bean.DecorateCompanyCommentBean;
+import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseFragment;
 import com.android.yt.ehouse.app.ui.view.RoundedNoNetImageView;
-import com.android.yt.ehouse.app.utils.Constants;
 import com.android.yt.ehouse.app.utils.GlideManager;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * Created by feng on 2017/7/5.
@@ -26,8 +26,9 @@ import butterknife.BindView;
 
 public class DecorateCompanyInfoCommentFragment extends LroidBaseFragment {
 
-    public static DecorateCompanyInfoCommentFragment newInstance() {
+    public static DecorateCompanyInfoCommentFragment newInstance(String orgId) {
         Bundle args = new Bundle();
+        args.putString(DecorateCompanyInfoFragment.ORG_ID,orgId);
         DecorateCompanyInfoCommentFragment fragment = new DecorateCompanyInfoCommentFragment();
         fragment.setArguments(args);
         return fragment;
@@ -67,14 +68,20 @@ public class DecorateCompanyInfoCommentFragment extends LroidBaseFragment {
     protected void setComponent() {
     }
 
+    @OnClick(R.id.id_tv_fragment_decorate_company_info_comment_all_count)
+    public void onClick() {
+        FragmentContainerActivity.startFragmentsActivity(mContext, "业主评价", FragmentContainerActivity.DECORATE_COMPANY_COMMENT_LIST_FRAGMENT_FLAG, getArguments());
+    }
+
     public void refresh(DecorateCompanyCommentBean decorateCompanyCommentBean) {
         String count = decorateCompanyCommentBean.getCount();
         SpannableString spannableString = new SpannableString("全部" + (TextUtils.isEmpty(count) ? "0" : count) + "条");
         spannableString.setSpan(new ForegroundColorSpan(ContextCompat.getColor(mContext, R.color.main_color)),2, 2 + count.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         tv_count.setText(spannableString);
+
         tv_content.setText(decorateCompanyCommentBean.getContent());
-        tv_name.setText(decorateCompanyCommentBean.getEvaluate_type_name());
-        tv_time.setText(decorateCompanyCommentBean.getTime_str());
+        tv_name.setText(decorateCompanyCommentBean.getNickname());
+        tv_time.setText(decorateCompanyCommentBean.getTime());
         String designScore = decorateCompanyCommentBean.getGoods_score();
         String serviceScore = decorateCompanyCommentBean.getService_score();
         float designScoreFloat = Float.parseFloat(designScore);
@@ -82,6 +89,6 @@ public class DecorateCompanyInfoCommentFragment extends LroidBaseFragment {
         rb_design_score.setRating(designScoreFloat);
         rb_work_score.setRating(designScoreFloat);
         rb_service_score.setRating(serviceScoreFloat);
-        GlideManager.loadImage(this, Constants.DEFAULT_IMAGE_URL, iv_face);
+        GlideManager.loadImage(this, decorateCompanyCommentBean.getAvatarUrl(), iv_face);
     }
 }

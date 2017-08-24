@@ -1,49 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#fff"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:padding="@dimen/dp_10">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp">
-
-        <View
-            android:layout_width="5dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/dp_10"
-            android:layout_marginTop="@dimen/dp_10"
-            android:background="@color/main_color" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="20dp"
-            android:text="业主评价"
-            android:textColor="#444"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/id_tv_fragment_decorate_company_info_comment_all_count"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:drawablePadding="@dimen/dp_10"
-            android:drawableRight="@drawable/img_enter_icon"
-            android:text="全部0个"
-            android:textColor="#777"
-            android:textSize="14sp" />
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#eee" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="90dp"

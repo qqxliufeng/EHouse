@@ -62,7 +62,7 @@ public class DecorateCompanyInfoForIntroduceAndBusinessFragment extends BaseRecy
         mBaseQuickAdapter.setEnableLoadMore(false);
     }
 
-    private void fillDataFromNet() {
+    protected void fillDataFromNet() {
         String orgId = getArguments().getString(ORG_ID_FLAG);
         action = getArguments().getString(ACTION_FLAG);
         mGetDataFromNetPresenter.getData(0x0, RequestParamsHelper.RequestMod_ORGANIZATION.getBaseCompanyInfo(orgId, action));

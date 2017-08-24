@@ -12,10 +12,12 @@ import android.widget.TextView;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.data.bean.DecorateCompanyDesignBean;
+import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseFragment;
 import com.android.yt.ehouse.app.utils.GlideManager;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * Created by feng on 2017/7/5.
@@ -23,8 +25,9 @@ import butterknife.BindView;
 
 public class DecorateCompanyInfoDesignFragment extends LroidBaseFragment {
 
-    public static DecorateCompanyInfoDesignFragment newInstance() {
+    public static DecorateCompanyInfoDesignFragment newInstance(String orgId) {
         Bundle args = new Bundle();
+        args.putString(DecorateCompanyInfoFragment.ORG_ID,orgId);
         DecorateCompanyInfoDesignFragment fragment = new DecorateCompanyInfoDesignFragment();
         fragment.setArguments(args);
         return fragment;
@@ -53,6 +56,11 @@ public class DecorateCompanyInfoDesignFragment extends LroidBaseFragment {
     protected void setComponent() {
     }
 
+    @OnClick(R.id.id_tv_fragment_decorate_company_info_design_all_design)
+    public void onClick(){
+        FragmentContainerActivity.startFragmentsActivity(mContext,"全部设计方案",FragmentContainerActivity.DECORATE_COMPANY_DESIGN_LIST_FRAGMENT_FLAG,getArguments());
+    }
+
     public void refresh(DecorateCompanyDesignBean decorateCompanyDesignBean) {
         String count = decorateCompanyDesignBean.getCount();
         SpannableString spannableString = new SpannableString("全部" + (TextUtils.isEmpty(count) ? "0" : count) + "篇");
@@ -61,11 +69,6 @@ public class DecorateCompanyInfoDesignFragment extends LroidBaseFragment {
         tv_all_design.setText(spannableString);
         tv_name.setText(decorateCompanyDesignBean.getName());
         GlideManager.loadImage(mContext, decorateCompanyDesignBean.getThumb(), R.drawable.img_banner_default_img, R.drawable.img_banner_default_img, iv_image);
-        if (!TextUtils.isEmpty(decorateCompanyDesignBean.getHouse_type_name())) {
-            tv_desc.setText(decorateCompanyDesignBean.getHouse_type_name() + " | ");
-        }
-        if (!TextUtils.isEmpty(decorateCompanyDesignBean.getDesign_style_name())) {
-            tv_desc.setText(tv_desc.getText() + decorateCompanyDesignBean.getDesign_style_name() + " | ");
-        }
+        tv_desc.setText(decorateCompanyDesignBean.getStr());
     }
 }

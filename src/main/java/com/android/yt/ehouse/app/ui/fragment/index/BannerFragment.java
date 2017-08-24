@@ -1,21 +1,21 @@
 package com.android.yt.ehouse.app.ui.fragment.index;
 
 import android.graphics.Color;
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import com.android.yt.ehouse.app.R;
-import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseFragment;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseNetFragment;
 import com.android.yt.ehouse.app.ui.view.AutoScrollViewPager;
 import com.android.yt.ehouse.app.ui.view.IndicatorView;
+import com.android.yt.ehouse.app.utils.RequestParamsHelper;
 
 import java.util.ArrayList;
 
@@ -62,7 +62,7 @@ public class BannerFragment extends LroidBaseNetFragment implements ViewPager.On
         imageUrlList.add("http://pic.58pic.com/58pic/16/01/58/80F58PICvCc_1024.jpg");
         imageUrlList.add("http://pic36.nipic.com/20131203/13879008_225108687000_2.jpg");
         initIndicator();
-//        mGetDataFromNetPresenter.getData(0x0, RequestParamsHelper.RequestMod_LAW.getBannerPicParams());
+//        mGetDataFromNetPresenter.getData(0x0, RequestParamsHelper.RequestMod_AD.getIndexADList());
     }
 
     private void initIndicator() {
@@ -73,7 +73,7 @@ public class BannerFragment extends LroidBaseNetFragment implements ViewPager.On
             params.rightMargin = 10;
             indicatorView.setLayoutParams(params);
             indicatorView.setDefaultIndicatorColor(Color.WHITE);
-            indicatorView.setFocusedIndicatorColor(ContextCompat.getColor(mContext,R.color.blue));
+            indicatorView.setFocusedIndicatorColor(ContextCompat.getColor(mContext, R.color.blue));
             mIndicatorContainer.addView(indicatorView, i);
             if (i == 0) {
                 indicatorView.setSelect(true);
@@ -81,6 +81,11 @@ public class BannerFragment extends LroidBaseNetFragment implements ViewPager.On
         }
     }
 
+    @Override
+    public <T> void onRequestSuccess(int requestID, T result) {
+        super.onRequestSuccess(requestID, result);
+        Log.e("TAG",result.toString());
+    }
 
     @Override
     public void onPageSelected(int position) {
@@ -97,7 +102,7 @@ public class BannerFragment extends LroidBaseNetFragment implements ViewPager.On
     @Override
     public void onResume() {
         super.onResume();
-        if (!vp_banner.isAutoScroll()){
+        if (!vp_banner.isAutoScroll()) {
             vp_banner.startAutoScroll();
         }
     }

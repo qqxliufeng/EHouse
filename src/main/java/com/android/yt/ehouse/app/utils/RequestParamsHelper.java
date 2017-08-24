@@ -64,10 +64,10 @@ public class RequestParamsHelper {
          */
         static final String GET_DIARY_LIST = "diaryList";
 
-        public static HashMap<String, Object> getDiaryList(String org_id,String recommend) {
+        public static HashMap<String, Object> getDiaryList(String org_id, String recommend) {
             HashMap<String, Object> requestParams = RequestParamsHelper.getRequestParams(ORGANIZATION_NAME, GET_DIARY_LIST);
-            requestParams.put("org_id",org_id);
-            requestParams.put("recommend",recommend);
+            requestParams.put("org_id", org_id);
+            requestParams.put("recommend", recommend);
             return requestParams;
         }
 
@@ -76,7 +76,7 @@ public class RequestParamsHelper {
          */
         static final String GET_BASE_COMPANY_INFO = "baseCompanyInfo";
 
-        public static HashMap<String, Object> getBaseCompanyInfo(String org_id,String action) {
+        public static HashMap<String, Object> getBaseCompanyInfo(String org_id, String action) {
             HashMap<String, Object> requestParams = RequestParamsHelper.getRequestParams(ORGANIZATION_NAME, GET_BASE_COMPANY_INFO);
             requestParams.put("org_id", org_id);
             requestParams.put("method", action);
@@ -154,31 +154,35 @@ public class RequestParamsHelper {
         }
     }
 
-    public static final class RequestMod_COMMON {
+    public static final class REQUESTMOD_HOUSE {
 
-        static final String MOD_NAME = "common";
+        static final String MOD_NAME = "house";
 
-        static final String GET_LANG = "getLang";
+        static final String GET_DIARY_LIST = "diaryList";
 
-        public static HashMap<String, Object> getCommonLanParams() {
-            return getRequestParams(MOD_NAME, GET_LANG);
+        public static HashMap<String, Object> getDiaryList(String org_id, String recommend) {
+            HashMap<String, Object> requestParams = getRequestParams(MOD_NAME, GET_DIARY_LIST);
+            requestParams.put("recommend", TextUtils.isEmpty(recommend) ? "" : recommend);
+            requestParams.put("org_id", TextUtils.isEmpty(org_id) ? "" : org_id);
+            return requestParams;
         }
 
-        static final String GEN_ID = "genId";
+        static final String GEN_DESIGN_LIST = "designList";
 
-        public static HashMap<String, Object> getGenId(String... args) {
-            HashMap<String, Object> param = RequestParamsHelper.getRequestParams(MOD_NAME, GEN_ID);
-            param.put("type", "policyAttach");
-            param.put("num", args[0]);
-            return param;
+        public static HashMap<String, Object> getDesignList(String org_id, String recommend) {
+            HashMap<String, Object> requestParams = getRequestParams(MOD_NAME, GEN_DESIGN_LIST);
+            requestParams.put("recommend", TextUtils.isEmpty(recommend) ? "" : recommend);
+            requestParams.put("org_id", TextUtils.isEmpty(org_id) ? "" : org_id);
+            return requestParams;
         }
 
-        static final String GET_AREA_LIST = "getAreaList";
+        static final String GET_EVALUATE_LIST = "evaluateList";
 
-        public static HashMap<String, Object> getAreaList(String parentId) {
-            HashMap<String, Object> param = RequestParamsHelper.getRequestParams(MOD_NAME, GET_AREA_LIST);
-            param.put("parentId", parentId);
-            return param;
+        public static HashMap<String, Object> getEvaluateList(String org_id, String recommend) {
+            HashMap<String, Object> requestParams = getRequestParams(MOD_NAME, GET_EVALUATE_LIST);
+            requestParams.put("recommend", TextUtils.isEmpty(recommend) ? "" : recommend);
+            requestParams.put("org_id", TextUtils.isEmpty(org_id) ? "" : org_id);
+            return requestParams;
         }
     }
 
@@ -339,34 +343,16 @@ public class RequestParamsHelper {
         }
     }
 
-    public static final class RequestMod_ATTACH {
+    public static final class RequestMod_AD {
 
-        static final String MOD_NAME = "attach";
+        static final String MOD_NAME = "ad";
 
-        static final String UPLOAD_ATTACH = "uploadAttach";
+        static final String GET_AD_LIST = "adList";
 
-        public static HashMap<String, Object> uploadPic(String... args) {
-            HashMap<String, Object> params = RequestParamsHelper.getRequestParams(MOD_NAME, UPLOAD_ATTACH);
-            params.put("groupid", args[0]);
-            params.put("filename", args[1]);
-            return params;
+        public static HashMap<String, Object> getIndexADList() {
+            return RequestParamsHelper.getRequestParams(MOD_NAME, GET_AD_LIST);
         }
 
-        static final String GET_FILES_BY_GROUP_ID = "getFilesByGroupId";
-
-        public static HashMap<String, Object> getFilesByGroupId(String groupId) {
-            HashMap<String, Object> params = RequestParamsHelper.getRequestParams(MOD_NAME, GET_FILES_BY_GROUP_ID);
-            params.put("groupid", groupId);
-            return params;
-        }
-
-        static final String DELETE_FILE_BY_ID = "deleteFileById";
-
-        public static HashMap<String, Object> deleteFileById(String attachId) {
-            HashMap<String, Object> params = RequestParamsHelper.getRequestParams(MOD_NAME, DELETE_FILE_BY_ID);
-            params.put("attach_id", attachId);
-            return params;
-        }
     }
 
     private static HashMap<String, Object> getRequestParams(String modName, String actName) {

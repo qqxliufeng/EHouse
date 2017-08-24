@@ -48,7 +48,7 @@ public class DecorateCompanyInfoForCertificateFragment extends BaseRecycleViewFr
         fillDataFromNet();
     }
 
-    private void fillDataFromNet() {
+    protected void fillDataFromNet() {
         mGetDataFromNetPresenter.getData(0x0, RequestParamsHelper.RequestMod_ORGANIZATION.getBaseCompanyInfo(getArguments().getString(DecorateCompanyInfoFragment.ORG_ID), "cert"));
     }
 

@@ -73,7 +73,7 @@ public class DecorateIndexFragment extends BaseRecycleViewFragment<DecorateCompa
         fillDataFromNet();
     }
 
-    private void fillDataFromNet() {
+    protected void fillDataFromNet() {
         mGetDataFromNetPresenter.getData(0x0, RequestParamsHelper.RequestMod_ORGANIZATION.getDecoCompanyList(
                 "1",
                 null,

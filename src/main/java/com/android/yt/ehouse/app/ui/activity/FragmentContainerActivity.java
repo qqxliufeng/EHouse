@@ -16,6 +16,8 @@ import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.ui.fragment.bbs.BBSCreateFragment;
 import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCaseInfoFragment;
 import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCaseListFragment;
+import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCompanyCommentListFragment;
+import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCompanyDesignListFragment;
 import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCompanyInfoForCertificateFragment;
 import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateCompanyInfoForIntroduceAndBusinessFragment;
 import com.android.yt.ehouse.app.ui.fragment.financing.FinancingListFragment;
@@ -96,6 +98,8 @@ public class FragmentContainerActivity extends BaseActivity {
     public static final int MY_INFO_ADDRESS_FLAG = 0x32;
     public static final int DECORATE_COMPANY_INFO_INTRODUCE_AND_BUSINESS_FLAG = 0x33;
     public static final int DECORATE_COMPANY_INFO_CERTIFICATE_FLAG = 0x34;
+    public static final int DECORATE_COMPANY_DESIGN_LIST_FRAGMENT_FLAG = 0x35;
+    public static final int DECORATE_COMPANY_COMMENT_LIST_FRAGMENT_FLAG = 0x36;
 
 
     @BindView(R.id.id_tl_home_tool_bar)
@@ -252,6 +256,12 @@ public class FragmentContainerActivity extends BaseActivity {
                 break;
             case DECORATE_COMPANY_INFO_CERTIFICATE_FLAG:
                 fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateCompanyInfoForCertificateFragment.newInstance(getIntent().getBundleExtra(EXTRA_FLAG)));
+                break;
+            case DECORATE_COMPANY_DESIGN_LIST_FRAGMENT_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateCompanyDesignListFragment.newInstance(getIntent().getBundleExtra(EXTRA_FLAG)));
+                break;
+            case DECORATE_COMPANY_COMMENT_LIST_FRAGMENT_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateCompanyCommentListFragment.newInstance(getIntent().getBundleExtra(EXTRA_FLAG)));
                 break;
         }
         fragmentTransaction.commitAllowingStateLoss();

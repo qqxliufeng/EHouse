@@ -44,9 +44,9 @@ public class DecorateCompanyInfoFragment extends LroidBaseNetFragment {
     @Override
     protected void initView(View view) {
         decorateCompanyBean = getArguments().getParcelable(ORG_ID);
-        decorateCompanyInfoDesignFragment = DecorateCompanyInfoDesignFragment.newInstance();
+        decorateCompanyInfoDesignFragment = DecorateCompanyInfoDesignFragment.newInstance(decorateCompanyBean.getOrg_id());
         decorateCompanyInfoNoteFragment = DecorateCompanyInfoNoteFragment.newInstance();
-        decorateCompanyInfoCommentFragment = DecorateCompanyInfoCommentFragment.newInstance();
+        decorateCompanyInfoCommentFragment = DecorateCompanyInfoCommentFragment.newInstance(decorateCompanyBean.getOrg_id());
         getChildFragmentManager()
                 .beginTransaction()
                 .replace(R.id.id_fl_fragment_decorate_company_info_introduce_container, DecorateCompanyInfoIntroduceFragment.newInstance(decorateCompanyBean))

@@ -9,41 +9,16 @@ import android.os.Parcelable;
 
 public class DecorateCompanyCommentBean implements Parcelable {
 
+
     private String id;
-    private String company_id;
-    private String store_id;
-    private String goods_id;
-    private String order_id;
-    private String order_item_id;
-    private String project_id;
-    private String member_id;
-    private String evaluate_type;
+    private String avatarUrl;
+    private String content;
+    private String time;
     private String goods_score;
     private String service_score;
-    private String content;
-    private String reply;
-    private String time;
-    private String recommend;
-    private String _num;
-    private String evaluate_type_name;
-    private String time_str;
+    private String nickname;
     private String count;
 
-    public String getEvaluate_type_name() {
-        return evaluate_type_name;
-    }
-
-    public void setEvaluate_type_name(String evaluate_type_name) {
-        this.evaluate_type_name = evaluate_type_name;
-    }
-
-    public String getTime_str() {
-        return time_str;
-    }
-
-    public void setTime_str(String time_str) {
-        this.time_str = time_str;
-    }
 
     public String getCount() {
         return count;
@@ -59,70 +34,6 @@ public class DecorateCompanyCommentBean implements Parcelable {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getCompany_id() {
-        return company_id;
-    }
-
-    public void setCompany_id(String company_id) {
-        this.company_id = company_id;
-    }
-
-    public String getStore_id() {
-        return store_id;
-    }
-
-    public void setStore_id(String store_id) {
-        this.store_id = store_id;
-    }
-
-    public String getGoods_id() {
-        return goods_id;
-    }
-
-    public void setGoods_id(String goods_id) {
-        this.goods_id = goods_id;
-    }
-
-    public String getOrder_id() {
-        return order_id;
-    }
-
-    public void setOrder_id(String order_id) {
-        this.order_id = order_id;
-    }
-
-    public String getOrder_item_id() {
-        return order_item_id;
-    }
-
-    public void setOrder_item_id(String order_item_id) {
-        this.order_item_id = order_item_id;
-    }
-
-    public String getProject_id() {
-        return project_id;
-    }
-
-    public void setProject_id(String project_id) {
-        this.project_id = project_id;
-    }
-
-    public String getMember_id() {
-        return member_id;
-    }
-
-    public void setMember_id(String member_id) {
-        this.member_id = member_id;
-    }
-
-    public String getEvaluate_type() {
-        return evaluate_type;
-    }
-
-    public void setEvaluate_type(String evaluate_type) {
-        this.evaluate_type = evaluate_type;
     }
 
     public String getGoods_score() {
@@ -149,14 +60,6 @@ public class DecorateCompanyCommentBean implements Parcelable {
         this.content = content;
     }
 
-    public String getReply() {
-        return reply;
-    }
-
-    public void setReply(String reply) {
-        this.reply = reply;
-    }
-
     public String getTime() {
         return time;
     }
@@ -165,20 +68,20 @@ public class DecorateCompanyCommentBean implements Parcelable {
         this.time = time;
     }
 
-    public String getRecommend() {
-        return recommend;
+    public String getAvatarUrl() {
+        return avatarUrl;
     }
 
-    public void setRecommend(String recommend) {
-        this.recommend = recommend;
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 
-    public String get_num() {
-        return _num;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void set_num(String _num) {
-        this._num = _num;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public DecorateCompanyCommentBean() {
@@ -192,45 +95,23 @@ public class DecorateCompanyCommentBean implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.id);
-        dest.writeString(this.company_id);
-        dest.writeString(this.store_id);
-        dest.writeString(this.goods_id);
-        dest.writeString(this.order_id);
-        dest.writeString(this.order_item_id);
-        dest.writeString(this.project_id);
-        dest.writeString(this.member_id);
-        dest.writeString(this.evaluate_type);
+        dest.writeString(this.avatarUrl);
+        dest.writeString(this.content);
+        dest.writeString(this.time);
         dest.writeString(this.goods_score);
         dest.writeString(this.service_score);
-        dest.writeString(this.content);
-        dest.writeString(this.reply);
-        dest.writeString(this.time);
-        dest.writeString(this.recommend);
-        dest.writeString(this._num);
-        dest.writeString(this.evaluate_type_name);
-        dest.writeString(this.time_str);
+        dest.writeString(this.nickname);
         dest.writeString(this.count);
     }
 
     protected DecorateCompanyCommentBean(Parcel in) {
         this.id = in.readString();
-        this.company_id = in.readString();
-        this.store_id = in.readString();
-        this.goods_id = in.readString();
-        this.order_id = in.readString();
-        this.order_item_id = in.readString();
-        this.project_id = in.readString();
-        this.member_id = in.readString();
-        this.evaluate_type = in.readString();
+        this.avatarUrl = in.readString();
+        this.content = in.readString();
+        this.time = in.readString();
         this.goods_score = in.readString();
         this.service_score = in.readString();
-        this.content = in.readString();
-        this.reply = in.readString();
-        this.time = in.readString();
-        this.recommend = in.readString();
-        this._num = in.readString();
-        this.evaluate_type_name = in.readString();
-        this.time_str = in.readString();
+        this.nickname = in.readString();
         this.count = in.readString();
     }
 
