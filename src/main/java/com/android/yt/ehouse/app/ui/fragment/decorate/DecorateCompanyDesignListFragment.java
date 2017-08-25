@@ -36,7 +36,7 @@ public class DecorateCompanyDesignListFragment extends BaseRecycleViewFragment<D
     }
 
     protected void fillDataFromNet() {
-        mGetDataFromNetPresenter.getData(0x0, RequestParamsHelper.REQUESTMOD_HOUSE.getDesignList(getArguments().getString(DecorateCompanyInfoFragment.ORG_ID, ""), ""));
+        mGetDataFromNetPresenter.getData(0x0, RequestParamsHelper.RequestMod_HOUSE.getDesignList(getArguments().getString(DecorateCompanyInfoFragment.ORG_ID, ""), ""));
     }
 
     @Override

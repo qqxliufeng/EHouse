@@ -4,9 +4,7 @@ import android.widget.RatingBar;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.data.bean.DecorateCompanyCommentBean;
-import com.android.yt.ehouse.app.ui.view.RoundedDrawable;
 import com.android.yt.ehouse.app.ui.view.RoundedNoNetImageView;
-import com.android.yt.ehouse.app.utils.Constants;
 import com.android.yt.ehouse.app.utils.GlideManager;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -41,7 +39,7 @@ public class DecorateCompanyCommentListAdapter extends BaseQuickAdapter<Decorate
         rb_service_score.setRating(serviceScoreFloat);
 
         RoundedNoNetImageView iv_face = helper.getView(R.id.id_iv_fragment_decorate_comment_user_face);
+        GlideManager.loadCircleImage(this.mContext, item.getAvatarUrl(), iv_face);
         iv_face.setOval(true);
-        GlideManager.loadImage(this.mContext, item.getAvatarUrl(), iv_face);
     }
 }

@@ -71,15 +71,13 @@ public class DecorateCompanyInfoNoteFragment extends LroidBaseFragment {
         SpannableString spannableString = new SpannableString("全部" + (TextUtils.isEmpty(count) ? "0" : count) + "篇");
         spannableString.setSpan(new ForegroundColorSpan(ContextCompat.getColor(mContext, R.color.main_color)), 2, 2 + count.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         tv_count.setText(spannableString);
-        String content = decorateCompanyNoteBean.getDecorateCompanyNoteInfoBean().getContent();
+        String content = decorateCompanyNoteBean.getContent();
         tv_content.setText(TextUtils.isEmpty(content) ? "暂无" : content);
-        String area = decorateCompanyNoteBean.getArea();
-        String styleStr = decorateCompanyNoteBean.getDecoration_style_str();
-        tv_style.setText((TextUtils.isEmpty(area) ? "暂无" : area) + "/" + (TextUtils.isEmpty(styleStr) ? "暂无" : styleStr));
-        String tag = decorateCompanyNoteBean.getTag();
+        tv_style.setText((TextUtils.isEmpty(decorateCompanyNoteBean.getStr()) ? "暂无" : decorateCompanyNoteBean.getStr()));
+        String tag = decorateCompanyNoteBean.getSclassname();
         tv_tag.setText(TextUtils.isEmpty(tag) ? "暂无" : tag);
-        String nickname = decorateCompanyNoteBean.getDecorateCompanyNoteUserInfoBean().getNickname();
+        String nickname = decorateCompanyNoteBean.getNickname();
         tv_user_name.setText(TextUtils.isEmpty(nickname) ? "暂无" : nickname);
-        GlideManager.loadImage(this, decorateCompanyNoteBean.getDecorateCompanyNoteUserInfoBean().getAvatar_file(), iv_face);
+        GlideManager.loadImage(this, decorateCompanyNoteBean.getAvatarUrl(), iv_face);
     }
 }

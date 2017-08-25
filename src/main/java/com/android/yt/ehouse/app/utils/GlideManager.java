@@ -49,7 +49,7 @@ public class GlideManager {
 
     public static void loadImage(Context context, String url, ImageView iv) {
         //原生 API
-        Glide.with(context).load(TextUtils.isEmpty(url) ? Constants.DEFAULT_IMAGE_URL : url).crossFade().placeholder(R.drawable.shape_default_image).error(R.drawable.shape_default_image).into(iv);
+        Glide.with(context).load(TextUtils.isEmpty(url) ? Constants.DEFAULT_IMAGE_URL : url).placeholder(R.drawable.shape_default_image).error(R.drawable.shape_default_image).into(iv);
     }
 
     public static void loadGifImage(Context context, String url, ImageView iv) {

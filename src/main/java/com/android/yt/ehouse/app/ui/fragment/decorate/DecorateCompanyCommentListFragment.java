@@ -5,9 +5,7 @@ import android.view.View;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.data.bean.DecorateCompanyCommentBean;
-import com.android.yt.ehouse.app.data.bean.DecorateCompanyDesignBean;
 import com.android.yt.ehouse.app.ui.adapter.DecorateCompanyCommentListAdapter;
-import com.android.yt.ehouse.app.ui.adapter.DecorateCompanyDesignListAdapter;
 import com.android.yt.ehouse.app.ui.fragment.base.BaseRecycleViewFragment;
 import com.android.yt.ehouse.app.utils.RequestParamsHelper;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -45,7 +43,7 @@ public class DecorateCompanyCommentListFragment extends BaseRecycleViewFragment<
     }
 
     protected void fillDataFromNet() {
-        mGetDataFromNetPresenter.getData(0x0, RequestParamsHelper.REQUESTMOD_HOUSE.getEvaluateList(getArguments().getString(DecorateCompanyInfoFragment.ORG_ID, ""), ""));
+        mGetDataFromNetPresenter.getData(0x0, RequestParamsHelper.RequestMod_HOUSE.getEvaluateList(getArguments().getString(DecorateCompanyInfoFragment.ORG_ID, ""), ""));
     }
 
     @Override

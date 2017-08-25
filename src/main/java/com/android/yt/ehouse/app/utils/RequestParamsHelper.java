@@ -154,7 +154,7 @@ public class RequestParamsHelper {
         }
     }
 
-    public static final class REQUESTMOD_HOUSE {
+    public static final class RequestMod_HOUSE {
 
         static final String MOD_NAME = "house";
 
@@ -164,6 +164,14 @@ public class RequestParamsHelper {
             HashMap<String, Object> requestParams = getRequestParams(MOD_NAME, GET_DIARY_LIST);
             requestParams.put("recommend", TextUtils.isEmpty(recommend) ? "" : recommend);
             requestParams.put("org_id", TextUtils.isEmpty(org_id) ? "" : org_id);
+            return requestParams;
+        }
+
+        static final String GEN_DESIGN_DETAIL = "diaryDetail";
+
+        public static HashMap<String, Object> getDiaryDetail(String id) {
+            HashMap<String, Object> requestParams = getRequestParams(MOD_NAME, GEN_DESIGN_DETAIL);
+            requestParams.put("id", TextUtils.isEmpty(id) ? "" : id);
             return requestParams;
         }
 

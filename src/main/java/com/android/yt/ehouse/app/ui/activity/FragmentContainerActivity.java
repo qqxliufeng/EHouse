@@ -265,6 +265,9 @@ public class FragmentContainerActivity extends BaseActivity {
             case DECORATE_COMPANY_NOTE_LIST_FRAGMENT_FLAG:
                 fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateCompanyNoteListFragment.newInstance(getIntent().getBundleExtra(EXTRA_FLAG)));
                 break;
+            case DECORATE_COMPANY_COMMENT_LIST_FRAGMENT_FLAG:
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateCompanyCommentListFragment.newInstance(getIntent().getBundleExtra(EXTRA_FLAG)));
+                break;
         }
         fragmentTransaction.commitAllowingStateLoss();
     }

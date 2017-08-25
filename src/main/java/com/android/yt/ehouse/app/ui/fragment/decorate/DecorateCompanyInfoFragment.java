@@ -120,10 +120,6 @@ public class DecorateCompanyInfoFragment extends LroidBaseNetFragment {
         Map<String, Object> noteResult = (Map<String, Object>) mapResult.get("diary");
         if (noteResult != null && !noteResult.isEmpty()) {
             DecorateCompanyNoteBean decorateCompanyNoteBean = MethodUtils.jsonToBean(EncodeUtils.jsonEncode(noteResult), DecorateCompanyNoteBean.class);
-            DecorateCompanyNoteBean.DecorateCompanyNoteUserInfoBean decorateCompanyNoteUserInfoBean = MethodUtils.jsonToBean(EncodeUtils.jsonEncode((Map<String, Object>) noteResult.get("user")), DecorateCompanyNoteBean.DecorateCompanyNoteUserInfoBean.class);
-            DecorateCompanyNoteBean.DecorateCompanyNoteInfoBean decorateCompanyNoteInfoBean = MethodUtils.jsonToBean(EncodeUtils.jsonEncode((Map<String, Object>) noteResult.get("info")), DecorateCompanyNoteBean.DecorateCompanyNoteInfoBean.class);
-            decorateCompanyNoteBean.setDecorateCompanyNoteInfoBean(decorateCompanyNoteInfoBean);
-            decorateCompanyNoteBean.setDecorateCompanyNoteUserInfoBean(decorateCompanyNoteUserInfoBean);
             decorateCompanyInfoNoteFragment.refresh(decorateCompanyNoteBean);
         }
     }
