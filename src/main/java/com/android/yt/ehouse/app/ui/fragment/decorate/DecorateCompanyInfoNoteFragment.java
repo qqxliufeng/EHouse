@@ -13,6 +13,7 @@ import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.data.bean.DecorateCompanyNoteBean;
 import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseFragment;
+import com.android.yt.ehouse.app.ui.fragment.note.NoteInfoFragment;
 import com.android.yt.ehouse.app.ui.view.RoundedNoNetImageView;
 import com.android.yt.ehouse.app.utils.GlideManager;
 
@@ -47,6 +48,9 @@ public class DecorateCompanyInfoNoteFragment extends LroidBaseFragment {
     RoundedNoNetImageView iv_face;
 
 
+    private String noteId;
+
+
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_decorate_company_info_note_layout;
@@ -66,7 +70,17 @@ public class DecorateCompanyInfoNoteFragment extends LroidBaseFragment {
         FragmentContainerActivity.startFragmentsActivity(mContext, "业主日记", FragmentContainerActivity.DECORATE_COMPANY_NOTE_LIST_FRAGMENT_FLAG, getArguments());
     }
 
+    @OnClick(R.id.id_ll_fragment_decorate_company_info_note_container)
+    public void onContainerClick(){
+        if (noteId != null) {
+            Bundle bundle = new Bundle();
+            bundle.putString(NoteInfoFragment.ORG_ID,noteId);
+            FragmentContainerActivity.startFragmentsActivity(mContext, "日记详情", FragmentContainerActivity.NOTE_DECORATE_INFO_FLAG, bundle);
+        }
+    }
+
     public void refresh(DecorateCompanyNoteBean decorateCompanyNoteBean) {
+        noteId = decorateCompanyNoteBean.getId();
         String count = decorateCompanyNoteBean.getCount();
         SpannableString spannableString = new SpannableString("全部" + (TextUtils.isEmpty(count) ? "0" : count) + "篇");
         spannableString.setSpan(new ForegroundColorSpan(ContextCompat.getColor(mContext, R.color.main_color)), 2, 2 + count.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);

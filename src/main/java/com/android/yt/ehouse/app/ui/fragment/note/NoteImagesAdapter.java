@@ -1,9 +1,10 @@
 package com.android.yt.ehouse.app.ui.fragment.note;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.yt.ehouse.app.R;
@@ -23,7 +24,7 @@ public class NoteImagesAdapter extends StatelessSection {
     private List<String> list;
 
     public NoteImagesAdapter(String title, List<String> list) {
-        super(new SectionParameters.Builder(R.layout.test_image_layout)
+        super(new SectionParameters.Builder(R.layout.adapter_note_item_image_layout)
                 .headerResourceId(R.layout.test_header_layout)
                 .build());
         this.title = title;
@@ -42,6 +43,12 @@ public class NoteImagesAdapter extends StatelessSection {
 
     @Override
     public void onBindItemViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) ((ItemViewHolder) viewHolder).imageView.getLayoutParams();
+        if (i % 3 == 0) {
+            layoutParams.leftMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,20.0f,((ItemViewHolder) viewHolder).imageView.getResources().getDisplayMetrics());
+        }else {
+            layoutParams.leftMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,15.0f,((ItemViewHolder) viewHolder).imageView.getResources().getDisplayMetrics());
+        }
 //        if (i % 2 == 1){
 //            ((ItemViewHolder)viewHolder).viewLine.setVisibility(View.GONE);
 //        }else {

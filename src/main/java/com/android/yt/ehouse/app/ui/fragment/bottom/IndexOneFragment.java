@@ -1,7 +1,9 @@
 package com.android.yt.ehouse.app.ui.fragment.bottom;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.widget.NestedScrollView;
+import android.util.Log;
 import android.view.View;
 
 import com.android.yt.ehouse.app.R;
@@ -15,6 +17,7 @@ import com.android.yt.ehouse.app.ui.fragment.index.DecorateNoteFragment;
 import com.android.yt.ehouse.app.ui.fragment.index.DecorateResultFragment;
 import com.android.yt.ehouse.app.ui.fragment.index.DecorateStrategyFragment;
 import com.android.yt.ehouse.app.ui.fragment.index.MallSpecialFragment;
+import com.android.yt.ehouse.app.utils.RequestParamsHelper;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -73,7 +76,15 @@ public class IndexOneFragment extends LroidBaseNetFragment {
 
 
     @Override
-    protected void setComponent() {
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        mGetDataFromNetPresenter.getData(0x0, RequestParamsHelper.RequestMod_COMMON.getCommonIndex());
+    }
+
+    @Override
+    public <T> void onRequestSuccess(int requestID, T result) {
+        super.onRequestSuccess(requestID, result);
+        Log.e("TAG",result.toString());
     }
 
     @OnClick({R.id.id_tv_fragment_bottom_one_jiancai,

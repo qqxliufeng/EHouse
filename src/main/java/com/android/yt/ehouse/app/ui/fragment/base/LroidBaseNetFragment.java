@@ -19,7 +19,7 @@ public abstract class LroidBaseNetFragment extends LroidBaseFragment {
 
 
     @Override
-    protected void setComponent() {
+    protected final void setComponent() {
         DaggerPresenterComponent.builder().appComponent(EHouseApplication.getAppComponent()).presenterModules(new PresenterModules()).build().inject(this);
         mGetDataFromNetPresenter.setFragment(this);
     }

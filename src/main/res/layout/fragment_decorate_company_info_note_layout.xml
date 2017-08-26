@@ -45,6 +45,7 @@
         android:background="#eee" />
 
     <LinearLayout
+        android:id="@+id/id_ll_fragment_decorate_company_info_note_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

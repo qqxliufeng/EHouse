@@ -227,7 +227,7 @@ public class FragmentContainerActivity extends BaseActivity {
                 fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, NoteDecorateTagFragment.newInstance());
                 break;
             case NOTE_DECORATE_INFO_FLAG:
-                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, NoteInfoFragment.newInstance());
+                fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, NoteInfoFragment.newInstance(getIntent().getBundleExtra(EXTRA_FLAG)));
                 break;
             case BBS_CREATE_FLAG:
                 fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, BBSCreateFragment.newInstance());

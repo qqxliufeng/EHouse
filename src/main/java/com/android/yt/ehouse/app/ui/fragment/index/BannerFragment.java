@@ -62,7 +62,7 @@ public class BannerFragment extends LroidBaseNetFragment implements ViewPager.On
         imageUrlList.add("http://pic.58pic.com/58pic/16/01/58/80F58PICvCc_1024.jpg");
         imageUrlList.add("http://pic36.nipic.com/20131203/13879008_225108687000_2.jpg");
         initIndicator();
-//        mGetDataFromNetPresenter.getData(0x0, RequestParamsHelper.RequestMod_AD.getIndexADList());
+        mGetDataFromNetPresenter.getData(0x0, RequestParamsHelper.RequestMod_AD.getIndexADList());
     }
 
     private void initIndicator() {

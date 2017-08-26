@@ -363,6 +363,19 @@ public class RequestParamsHelper {
 
     }
 
+    public static final class RequestMod_COMMON {
+
+        static final String MOD_NAME = "common";
+
+        static final String GET_COMMON_INDEX = "commonIndex";
+
+        public static HashMap<String, Object> getCommonIndex() {
+            return getRequestParams(MOD_NAME, GET_COMMON_INDEX);
+        }
+
+    }
+
+
     private static HashMap<String, Object> getRequestParams(String modName, String actName) {
         HashMap<String, Object> params = new HashMap<>();
         params.put(Constants.MOD, modName);

@@ -103,7 +103,7 @@ public class NoteInfoAdapter extends StatelessSection {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            return View.inflate(EHouseApplication.getInstance(), R.layout.test_image_layout, null);
+            return View.inflate(EHouseApplication.getInstance(), R.layout.adapter_note_item_image_layout, null);
         }
     }
 
