@@ -41,8 +41,8 @@ public class DecorateCompanyInfoDetailFragment extends LroidBaseFragment {
         switch (view.getId()) {
             case R.id.id_tv_fragment_decorate_company_info_jiajie:
                 Bundle introduceBundle = new Bundle();
-                introduceBundle.putString(DecorateCompanyInfoForIntroduceAndBusinessFragment.ORG_ID_FLAG, getArguments().getString(DecorateCompanyInfoFragment.ORG_ID, ""));
-                introduceBundle.putString(DecorateCompanyInfoForIntroduceAndBusinessFragment.ACTION_FLAG, "intro");
+                introduceBundle.putString(KtDecorateCompanyInfoForIntroduceAndBusinessFragment.Companion.getORG_ID_FLAG(), getArguments().getString(DecorateCompanyInfoFragment.ORG_ID, ""));
+                introduceBundle.putString(KtDecorateCompanyInfoForIntroduceAndBusinessFragment.Companion.getACTION_FLAG(), "intro");
                 KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext, "公司简介", KtFragmentContainerActivity.Companion.getDECORATE_COMPANY_INFO_INTRODUCE_AND_BUSINESS_FLAG(), introduceBundle);
                 break;
             case R.id.id_tv_fragment_decorate_company_info_zhengshu:
@@ -52,8 +52,8 @@ public class DecorateCompanyInfoDetailFragment extends LroidBaseFragment {
                 break;
             case R.id.id_tv_fragment_decorate_company_info_gongshang:
                 Bundle businessBundle = new Bundle();
-                businessBundle.putString(DecorateCompanyInfoForIntroduceAndBusinessFragment.ORG_ID_FLAG, getArguments().getString(DecorateCompanyInfoFragment.ORG_ID, ""));
-                businessBundle.putString(DecorateCompanyInfoForIntroduceAndBusinessFragment.ACTION_FLAG, "business");
+                businessBundle.putString(KtDecorateCompanyInfoForIntroduceAndBusinessFragment.Companion.getORG_ID_FLAG(), getArguments().getString(DecorateCompanyInfoFragment.ORG_ID, ""));
+                businessBundle.putString(KtDecorateCompanyInfoForIntroduceAndBusinessFragment.Companion.getACTION_FLAG(), "business");
                 KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext, "工商注册信息", KtFragmentContainerActivity.Companion.getDECORATE_COMPANY_INFO_INTRODUCE_AND_BUSINESS_FLAG(), businessBundle);
                 break;
         }

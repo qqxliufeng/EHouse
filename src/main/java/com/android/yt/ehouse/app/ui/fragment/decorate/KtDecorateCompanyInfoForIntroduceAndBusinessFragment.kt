@@ -18,6 +18,9 @@ import java.util.*
 class KtDecorateCompanyInfoForIntroduceAndBusinessFragment : KtBaseRecycleViewFragment<DecorateCompanyDetailBean>() {
 
     companion object {
+        val ORG_ID_FLAG = "org_id_flag"
+        val ACTION_FLAG = "action_flag"
+
         fun newInstance(args: Bundle): KtDecorateCompanyInfoForIntroduceAndBusinessFragment {
             val ktDecorateCompanyInfoForIntroduceAndBusinessFragment = KtDecorateCompanyInfoForIntroduceAndBusinessFragment()
             ktDecorateCompanyInfoForIntroduceAndBusinessFragment.arguments = args
@@ -25,8 +28,6 @@ class KtDecorateCompanyInfoForIntroduceAndBusinessFragment : KtBaseRecycleViewFr
         }
     }
 
-    val ORG_ID_FLAG = "org_id_flag"
-    val ACTION_FLAG = "action_flag"
     private var action: String? = null
 
     override fun createAdapter(): BaseQuickAdapter<DecorateCompanyDetailBean, BaseViewHolder> {
