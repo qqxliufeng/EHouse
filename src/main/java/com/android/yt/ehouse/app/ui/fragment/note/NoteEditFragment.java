@@ -6,7 +6,7 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 
 import com.android.yt.ehouse.app.R;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseNetFragment;
 import com.android.yt.ehouse.app.utils.MethodUtils;
 
@@ -44,7 +44,7 @@ public class NoteEditFragment extends LroidBaseNetFragment {
             case R.id.id_rl_fragment_note_edit_select_step:
                 break;
             case R.id.id_rl_fragment_note_edit_select_tag:
-                FragmentContainerActivity.startFragmentsActivity(mContext,"选择标签",FragmentContainerActivity.NOTE_DECORATE_TAG_FLAG);
+                KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext,"选择标签",KtFragmentContainerActivity.Companion.getNOTE_DECORATE_TAG_FLAG());
                 break;
             case R.id.id_rl_fragment_note_edit_select_time:
                 DatePickerDialog datePickerDialog = new DatePickerDialog(mContext, new DatePickerDialog.OnDateSetListener() {

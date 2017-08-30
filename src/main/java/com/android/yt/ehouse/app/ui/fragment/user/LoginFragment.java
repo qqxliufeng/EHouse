@@ -10,7 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.android.yt.ehouse.app.R;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseFragment;
 
 import butterknife.BindView;
@@ -40,7 +40,7 @@ public class LoginFragment extends LroidBaseFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ((FragmentContainerActivity) mContext).setAppBarVisibility(View.GONE);
+        ((KtFragmentContainerActivity) mContext).setAppBarVisibility(View.GONE);
     }
 
     @Override

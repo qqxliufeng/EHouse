@@ -11,7 +11,7 @@ import android.widget.CompoundButton;
 import android.widget.RadioButton;
 
 import com.android.yt.ehouse.app.R;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseFragment;
 
 import butterknife.BindView;
@@ -43,7 +43,7 @@ public class NoteDecorateListFragment extends LroidBaseFragment implements ViewP
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ((FragmentContainerActivity) mContext).setAppBarVisibility(View.GONE);
+        ((KtFragmentContainerActivity) mContext).setAppBarVisibility(View.GONE);
     }
 
     @Override
@@ -69,7 +69,7 @@ public class NoteDecorateListFragment extends LroidBaseFragment implements ViewP
     public void onClick(View view){
         switch (view.getId()){
             case R.id.id_fab_fragment_note_decorate_edit:
-                FragmentContainerActivity.startFragmentsActivity(mContext,"写日记",FragmentContainerActivity.NOTE_EDIT_FlAG);
+                KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext,"写日记",KtFragmentContainerActivity.Companion.getNOTE_EDIT_FlAG());
                 break;
         }
     }

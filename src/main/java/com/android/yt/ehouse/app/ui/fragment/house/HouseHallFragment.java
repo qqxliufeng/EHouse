@@ -4,7 +4,8 @@ import android.view.View;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.data.bean.HouseItemBean;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity.Companion;
 import com.android.yt.ehouse.app.ui.adapter.HouseFragmentItemAdapter;
 import com.android.yt.ehouse.app.ui.fragment.base.BaseRecycleViewFragment;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -40,13 +41,13 @@ public class HouseHallFragment extends BaseRecycleViewFragment<HouseItemBean> {
         headerView.findViewById(R.id.id_tv_more).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentContainerActivity.startFragmentsActivity(mContext,"",FragmentContainerActivity.HOUSE_LIST_FLAG);
+                KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext,"",KtFragmentContainerActivity.Companion.getHOUSE_LIST_FLAG());
             }
         });
         headerView.findViewById(R.id.id_rl_fragment_adapter_house_hall_top_sell).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentContainerActivity.startFragmentsActivity(mContext,"我要卖房",FragmentContainerActivity.HOUSE_SELL_FLAG);
+                KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext,"我要卖房",KtFragmentContainerActivity.Companion.getHOUSE_SELL_FLAG());
             }
         });
         mBaseQuickAdapter.addHeaderView(headerView);
@@ -61,6 +62,6 @@ public class HouseHallFragment extends BaseRecycleViewFragment<HouseItemBean> {
 
     @Override
     public void onMySimpleItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-        FragmentContainerActivity.startFragmentsActivity(mContext,"",FragmentContainerActivity.HOUSE_INFO_FLAG);
+        KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext,"",KtFragmentContainerActivity.Companion.getHOUSE_INFO_FLAG());
     }
 }

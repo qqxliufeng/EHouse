@@ -13,6 +13,6 @@ public class Constants {
     public static String charset = "UTF-8";
     public static String apiKey = "iv0ssEnU35zhHA662lA5";
 
-    public static final String BASE_IP = "http://192.168.1.100";
+    public static final String BASE_IP = "http://192.168.1.111";
     public static final String BASE_IP_POSTFIX = "pgelmobapi.php";
 }

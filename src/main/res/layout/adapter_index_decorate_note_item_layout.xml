@@ -5,6 +5,7 @@
     android:orientation="vertical">
 
     <ImageView
+        android:id="@+id/id_iv_adapter_index_decorate_note_img"
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:scaleType="centerCrop"
@@ -20,6 +21,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/id_tv_adapter_index_decorate_note_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
@@ -34,6 +36,7 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/id_tv_adapter_index_decorate_note_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="简约现代/2室1厅1厨1卫/85m/4~5万"
@@ -41,18 +44,19 @@
                 android:textSize="@dimen/sp_12" />
 
             <TextView
+                android:id="@+id/id_tv_adapter_index_decorate_note_see_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/dp_10"
-                android:layout_toLeftOf="@+id/id_tv_adapter_decorate_note_item_collect_num"
-                android:drawableLeft="@drawable/img_liulan1_icon"
+                android:layout_toLeftOf="@+id/id_tv_adapter_index_decorate_note_collection_count"
+                android:drawableLeft="@drawable/img_liulan_icon"
                 android:drawablePadding="@dimen/dp_10"
                 android:text="2536"
                 android:textColor="#fff"
                 android:textSize="@dimen/sp_12" />
 
             <TextView
-                android:id="@+id/id_tv_adapter_decorate_note_item_collect_num"
+                android:id="@+id/id_tv_adapter_index_decorate_note_collection_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

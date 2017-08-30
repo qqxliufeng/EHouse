@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.data.bean.DecorateCompanyBean;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.adapter.IndexDecorateFragmentAdapter;
 import com.android.yt.ehouse.app.ui.fragment.base.BaseFragmentWithSearchConditionFragment;
 import com.android.yt.ehouse.app.utils.RequestParamsHelper;
@@ -122,6 +122,6 @@ public class DecorateCompanyListFragment extends BaseFragmentWithSearchCondition
     public void onMySimpleItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Bundle bundle = new Bundle();
         bundle.putString(DecorateCompanyInfoFragment.ORG_ID, mArrayList.get(i).getOrg_id());
-        FragmentContainerActivity.startFragmentsActivity(mContext, "公司详情", FragmentContainerActivity.DECORATE_COMPANY_INFO_FLAG,bundle);
+        KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext, "公司详情", KtFragmentContainerActivity.Companion.getDECORATE_COMPANY_INFO_FLAG(),bundle);
     }
 }

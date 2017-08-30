@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.data.bean.DecorateCompanyNoteBean;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseFragment;
 import com.android.yt.ehouse.app.ui.fragment.note.NoteInfoFragment;
 import com.android.yt.ehouse.app.ui.view.RoundedNoNetImageView;
@@ -67,7 +67,7 @@ public class DecorateCompanyInfoNoteFragment extends LroidBaseFragment {
 
     @OnClick(R.id.id_tv_fragment_decorate_company_info_note_all_count)
     public void onClick() {
-        FragmentContainerActivity.startFragmentsActivity(mContext, "业主日记", FragmentContainerActivity.DECORATE_COMPANY_NOTE_LIST_FRAGMENT_FLAG, getArguments());
+        KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext, "业主日记", KtFragmentContainerActivity.Companion.getDECORATE_COMPANY_NOTE_LIST_FRAGMENT_FLAG(), getArguments());
     }
 
     @OnClick(R.id.id_ll_fragment_decorate_company_info_note_container)
@@ -75,7 +75,7 @@ public class DecorateCompanyInfoNoteFragment extends LroidBaseFragment {
         if (noteId != null) {
             Bundle bundle = new Bundle();
             bundle.putString(NoteInfoFragment.ORG_ID,noteId);
-            FragmentContainerActivity.startFragmentsActivity(mContext, "日记详情", FragmentContainerActivity.NOTE_DECORATE_INFO_FLAG, bundle);
+            KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext, "日记详情", KtFragmentContainerActivity.Companion.getNOTE_DECORATE_INFO_FLAG(), bundle);
         }
     }
 

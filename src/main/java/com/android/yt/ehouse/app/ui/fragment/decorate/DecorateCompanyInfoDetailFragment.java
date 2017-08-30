@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.android.yt.ehouse.app.R;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseFragment;
 
 import butterknife.OnClick;
@@ -43,18 +43,18 @@ public class DecorateCompanyInfoDetailFragment extends LroidBaseFragment {
                 Bundle introduceBundle = new Bundle();
                 introduceBundle.putString(DecorateCompanyInfoForIntroduceAndBusinessFragment.ORG_ID_FLAG, getArguments().getString(DecorateCompanyInfoFragment.ORG_ID, ""));
                 introduceBundle.putString(DecorateCompanyInfoForIntroduceAndBusinessFragment.ACTION_FLAG, "intro");
-                FragmentContainerActivity.startFragmentsActivity(mContext, "公司简介", FragmentContainerActivity.DECORATE_COMPANY_INFO_INTRODUCE_AND_BUSINESS_FLAG, introduceBundle);
+                KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext, "公司简介", KtFragmentContainerActivity.Companion.getDECORATE_COMPANY_INFO_INTRODUCE_AND_BUSINESS_FLAG(), introduceBundle);
                 break;
             case R.id.id_tv_fragment_decorate_company_info_zhengshu:
                 Bundle certificateBundle = new Bundle();
                 certificateBundle.putString(DecorateCompanyInfoFragment.ORG_ID, getArguments().getString(DecorateCompanyInfoFragment.ORG_ID, ""));
-                FragmentContainerActivity.startFragmentsActivity(mContext, "企业证书", FragmentContainerActivity.DECORATE_COMPANY_INFO_CERTIFICATE_FLAG, certificateBundle);
+                KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext, "企业证书", KtFragmentContainerActivity.Companion.getDECORATE_COMPANY_INFO_CERTIFICATE_FLAG(), certificateBundle);
                 break;
             case R.id.id_tv_fragment_decorate_company_info_gongshang:
                 Bundle businessBundle = new Bundle();
                 businessBundle.putString(DecorateCompanyInfoForIntroduceAndBusinessFragment.ORG_ID_FLAG, getArguments().getString(DecorateCompanyInfoFragment.ORG_ID, ""));
                 businessBundle.putString(DecorateCompanyInfoForIntroduceAndBusinessFragment.ACTION_FLAG, "business");
-                FragmentContainerActivity.startFragmentsActivity(mContext, "工商注册信息", FragmentContainerActivity.DECORATE_COMPANY_INFO_INTRODUCE_AND_BUSINESS_FLAG, businessBundle);
+                KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext, "工商注册信息", KtFragmentContainerActivity.Companion.getDECORATE_COMPANY_INFO_INTRODUCE_AND_BUSINESS_FLAG(), businessBundle);
                 break;
         }
     }

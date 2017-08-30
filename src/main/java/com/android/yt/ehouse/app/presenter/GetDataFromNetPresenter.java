@@ -2,7 +2,7 @@ package com.android.yt.ehouse.app.presenter;
 
 import android.text.TextUtils;
 
-import com.android.yt.ehouse.app.data.bean.UserInfo;
+import com.android.yt.ehouse.app.data.bean.KtUserInfo;
 import com.android.yt.ehouse.app.utils.MethodUtils;
 
 import java.util.HashMap;
@@ -30,7 +30,7 @@ public class GetDataFromNetPresenter extends BasePresenter {
         if (params == null) {
             throw new NullPointerException("params must not be null");
         }
-        observable = apiService.getData(MethodUtils.getEncodeRequestParams(params), "android", UserInfo.getInstance().getSession_id());
+        observable = apiService.getData(MethodUtils.getEncodeRequestParams(params), "android", KtUserInfo.INSTANCE.getSession_id());
         observable.map(new Func1<String, Map<String, Object>>() {
             @Override
             public Map<String, Object> call(String s) {

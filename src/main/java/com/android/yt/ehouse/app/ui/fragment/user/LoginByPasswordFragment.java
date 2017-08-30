@@ -9,8 +9,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.yt.ehouse.app.R;
-import com.android.yt.ehouse.app.data.bean.UserInfo;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.data.bean.KtUserInfo;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseNetFragment;
 import com.android.yt.ehouse.app.utils.RequestParamsHelper;
 
@@ -51,7 +51,7 @@ public class LoginByPasswordFragment extends LroidBaseNetFragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.id_tv_fragment_login_register:
-                FragmentContainerActivity.startFragmentsActivity(mContext, "", FragmentContainerActivity.REGISTER_FLAG);
+                KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext, "", KtFragmentContainerActivity.Companion.getREGISTER_FLAG());
                 break;
         }
     }
@@ -104,18 +104,18 @@ public class LoginByPasswordFragment extends LroidBaseNetFragment {
     public <T> void onRequestSuccess(int requestID, T result) {
         if (result != null) {
             HashMap<String, Object> map = (HashMap<String, Object>) result;
-            UserInfo.getInstance().setNickname((String) map.get("nickname"));
-            UserInfo.getInstance().setMobile((String) map.get("mobile"));
-            UserInfo.getInstance().setLoginToken((String) map.get("loginToken"));
-            UserInfo.getInstance().setSession_id((String) map.get("session_id"));
-            UserInfo.getInstance().setEmail((String) map.get("email"));
-            UserInfo.getInstance().setPredeposit((String) map.get("predeposit"));
-            UserInfo.getInstance().setUid((String) map.get("uid"));
-            UserInfo.getInstance().setBonusPoint((String) map.get("bonusPoint"));
-            UserInfo.getInstance().setIsDefPwd((String) map.get("isDefPwd"));
-            UserInfo.getInstance().setSex((String) map.get("sex"));
-            UserInfo.getInstance().setAvatarUrl((String) map.get("avatarUrl"));
-            UserInfo.getInstance().setRealname((String) map.get("realname"));
+            KtUserInfo.INSTANCE.setNickname((String) map.get("nickname"));
+            KtUserInfo.INSTANCE.setMobile((String) map.get("mobile"));
+            KtUserInfo.INSTANCE.setLoginToken((String) map.get("loginToken"));
+            KtUserInfo.INSTANCE.setSession_id((String) map.get("session_id"));
+            KtUserInfo.INSTANCE.setEmail((String) map.get("email"));
+            KtUserInfo.INSTANCE.setPredeposit((String) map.get("predeposit"));
+            KtUserInfo.INSTANCE.setUid((String) map.get("uid"));
+            KtUserInfo.INSTANCE.setBonusPoint((String) map.get("bonusPoint"));
+            KtUserInfo.INSTANCE.setDefPwd((String) map.get("isDefPwd"));
+            KtUserInfo.INSTANCE.setSex((String) map.get("sex"));
+            KtUserInfo.INSTANCE.setAvatarUrl((String) map.get("avatarUrl"));
+            KtUserInfo.INSTANCE.setRealname((String) map.get("realname"));
             Toast.makeText(mContext, "登录成功", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(mContext, "登录失败", Toast.LENGTH_SHORT).show();

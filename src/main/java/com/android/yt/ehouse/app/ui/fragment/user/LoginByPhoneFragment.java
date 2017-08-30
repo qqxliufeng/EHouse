@@ -3,7 +3,7 @@ package com.android.yt.ehouse.app.ui.fragment.user;
 import android.view.View;
 
 import com.android.yt.ehouse.app.R;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseNetFragment;
 
 import butterknife.OnClick;
@@ -31,7 +31,7 @@ public class LoginByPhoneFragment extends LroidBaseNetFragment{
     public void onClick(View view){
         switch (view.getId()){
             case R.id.id_tv_fragment_login_register:
-                FragmentContainerActivity.startFragmentsActivity(mContext,"",FragmentContainerActivity.REGISTER_FLAG);
+                KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext,"",KtFragmentContainerActivity.Companion.getREGISTER_FLAG());
                 break;
         }
     }

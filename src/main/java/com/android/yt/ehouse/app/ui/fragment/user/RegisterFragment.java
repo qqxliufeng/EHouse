@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.android.yt.ehouse.app.R;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseNetFragment;
 
 import butterknife.OnClick;
@@ -23,7 +23,7 @@ public class RegisterFragment extends LroidBaseNetFragment{
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ((FragmentContainerActivity)mContext).setAppBarVisibility(View.GONE);
+        ((KtFragmentContainerActivity)mContext).setAppBarVisibility(View.GONE);
     }
 
     @Override

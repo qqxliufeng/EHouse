@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.data.bean.DecorateCompanyCommentBean;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseFragment;
 import com.android.yt.ehouse.app.ui.view.RoundedNoNetImageView;
 import com.android.yt.ehouse.app.utils.GlideManager;
@@ -70,7 +70,7 @@ public class DecorateCompanyInfoCommentFragment extends LroidBaseFragment {
 
     @OnClick(R.id.id_tv_fragment_decorate_company_info_comment_all_count)
     public void onClick() {
-        FragmentContainerActivity.startFragmentsActivity(mContext, "业主评价", FragmentContainerActivity.DECORATE_COMPANY_COMMENT_LIST_FRAGMENT_FLAG, getArguments());
+        KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext, "业主评价", KtFragmentContainerActivity.Companion.getDECORATE_COMPANY_COMMENT_LIST_FRAGMENT_FLAG(), getArguments());
     }
 
     public void refresh(DecorateCompanyCommentBean decorateCompanyCommentBean) {

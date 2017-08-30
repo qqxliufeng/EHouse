@@ -7,7 +7,8 @@ import android.widget.BaseAdapter;
 import android.widget.Toast;
 
 import com.android.yt.ehouse.app.R;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity.Companion;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseNetFragment;
 import com.android.yt.ehouse.app.ui.view.MyGridView;
 
@@ -42,13 +43,13 @@ public class DecorateCaseFragment extends LroidBaseNetFragment implements Adapte
 
     @OnClick(R.id.id_tv_fragment_decorate_case_more)
     public void onClick(){
-        FragmentContainerActivity.startFragmentsActivity(mContext,"",FragmentContainerActivity.DECORATE_CASE_LIST_FLAG);
+        KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext,"",KtFragmentContainerActivity.Companion.getDECORATE_CASE_LIST_FLAG());
     }
 
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        FragmentContainerActivity.startFragmentsActivity(mContext,"案例详情",FragmentContainerActivity.DECORATE_CASE_INFO_FLAG);
+        KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext,"案例详情",KtFragmentContainerActivity.Companion.getDECORATE_CASE_INFO_FLAG());
     }
 
 

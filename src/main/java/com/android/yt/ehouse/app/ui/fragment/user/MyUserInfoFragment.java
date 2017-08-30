@@ -6,10 +6,9 @@ import android.view.MenuInflater;
 import android.view.View;
 
 import com.android.yt.ehouse.app.R;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseNetFragment;
 
-import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -44,7 +43,7 @@ public class MyUserInfoFragment extends LroidBaseNetFragment{
 
     @OnClick(R.id.id_rl_fragment_my_user_info_address)
     public void onAddress(){
-        FragmentContainerActivity.startFragmentsActivity(mContext,"收货地址",FragmentContainerActivity.MY_INFO_ADDRESS_FLAG);
+        KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext,"收货地址",KtFragmentContainerActivity.Companion.getMY_INFO_ADDRESS_FLAG());
     }
 
 

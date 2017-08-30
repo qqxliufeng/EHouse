@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.data.bean.HouseItemBean;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.adapter.HouseFragmentItemAdapter;
 import com.android.yt.ehouse.app.ui.fragment.base.BaseFragmentWithSearchConditionFragment;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -86,7 +86,7 @@ public class HouseListFragment extends BaseFragmentWithSearchConditionFragment<H
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ((FragmentContainerActivity) mContext).setAppBarVisibility(View.GONE);
+        ((KtFragmentContainerActivity) mContext).setAppBarVisibility(View.GONE);
     }
 
     @Override

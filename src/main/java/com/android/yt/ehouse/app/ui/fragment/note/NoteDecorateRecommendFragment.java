@@ -3,7 +3,7 @@ package com.android.yt.ehouse.app.ui.fragment.note;
 import android.view.View;
 
 import com.android.yt.ehouse.app.R;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.adapter.NoteDecorateRecommendAdapter;
 import com.android.yt.ehouse.app.ui.fragment.base.BaseRecycleViewFragment;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -40,6 +40,6 @@ public class NoteDecorateRecommendFragment  extends BaseRecycleViewFragment<Stri
 
     @Override
     public void onMySimpleItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-        FragmentContainerActivity.startFragmentsActivity(mContext,"日记详情",FragmentContainerActivity.NOTE_DECORATE_INFO_FLAG);
+        KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext,"日记详情",KtFragmentContainerActivity.Companion.getNOTE_DECORATE_INFO_FLAG());
     }
 }

@@ -3,7 +3,8 @@ package com.android.yt.ehouse.app.ui.fragment.bottom;
 import android.view.View;
 
 import com.android.yt.ehouse.app.R;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity.Companion;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseFragment;
 import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateBottomVideoFragment;
 
@@ -35,17 +36,17 @@ public class IndexThreeFragment extends LroidBaseFragment {
 
     @OnClick(R.id.id_tv_fragment_bottom_three_more_video)
     public void onMoreVideo(){
-        FragmentContainerActivity.startFragmentsActivity(mContext,"视频学装修",FragmentContainerActivity.DECORATE_VIDEO_LIST_FLAG);
+        KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext,"视频学装修",KtFragmentContainerActivity.Companion.getDECORATE_VIDEO_LIST_FLAG());
     }
 
     @OnClick(R.id.id_rl_fragment_bottom_three_feng_shui)
     public void onFengShui(){
-        FragmentContainerActivity.startFragmentsActivity(mContext,"",FragmentContainerActivity.DECORATE_FENG_SHUI_FLAG);
+        KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext,"",KtFragmentContainerActivity.Companion.getDECORATE_FENG_SHUI_FLAG());
     }
 
     @OnClick(R.id.id_rl_fragment_bottom_three_xcsc)
     public void onXCSC(){
-        FragmentContainerActivity.startFragmentsActivity(mContext,"",FragmentContainerActivity.DECORATE_SELECT_MATERIAL_ARTICLE_FLAG);
+        KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext,"",KtFragmentContainerActivity.Companion.getDECORATE_SELECT_MATERIAL_ARTICLE_FLAG());
     }
 
 }

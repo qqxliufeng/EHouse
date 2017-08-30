@@ -9,7 +9,8 @@ import android.widget.CheckedTextView;
 import android.widget.LinearLayout;
 
 import com.android.yt.ehouse.app.R;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity.Companion;
 import com.android.yt.ehouse.app.ui.adapter.MaterialsListItemAdapter;
 import com.android.yt.ehouse.app.ui.fragment.base.BaseRecycleViewFragment;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -38,7 +39,7 @@ public class MaterialsListFragment extends BaseRecycleViewFragment<String> {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ((FragmentContainerActivity) mContext).setAppBarVisibility(View.GONE);
+        ((KtFragmentContainerActivity) mContext).setAppBarVisibility(View.GONE);
     }
 
     @Override
@@ -92,6 +93,6 @@ public class MaterialsListFragment extends BaseRecycleViewFragment<String> {
 
     @Override
     public void onMySimpleItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-        FragmentContainerActivity.startFragmentsActivity(mContext,"",FragmentContainerActivity.MATERIALS_INFO_FLAG);
+        KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext,"", KtFragmentContainerActivity.Companion.getMATERIALS_INFO_FLAG());
     }
 }

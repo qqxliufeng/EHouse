@@ -5,10 +5,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.android.yt.ehouse.app.R;
-import com.android.yt.ehouse.app.data.bean.DecorateCompanyBean;
 import com.android.yt.ehouse.app.data.bean.DecorateCompanyDetailBean;
-import com.android.yt.ehouse.app.ui.adapter.DecorateCompanyInfoForIntroduceAndBusinessAdapter;
-import com.android.yt.ehouse.app.ui.fragment.base.BaseRecycleViewFragment;
+import com.android.yt.ehouse.app.ui.adapter.KtDecorateCompanyInfoForIntroduceAndBusinessAdapter;
+import com.android.yt.ehouse.app.ui.fragment.base.KtBaseRecycleViewFragment;
 import com.android.yt.ehouse.app.utils.RequestParamsHelper;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -24,7 +23,7 @@ import java.util.Set;
  * Created by feng on 2017/8/23.
  */
 
-public class DecorateCompanyInfoForIntroduceAndBusinessFragment extends BaseRecycleViewFragment<DecorateCompanyDetailBean> {
+public class DecorateCompanyInfoForIntroduceAndBusinessFragment extends KtBaseRecycleViewFragment<DecorateCompanyDetailBean> {
 
     public static final String ORG_ID_FLAG = "org_id_flag";
     public static final String ACTION_FLAG = "action_flag";
@@ -38,9 +37,9 @@ public class DecorateCompanyInfoForIntroduceAndBusinessFragment extends BaseRecy
     }
 
     @Override
-    protected BaseQuickAdapter<DecorateCompanyDetailBean, BaseViewHolder> createAdapter() {
+    public BaseQuickAdapter<DecorateCompanyDetailBean, BaseViewHolder> createAdapter() {
         action = getArguments().getString(ACTION_FLAG);
-        return new DecorateCompanyInfoForIntroduceAndBusinessAdapter(R.layout.adapter_decorate_company_info_for_introduce_and_business_item_layout, mArrayList, "business".equals(action) ? 0 : 1);
+        return new KtDecorateCompanyInfoForIntroduceAndBusinessAdapter("business".equals(action) ? 0 : 1, R.layout.adapter_decorate_company_info_for_introduce_and_business_item_layout, getMArrayList());
     }
 
     @Override
@@ -58,8 +57,8 @@ public class DecorateCompanyInfoForIntroduceAndBusinessFragment extends BaseRecy
     @Override
     public void onRequestEnd(int requestID) {
         super.onRequestEnd(requestID);
-        mSwipeRefreshLayout.setEnabled(false);
-        mBaseQuickAdapter.setEnableLoadMore(false);
+        getMSwipeRefreshLayout().setEnabled(false);
+        getMBaseQuickAdapter().setEnableLoadMore(false);
     }
 
     protected void fillDataFromNet() {
@@ -103,7 +102,7 @@ public class DecorateCompanyInfoForIntroduceAndBusinessFragment extends BaseRecy
             });
 
             if (!"business".equals(action)) {
-                List<DecorateCompanyDetailBean> subList = tempList.subList(0,8);
+                List<DecorateCompanyDetailBean> subList = tempList.subList(0, 8);
                 View headerView = View.inflate(mContext, R.layout.layout_decorate_company_introduce_header_layout, null);
                 View footView = View.inflate(mContext, R.layout.layout_decorate_company_introduce_foot_layout, null);
                 TextView tv_header_content = (TextView) headerView.findViewById(R.id.id_tv_adapter_decorate_company_introduce_header_content);
@@ -116,14 +115,13 @@ public class DecorateCompanyInfoForIntroduceAndBusinessFragment extends BaseRecy
                 tv_foot_fwzc.setText((String) resultMap.get("public_deco"));
                 tv_foot_cjjw.setText((String) resultMap.get("accept_price"));
                 tv_foot_zcfg.setText((String) resultMap.get("focus_style"));
-                mBaseQuickAdapter.addHeaderView(headerView);
-                mBaseQuickAdapter.addFooterView(footView);
-                mArrayList.addAll(subList);
-            }else {
-                mArrayList.addAll(tempList);
+                getMBaseQuickAdapter().addHeaderView(headerView);
+                getMBaseQuickAdapter().addFooterView(footView);
+                getMArrayList().addAll(subList);
+            } else {
+                getMArrayList().addAll(tempList);
             }
-
-            mBaseQuickAdapter.notifyDataSetChanged();
+            getMBaseQuickAdapter().notifyDataSetChanged();
         }
     }
 }

@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.data.bean.DecorateCompanyDesignBean;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseFragment;
 import com.android.yt.ehouse.app.utils.GlideManager;
 
@@ -58,7 +58,7 @@ public class DecorateCompanyInfoDesignFragment extends LroidBaseFragment {
 
     @OnClick(R.id.id_tv_fragment_decorate_company_info_design_all_design)
     public void onClick(){
-        FragmentContainerActivity.startFragmentsActivity(mContext,"全部设计方案",FragmentContainerActivity.DECORATE_COMPANY_DESIGN_LIST_FRAGMENT_FLAG,getArguments());
+        KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext,"全部设计方案",KtFragmentContainerActivity.Companion.getDECORATE_COMPANY_DESIGN_LIST_FRAGMENT_FLAG(),getArguments());
     }
 
     public void refresh(DecorateCompanyDesignBean decorateCompanyDesignBean) {

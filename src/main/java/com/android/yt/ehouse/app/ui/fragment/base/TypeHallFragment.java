@@ -21,7 +21,7 @@ import com.android.yt.ehouse.app.application.EHouseApplication;
 import com.android.yt.ehouse.app.data.bean.BaseTypeItemBean;
 import com.android.yt.ehouse.app.data.bean.TypeHallSellBean;
 import com.android.yt.ehouse.app.interfaces.OnClassifySearchContentClickListener;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.adapter.TypeHallFragmentAdapter;
 import com.android.yt.ehouse.app.ui.adapter.TypeHallHotSellAdapter;
 import com.android.yt.ehouse.app.ui.fragment.index.BannerFragment;
@@ -33,7 +33,6 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -73,7 +72,7 @@ public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ((FragmentContainerActivity) mContext).setAppBarVisibility(View.GONE);
+        ((KtFragmentContainerActivity) mContext).setAppBarVisibility(View.GONE);
     }
 
     public static TypeHallFragment newInstance(Bundle args) {
@@ -203,12 +202,12 @@ public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> 
                 break;
             case R.id.id_et_fragment_type_hall_search_content:
                 EHouseApplication.getInstance().setOnClassifySearchContentClickListener(this);
-                FragmentContainerActivity.startFragmentsActivity(mContext, "", FragmentContainerActivity.CLASSIFY_SEARCH_FLAG);
+                KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext, "", KtFragmentContainerActivity.Companion.getCLASSIFY_SEARCH_FLAG());
                 break;
             case R.id.id_tv_fragment_type_hall_header_one_flag:
                 switch (currentFlag){
                     case MATERIALS_FLAG:
-                        FragmentContainerActivity.startFragmentsActivity(mContext,"",FragmentContainerActivity.MATERIALS_LIST_FLAG);
+                        KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext,"",KtFragmentContainerActivity.Companion.getMATERIALS_LIST_FLAG());
                         break;
                 }
                 break;

@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.data.bean.DecorateCompanyNoteBean;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.adapter.NoteDecorateAllAdapter;
 import com.android.yt.ehouse.app.ui.fragment.base.BaseRecycleViewFragment;
 import com.android.yt.ehouse.app.ui.fragment.note.NoteInfoFragment;
@@ -57,7 +57,7 @@ public class DecorateCompanyNoteListFragment extends BaseRecycleViewFragment<Dec
     public void onMySimpleItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Bundle bundle = new Bundle();
         bundle.putString(NoteInfoFragment.ORG_ID,mArrayList.get(i).getId());
-        FragmentContainerActivity.startFragmentsActivity(mContext,"日记详情",FragmentContainerActivity.NOTE_DECORATE_INFO_FLAG,bundle);
+        KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext,"日记详情",KtFragmentContainerActivity.Companion.getNOTE_DECORATE_INFO_FLAG(),bundle);
     }
 
     @Override

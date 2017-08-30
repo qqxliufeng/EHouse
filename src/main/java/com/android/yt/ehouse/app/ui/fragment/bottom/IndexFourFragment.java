@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.android.yt.ehouse.app.R;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.adapter.BBSListItemAdapter;
 import com.android.yt.ehouse.app.ui.fragment.base.BaseFragmentWithSearchConditionFragment;
 import com.android.yt.ehouse.app.ui.fragment.decorate.DecorateSearchConditionAreaFragment;
@@ -105,6 +105,6 @@ public class IndexFourFragment extends BaseFragmentWithSearchConditionFragment<S
 
     @OnClick(R.id.id_iv_fragment_bottom_four_crate)
     public void onCreate(){
-        FragmentContainerActivity.startFragmentsActivity(mContext,"发帖",FragmentContainerActivity.BBS_CREATE_FLAG);
+        KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext,"发帖",KtFragmentContainerActivity.Companion.getBBS_CREATE_FLAG());
     }
 }

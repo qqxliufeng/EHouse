@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.yt.ehouse.app.R;
-import com.android.yt.ehouse.app.ui.activity.FragmentContainerActivity;
+import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseNetFragment;
 import com.android.yt.ehouse.app.ui.fragment.base.WebContentFragment;
 import com.android.yt.ehouse.app.ui.fragment.index.BannerFragment;
@@ -58,7 +58,7 @@ public class MaterialsInfoFragment extends LroidBaseNetFragment implements AppBa
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ((FragmentContainerActivity) mContext).setAppBarVisibility(View.GONE);
+        ((KtFragmentContainerActivity) mContext).setAppBarVisibility(View.GONE);
     }
 
     @Override
@@ -70,7 +70,7 @@ public class MaterialsInfoFragment extends LroidBaseNetFragment implements AppBa
     protected void initView(View view) {
         al_container.addOnOffsetChangedListener(this);
         Bundle bundle = new Bundle();
-        bundle.putString(WebContentFragment.WEB_LOAD_URL, "http://www.baidu.com");
+        bundle.putString(WebContentFragment.Companion.getWEB_LOAD_URL(), "http://www.baidu.com");
 //        webContentFragment = WebContentFragment.newInstance(bundle);
         bannerFragment = BannerFragment.newInstance();
         getChildFragmentManager()
