@@ -44,25 +44,25 @@ public class GlideManager {
 
     public static void loadImage(Context context, String url, int errorImg, int emptyImg, ImageView iv) {
         //原生 API  
-        Glide.with(context).load(TextUtils.isEmpty(url) ? Constants.DEFAULT_IMAGE_URL : url).placeholder(emptyImg).error(errorImg).into(iv);
+        Glide.with(context).load(TextUtils.isEmpty(url) ? Constants.INSTANCE.DEFAULT_IMAGE_URL : url).placeholder(emptyImg).error(errorImg).into(iv);
     }
 
     public static void loadImage(Context context, String url, ImageView iv) {
         //原生 API
-        Glide.with(context).load(TextUtils.isEmpty(url) ? Constants.DEFAULT_IMAGE_URL : url).placeholder(R.drawable.shape_default_image).error(R.drawable.shape_default_image).into(iv);
+        Glide.with(context).load(TextUtils.isEmpty(url) ? Constants.INSTANCE.DEFAULT_IMAGE_URL : url).placeholder(R.drawable.shape_default_image).error(R.drawable.shape_default_image).into(iv);
     }
 
     public static void loadGifImage(Context context, String url, ImageView iv) {
-        Glide.with(context).load(TextUtils.isEmpty(url) ? Constants.DEFAULT_IMAGE_URL : url).asGif().diskCacheStrategy(DiskCacheStrategy.SOURCE).placeholder(R.drawable.shape_default_image).error(R.drawable.shape_default_image).into(iv);
+        Glide.with(context).load(TextUtils.isEmpty(url) ? Constants.INSTANCE.DEFAULT_IMAGE_URL : url).asGif().diskCacheStrategy(DiskCacheStrategy.SOURCE).placeholder(R.drawable.shape_default_image).error(R.drawable.shape_default_image).into(iv);
     }
 
 
     public static void loadCircleImage(Context context, String url, ImageView iv) {
-        Glide.with(context).load(TextUtils.isEmpty(url) ? Constants.DEFAULT_IMAGE_URL : url).placeholder(R.drawable.shape_default_image).error(R.drawable.shape_default_image).transform(new GlideCircleTransform(context)).into(iv);
+        Glide.with(context).load(TextUtils.isEmpty(url) ? Constants.INSTANCE.DEFAULT_IMAGE_URL : url).placeholder(R.drawable.shape_default_image).error(R.drawable.shape_default_image).transform(new GlideCircleTransform(context)).into(iv);
     }
 
     public static void loadRoundCornerImage(Context context, String url, ImageView iv) {
-        Glide.with(context).load(TextUtils.isEmpty(url) ? Constants.DEFAULT_IMAGE_URL : url).placeholder(R.drawable.shape_default_image).error(R.drawable.shape_default_image).transform(new GlideRoundTransform(context, 10)).into(iv);
+        Glide.with(context).load(TextUtils.isEmpty(url) ? Constants.INSTANCE.DEFAULT_IMAGE_URL : url).placeholder(R.drawable.shape_default_image).error(R.drawable.shape_default_image).transform(new GlideRoundTransform(context, 10)).into(iv);
     }
 
 

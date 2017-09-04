@@ -25,16 +25,16 @@ public class MethodUtils {
 
     public static ApiParams getEncodeRequestParams(Map<String,Object> unCodeParam){
         ApiParams params = new ApiParams();
-        params.with("data", URLEncoder.encode(EncodeUtils.getCode(unCodeParam, Constants.encodeType)));
+        params.with("data", URLEncoder.encode(EncodeUtils.getCode(unCodeParam, Constants.INSTANCE.encodeType)));
         return params;
     }
 
     public static String getCodeRequestParams(Map<String,Object> unCodeParam){
-        return EncodeUtils.getCode(unCodeParam, Constants.encodeType);
+        return EncodeUtils.getCode(unCodeParam, Constants.INSTANCE.encodeType);
     }
 
     public static String getCodeRequestParams(String content){
-        return EncodeUtils.getCode(content, Constants.encodeType);
+        return EncodeUtils.getCode(content, Constants.INSTANCE.encodeType);
     }
 
     /**
@@ -44,13 +44,13 @@ public class MethodUtils {
      * @throws Exception
      */
     public static Map<String,Object> getDataContent(String content) throws Exception{
-        Map<String, Object> result = EncodeUtils.getData(content, Constants.encodeType);
+        Map<String, Object> result = EncodeUtils.getData(content, Constants.INSTANCE.encodeType);
         return (Map<String, Object>) result.get("__data");
     }
 
 
     public static Map<String,Object> getContent(String content) throws Exception{
-        return EncodeUtils.getData(content, Constants.encodeType);
+        return EncodeUtils.getData(content, Constants.INSTANCE.encodeType);
     }
 
     public static Map<String,Object> getListContent(String content) throws Exception{

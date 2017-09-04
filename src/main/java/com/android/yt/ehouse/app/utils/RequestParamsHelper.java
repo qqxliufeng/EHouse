@@ -378,8 +378,8 @@ public class RequestParamsHelper {
 
     private static HashMap<String, Object> getRequestParams(String modName, String actName) {
         HashMap<String, Object> params = new HashMap<>();
-        params.put(Constants.MOD, modName);
-        params.put(Constants.ACT, actName);
+        params.put(Constants.INSTANCE.MOD, modName);
+        params.put(Constants.INSTANCE.ACT, actName);
         return params;
     }
 

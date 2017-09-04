@@ -62,13 +62,13 @@ class KtIndexActivity : BaseActivity(), TabLayout.OnTabSelectedListener {
             val itemTab = id_tl_activity_index_navigation.getTabAt(i)
             if (itemTab != null) {
                 val customBottomView = View.inflate(this, R.layout.layout_home_bottom_bar_item_layout, null)
-                itemTab!!.customView = customBottomView
+                itemTab.customView = customBottomView
                 val iv_bottom = customBottomView.findViewById(R.id.id_iv_home_bottom_bar_img) as ImageView
                 val tv_bottom = customBottomView.findViewById(R.id.id_tv_home_bottom_bar_title) as TextView
                 tv_bottom.text = INDEX_BOTTOM_TITLE[i]
                 iv_bottom.setImageResource(INDEX_BOTTOM_IMGS[i])
-                if (i == 0 && itemTab!!.customView != null) {
-                    itemTab!!.customView!!.isSelected = true
+                if (i == 0 && itemTab.customView != null) {
+                    itemTab.customView!!.isSelected = true
                     iv_bottom.setColorFilter(ContextCompat.getColor(this, R.color.main_color))
                 }
             }

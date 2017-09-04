@@ -1,7 +1,6 @@
 package com.android.yt.ehouse.app.component;
 
 
-import com.android.yt.ehouse.app.utils.Constants;
 
 import java.util.HashMap;
 
@@ -18,7 +17,7 @@ import rx.Observable;
 public interface ApiService {
 
     @FormUrlEncoded
-    @POST(Constants.BASE_IP_POSTFIX)
+    @POST("pgelmobapi.php")
     Observable<String> getData(@FieldMap HashMap<String, String> params, @Query("__CLIENT_TYPE__") String type, @Query("PHPSESSID") String session);
 
 

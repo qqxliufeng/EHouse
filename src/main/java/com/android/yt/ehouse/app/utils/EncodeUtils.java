@@ -20,7 +20,7 @@ import java.util.Set;
 public class EncodeUtils {
 
     public static String getCode(Map<String, Object> data, String encodeType) {
-        if (Constants.apiKey == null) {
+        if (Constants.INSTANCE.apiKey == null) {
             return null;
         }
         Map<String, Object> mapCode = encodeMap(data);
@@ -28,10 +28,10 @@ public class EncodeUtils {
         String dataCode = "";
         if (encodeType.equals("xor")) {
             try {
-                byte[] apiKey = Constants.apiKey.getBytes();
+                byte[] apiKey = Constants.INSTANCE.apiKey.getBytes();
                 byte[] dataBytes = dataJson.getBytes();
                 byte[] dataJsonByte = xorEnc(dataBytes, apiKey);
-                dataCode = new String(base64encode(dataJsonByte), Constants.charset);
+                dataCode = new String(base64encode(dataJsonByte), Constants.INSTANCE.charset);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -47,17 +47,17 @@ public class EncodeUtils {
     }
 
     public static String getCode(String data, String encodeType) {
-        if (Constants.apiKey == null) {
+        if (Constants.INSTANCE.apiKey == null) {
             return null;
         }
         String dataJson = base64encode(data);
         String dataCode = "";
         if (encodeType.equals("xor")) {
             try {
-                byte[] apiKey = Constants.apiKey.getBytes();
+                byte[] apiKey = Constants.INSTANCE.apiKey.getBytes();
                 byte[] dataBytes = dataJson.getBytes();
                 byte[] dataJsonByte = xorEnc(dataBytes, apiKey);
-                dataCode = new String(base64encode(dataJsonByte), Constants.charset);
+                dataCode = new String(base64encode(dataJsonByte), Constants.INSTANCE.charset);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -73,7 +73,7 @@ public class EncodeUtils {
     }
 
     public static Map<String, Object> getData(String code, String encodeType) {
-        if (Constants.apiKey == null) {
+        if (Constants.INSTANCE.apiKey == null) {
             return null;
         }
         code = code.replace("$", "\"");
@@ -94,10 +94,10 @@ public class EncodeUtils {
             String dataJson = "";
             if (encodeType.equals("xor")) {
                 try {
-                    byte[] apiKey = Constants.apiKey.getBytes();
+                    byte[] apiKey = Constants.INSTANCE.apiKey.getBytes();
                     byte[] dataCodeByte = dataCode.getBytes();
                     byte[] dataJsonByte = xorEnc(base64decode(dataCodeByte), apiKey);
-                    dataJson = new String(dataJsonByte, Constants.charset);
+                    dataJson = new String(dataJsonByte, Constants.INSTANCE.charset);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -222,7 +222,7 @@ public class EncodeUtils {
     }
 
     public static String getVerify(String dataCode) {
-        String apiKey = Constants.apiKey;
+        String apiKey = Constants.INSTANCE.apiKey;
         return md5(apiKey + dataCode);
     }
 
