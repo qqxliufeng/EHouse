@@ -20,9 +20,13 @@ import java.util.regex.Pattern;
  * Created by feng on 2017/7/7.
  */
 
+/**
+ * 此类是校验模型类的工具类，将模型类直接转化为要上传的Form表单，而且还可以校验模型类中各个字段的值情况，是否为空，字段值是不是合法的，如手机号，邮箱的校验
+ * @param <T> 泛型类
+ */
 public class FormBeanManager<T> {
 
-    public String phonePattern = "(13\\d|14[57]|15[^4,\\D]|17[13678]|18\\d)\\d{8}|170[0589]\\d{7}";
+    public static final String phonePattern = "(13\\d|14[57]|15[^4,\\D]|17[13678]|18\\d)\\d{8}|170[0589]\\d{7}";
 
     private T t;
     private final ArrayList<Field> descriptionFields;

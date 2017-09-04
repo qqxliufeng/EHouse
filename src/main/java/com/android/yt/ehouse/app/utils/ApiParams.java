@@ -4,8 +4,6 @@
 
 package com.android.yt.ehouse.app.utils;
 
-import android.util.Log;
-
 import java.util.HashMap;
 
 public class ApiParams extends HashMap<String, String> {
@@ -19,7 +17,6 @@ public class ApiParams extends HashMap<String, String> {
 
 	@Override
 	public String toString() {
-		Log.e("TAG","change string is --------->  "+super.toString().replace("{","").replace("}",""));
 		return super.toString().replace("{","").replace("}","");
 	}
 }

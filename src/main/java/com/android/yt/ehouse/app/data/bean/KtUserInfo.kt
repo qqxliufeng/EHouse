@@ -18,7 +18,7 @@ object KtUserInfo {
     var realname: String? = null
     var session_id: String? = null
 
-    fun clear() {
+    fun logout() {
         nickname = null
         uid = null
         sex = null
@@ -29,5 +29,4 @@ object KtUserInfo {
         defPwd = null
         loginToken = null
     }
-
 }
