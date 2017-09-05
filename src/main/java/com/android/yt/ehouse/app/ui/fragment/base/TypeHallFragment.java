@@ -202,7 +202,7 @@ public class TypeHallFragment extends BaseRecycleViewFragment<BaseTypeItemBean> 
                 break;
             case R.id.id_et_fragment_type_hall_search_content:
                 EHouseApplication.getInstance().setOnClassifySearchContentClickListener(this);
-                KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext, "", KtFragmentContainerActivity.Companion.getCLASSIFY_SEARCH_FLAG());
+                KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext, "", KtFragmentContainerActivity.getCLASSIFY_SEARCH_FLAG());
                 break;
             case R.id.id_tv_fragment_type_hall_header_one_flag:
                 switch (currentFlag){

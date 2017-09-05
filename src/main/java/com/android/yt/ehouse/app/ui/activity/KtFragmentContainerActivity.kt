@@ -38,7 +38,6 @@ import javax.inject.Inject
  */
 class KtFragmentContainerActivity : BaseActivity(){
 
-
     companion object {
         val TITLE_FLAG = "title_flag"
         val FRAGMENT_FLAG = "fragment_flag"
@@ -46,6 +45,7 @@ class KtFragmentContainerActivity : BaseActivity(){
 
 
         val WEB_CONTENT_CONTAINER_FLAG = 0x0
+        @JvmStatic
         val CLASSIFY_SEARCH_FLAG = 0x1
         val HOUSE_HALL_FLAG = 0x2
         val TYPE_HALL_FLAG = 0x3
