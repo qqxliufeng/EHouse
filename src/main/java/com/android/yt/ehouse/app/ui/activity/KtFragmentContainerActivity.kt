@@ -10,8 +10,6 @@ import android.support.v7.widget.Toolbar
 import android.util.Log
 import android.view.View
 import android.widget.FrameLayout
-import butterknife.BindView
-import butterknife.bindView
 import com.android.yt.ehouse.app.R
 import com.android.yt.ehouse.app.application.EHouseApplication
 import com.android.yt.ehouse.app.component.ApiService
@@ -31,6 +29,7 @@ import com.android.yt.ehouse.app.ui.fragment.note.*
 import com.android.yt.ehouse.app.ui.fragment.shoppingcar.ShoppingCarEmptyFragment
 import com.android.yt.ehouse.app.ui.fragment.shoppingcar.ShoppingCarFragment
 import com.android.yt.ehouse.app.ui.fragment.user.*
+import com.android.yt.ehouse.app.utils.bindView
 import javax.inject.Inject
 
 /**

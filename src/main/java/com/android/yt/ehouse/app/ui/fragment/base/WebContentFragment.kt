@@ -8,10 +8,10 @@ import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.ProgressBar
-import butterknife.bindView
 
 
 import com.android.yt.ehouse.app.R
+import com.android.yt.ehouse.app.utils.bindView
 
 
 /**

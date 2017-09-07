@@ -33,12 +33,12 @@
         android:src="@drawable/img_test_bg" />
 
     <TextView
+        android:id="@+id/id_tv_fragment_house_info_village_generalize_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_10"
         android:drawableLeft="@drawable/img_condition_address_1"
         android:drawablePadding="@dimen/dp_10"
-        android:text="苦苦aadaasdasda"
         android:textColor="#444"
         android:textSize="14sp" />
 
@@ -64,15 +64,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="售价"
+                android:text="总面积："
                 android:textColor="#777"
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/id_tv_fragment_house_info_village_generalize_area"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="119万"
                 android:textColor="#444"
                 android:textSize="16sp" />
 
@@ -93,15 +93,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="售价"
+                android:text="总户数："
                 android:textColor="#777"
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/id_tv_fragment_house_info_village_generalize_house_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="119万"
                 android:textColor="#444"
                 android:textSize="16sp" />
 
@@ -122,15 +122,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="售价"
+                android:text="容积率："
                 android:textColor="#777"
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/id_tv_fragment_house_info_village_generalize_rjl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="119万"
                 android:textColor="#444"
                 android:textSize="16sp" />
 
@@ -161,15 +161,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="售价"
+                android:text="停车位："
                 android:textColor="#777"
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/id_tv_fragment_house_info_village_generalize_car_park_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="119万"
                 android:textColor="#444"
                 android:textSize="16sp" />
 
@@ -190,15 +190,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="售价"
+                android:text="绿化率："
                 android:textColor="#777"
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/id_tv_fragment_house_info_village_generalize_lhl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="119万"
                 android:textColor="#444"
                 android:textSize="16sp" />
 
@@ -219,15 +219,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="售价"
+                android:text="物业费用："
                 android:textColor="#777"
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/id_tv_fragment_house_info_village_generalize_wyf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="119万"
                 android:textColor="#444"
                 android:textSize="16sp" />
 

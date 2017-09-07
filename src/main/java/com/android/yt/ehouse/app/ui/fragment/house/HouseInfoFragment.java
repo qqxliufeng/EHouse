@@ -69,7 +69,7 @@ public class HouseInfoFragment extends LroidBaseNetFragment implements AppBarLay
         iv_message.setColorFilter(Color.WHITE);
         bannerFragment = BannerFragment.newInstance();
         houseInfoHouseGeneralizeFragment = HouseInfoHouseGeneralizeFragment.Companion.newInstance();
-        houseInfoVillageGeneralizeFragment = HouseInfoVillageGeneralizeFragment.newInstance();
+        houseInfoVillageGeneralizeFragment = HouseInfoVillageGeneralizeFragment.Companion.newInstance();
         getChildFragmentManager()
                 .beginTransaction()
                 .replace(R.id.id_fl_fragment_index_banner_layout, bannerFragment)
@@ -123,7 +123,7 @@ public class HouseInfoFragment extends LroidBaseNetFragment implements AppBarLay
             HouseItemDetailInfoBean.HouseItemDetailInfoForCommunityBeanDescription descriptionBean = MethodUtils.jsonToBean(EncodeUtils.jsonEncode(descriptionMap), HouseItemDetailInfoBean.HouseItemDetailInfoForCommunityBeanDescription.class);
 
             houseInfoHouseGeneralizeFragment.onRefresh(houseInfo, descriptionBean);
-            houseInfoVillageGeneralizeFragment.onRefresh(houseInfo, communityBean, descriptionBean);
+            houseInfoVillageGeneralizeFragment.onRefresh(communityBean);
 
         }
     }

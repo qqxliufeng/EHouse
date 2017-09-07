@@ -12,8 +12,7 @@ import com.android.yt.ehouse.app.R
 import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseFragment
 
-import butterknife.BindView
-import butterknife.bindView
+import com.android.yt.ehouse.app.utils.bindView
 
 /**
  * Created by feng on 2017/7/26.

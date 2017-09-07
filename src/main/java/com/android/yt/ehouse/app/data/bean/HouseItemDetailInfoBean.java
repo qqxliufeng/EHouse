@@ -146,8 +146,17 @@ public class HouseItemDetailInfoBean {
         private String pos;
         private String plot_ratio;
         private String households_num;
-        private String owner_mobile;
         private String parking_space;
+        private String property_fee;
+        private String owner_mobile;
+
+        public String getProperty_fee() {
+            return property_fee;
+        }
+
+        public void setProperty_fee(String property_fee) {
+            this.property_fee = property_fee;
+        }
 
         public String getAddress() {
             return address;

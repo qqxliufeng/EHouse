@@ -46,51 +46,51 @@ public class GetDataFromNetPresenter extends BasePresenter {
             public Map<String, Object> call(Map<String, Object> stringObjectMap) {
                 HashMap<String,Object> _header = (HashMap<String, Object>) stringObjectMap.get(HEADER);
                 if (_header!=null && !_header.isEmpty()){
-                    HashMap<String,Object> firstMap = (HashMap<String, Object>) _header.get("0");
-                    if (firstMap!=null && !firstMap.isEmpty()){
-                        String name = (String) firstMap.get("name");
-                        if ("_Exception_".equals(name)){
-                            HashMap<String,Object> dataMap = (HashMap<String, Object>) stringObjectMap.get(DATA);
-                            String errorMsg = (String) dataMap.get("msg");
-                            if (TextUtils.isEmpty(errorMsg)){
-                                errorMsg = "暂无数据";
+                        HashMap<String,Object> firstMap = (HashMap<String, Object>) _header.get("0");
+                        if (firstMap!=null && !firstMap.isEmpty()){
+                            String name = (String) firstMap.get("name");
+                            if ("_Exception_".equals(name)){
+                                HashMap<String,Object> dataMap = (HashMap<String, Object>) stringObjectMap.get(DATA);
+                                String errorMsg = (String) dataMap.get("msg");
+                                if (TextUtils.isEmpty(errorMsg)){
+                                    errorMsg = "暂无数据";
+                                }
+                                throw new IllegalStateException(errorMsg);
+                            }else {
+                                return (Map<String, Object>) stringObjectMap.get(DATA);
                             }
-                            throw new IllegalStateException(errorMsg);
                         }else {
                             return (Map<String, Object>) stringObjectMap.get(DATA);
                         }
                     }else {
                         return (Map<String, Object>) stringObjectMap.get(DATA);
                     }
-                }else {
-                    return (Map<String, Object>) stringObjectMap.get(DATA);
                 }
+    }).subscribeOn(Schedulers.io()).doOnSubscribe(new Action0() {
+        @Override
+        public void call() {
+            if (checkNullPresent()) {
+                getPresentListener().onRequestStart(requestId);
             }
-        }).subscribeOn(Schedulers.io()).doOnSubscribe(new Action0() {
-                    @Override
-                    public void call() {
-                        if (checkNullPresent()) {
-                            getPresentListener().onRequestStart(requestId);
-                        }
-                    }
-                })
-                .subscribeOn(AndroidSchedulers.mainThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<Map<String, Object>>() {
-            @Override
-            public void onCompleted() {
-                if (checkNullPresent()) {
-                    getPresentListener().onRequestEnd(requestId);
-                }
+        }
+    })
+            .subscribeOn(AndroidSchedulers.mainThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(new Subscriber<Map<String, Object>>() {
+        @Override
+        public void onCompleted() {
+            if (checkNullPresent()) {
+                getPresentListener().onRequestEnd(requestId);
             }
+        }
 
-            @Override
-            public void onError(Throwable e) {
-                if (checkNullPresent()) {
-                    getPresentListener().onRequestEnd(requestId);
-                    getPresentListener().onRequestFail(requestId, e);
-                }
+        @Override
+        public void onError(Throwable e) {
+            if (checkNullPresent()) {
+                getPresentListener().onRequestEnd(requestId);
+                getPresentListener().onRequestFail(requestId, e);
             }
+        }
 
             @Override
             public void onNext(Map<String, Object> s) {

@@ -12,10 +12,10 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.TextView
-import butterknife.bindView
 import com.android.yt.ehouse.app.R
 import com.android.yt.ehouse.app.utils.EncodeUtils
 import com.android.yt.ehouse.app.utils.MethodUtils
+import com.android.yt.ehouse.app.utils.bindView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.chad.library.adapter.base.listener.OnItemClickListener

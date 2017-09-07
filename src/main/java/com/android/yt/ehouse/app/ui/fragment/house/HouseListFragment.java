@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.android.yt.ehouse.app.R;
 import com.android.yt.ehouse.app.data.bean.HouseItemBean;
@@ -21,6 +20,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+
 
 /**
  * Created by feng on 2017/6/30.
@@ -158,7 +158,10 @@ public class HouseListFragment extends BaseFragmentWithSearchConditionFragment<H
 
     @Override
     public void onMySimpleItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-        Toast.makeText(mContext, i + "", Toast.LENGTH_SHORT).show();
+        Bundle bundle = new Bundle();
+        HouseItemBean houseItemBean = mArrayList.get(i);
+        bundle.putString(HouseHallFragment.HOUSE_ID_FLAG, houseItemBean.getId());
+        KtFragmentContainerActivity.Companion.startFragmentsActivity(mContext,houseItemBean.getTitle(),KtFragmentContainerActivity.Companion.getHOUSE_INFO_FLAG(),bundle);
     }
 
 

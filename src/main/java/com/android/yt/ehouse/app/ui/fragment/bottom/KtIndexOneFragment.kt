@@ -5,7 +5,6 @@ import android.support.v4.widget.NestedScrollView
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
-import butterknife.bindView
 import com.android.yt.ehouse.app.R
 import com.android.yt.ehouse.app.data.bean.*
 import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity
@@ -16,6 +15,7 @@ import com.android.yt.ehouse.app.ui.fragment.index.*
 import com.android.yt.ehouse.app.utils.EncodeUtils
 import com.android.yt.ehouse.app.utils.MethodUtils
 import com.android.yt.ehouse.app.utils.RequestParamsHelper
+import com.android.yt.ehouse.app.utils.bindView
 import java.util.*
 
 /**
