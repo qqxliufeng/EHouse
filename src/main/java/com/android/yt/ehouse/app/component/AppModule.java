@@ -45,7 +45,7 @@ public class AppModule {
         builder.client(okHttpClient);
         builder.addConverterFactory(ScalarsConverterFactory.create());
         builder.addCallAdapterFactory(RxJavaCallAdapterFactory.create());
-        builder.baseUrl("http://192.168.1.111");
+        builder.baseUrl("http://192.168.1.113");
         return builder.build();
     }
 

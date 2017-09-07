@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.android.yt.ehouse.app.R;
+import com.android.yt.ehouse.app.data.bean.HouseItemDetailInfoBean;
 import com.android.yt.ehouse.app.ui.fragment.base.LroidBaseFragment;
 
 /**
@@ -32,6 +33,10 @@ public class HouseInfoVillageGeneralizeFragment extends LroidBaseFragment{
 
     @Override
     protected void setComponent() {
+
+    }
+
+    public void onRefresh(HouseItemDetailInfoBean.HouseItemDetailInfoForInfoBean houseInfo, HouseItemDetailInfoBean.HouseItemDetailInfoForCommunityBean communityBean, HouseItemDetailInfoBean.HouseItemDetailInfoForCommunityBeanDescription descriptionBean) {
 
     }
 }

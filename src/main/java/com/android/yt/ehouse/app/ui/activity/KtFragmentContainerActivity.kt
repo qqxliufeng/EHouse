@@ -152,7 +152,7 @@ class KtFragmentContainerActivity : BaseActivity(){
             }
             MATERIALS_LIST_FLAG -> fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, MaterialsListFragment.newInstance())
             MATERIALS_INFO_FLAG -> fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, MaterialsInfoFragment.newInstance())
-            HOUSE_INFO_FLAG -> fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, HouseInfoFragment.newInstance())
+            HOUSE_INFO_FLAG -> fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, HouseInfoFragment.newInstance(intent.getBundleExtra(EXTRA_FLAG)))
             DECORATE_COMPANY_INFO_FLAG -> fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, DecorateCompanyInfoFragment.newInstance(intent.getBundleExtra(EXTRA_FLAG)))
             SHOPPING_CAR_FLAG -> fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, ShoppingCarFragment.newInstance())
             SHOPPING_CAR_EMPTY_FLAG -> fragmentTransaction.replace(R.id.id_fl_activity_fragment_container, ShoppingCarEmptyFragment.newInstance())

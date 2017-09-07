@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.fragment_bottom_five_layout.*
 class IndexFiveFragment : LroidBaseNetFragment() {
 
     companion object {
+        @JvmStatic
         fun newInstance(): IndexFiveFragment {
             return IndexFiveFragment()
         }

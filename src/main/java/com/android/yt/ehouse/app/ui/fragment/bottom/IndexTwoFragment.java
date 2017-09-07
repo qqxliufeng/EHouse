@@ -57,19 +57,19 @@ public class IndexTwoFragment extends LroidBaseFragment implements ViewPager.OnP
     }
 
     @OnCheckedChanged({R.id.id_rb_fragment_bottom_two_general_image,
-    R.id.id_rb_fragment_bottom_two_map_image,
-    R.id.id_rb_fragment_bottom_two_single_image})
-    public void onChecked(CompoundButton button,boolean isChecked){
+            R.id.id_rb_fragment_bottom_two_map_image,
+            R.id.id_rb_fragment_bottom_two_single_image})
+    public void onChecked(CompoundButton button, boolean isChecked) {
         if (isChecked) {
             switch (button.getId()) {
                 case R.id.id_rb_fragment_bottom_two_general_image:
-                    vp_container.setCurrentItem(0,true);
+                    vp_container.setCurrentItem(0, true);
                     break;
                 case R.id.id_rb_fragment_bottom_two_map_image:
-                    vp_container.setCurrentItem(1,true);
+                    vp_container.setCurrentItem(1, true);
                     break;
                 case R.id.id_rb_fragment_bottom_two_single_image:
-                    vp_container.setCurrentItem(2,true);
+                    vp_container.setCurrentItem(2, true);
                     break;
             }
         }
@@ -83,7 +83,7 @@ public class IndexTwoFragment extends LroidBaseFragment implements ViewPager.OnP
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
         if (positionOffset != 0) {
-            view_sliding.setTranslationX(slidingViewWidth * positionOffset + slidingViewWidth * position);
+            view_sliding.setTranslationX(slidingViewWidth * (positionOffset + position));
         }
     }
 

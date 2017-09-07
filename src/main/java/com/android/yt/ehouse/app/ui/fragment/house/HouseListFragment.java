@@ -12,10 +12,12 @@ import com.android.yt.ehouse.app.data.bean.HouseItemBean;
 import com.android.yt.ehouse.app.ui.activity.KtFragmentContainerActivity;
 import com.android.yt.ehouse.app.ui.adapter.HouseFragmentItemAdapter;
 import com.android.yt.ehouse.app.ui.fragment.base.BaseFragmentWithSearchConditionFragment;
+import com.android.yt.ehouse.app.utils.RequestParamsHelper;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -92,10 +94,28 @@ public class HouseListFragment extends BaseFragmentWithSearchConditionFragment<H
     @Override
     public void initView(View view) {
         super.initView(view);
-        mBaseQuickAdapter.addData(0, new HouseItemBean());
-        mBaseQuickAdapter.addData(1, new HouseItemBean());
-        mBaseQuickAdapter.addData(2, new HouseItemBean());
-        mBaseQuickAdapter.addData(3, new HouseItemBean());
+    }
+
+    @Override
+    public void onRefresh() {
+        super.onRefresh();
+        fillDataFromNet();
+    }
+
+    @Override
+    protected void fillDataFromNet() {
+        super.fillDataFromNet();
+        mGetDataFromNetPresenter.getData(0x0, RequestParamsHelper.RequestMod_HOUSE.getHouseList(current_page));
+    }
+
+    @Override
+    public <T> void onRequestSuccess(int requestID, T result) {
+        super.onRequestSuccess(requestID, result);
+        try {
+            defaultDealData((Map<String, Object>) result,HouseItemBean.class,false);
+        } catch (Exception e) {
+            showEmptyView();
+        }
     }
 
     @OnClick({R.id.id_ll_house_list_condition_area,

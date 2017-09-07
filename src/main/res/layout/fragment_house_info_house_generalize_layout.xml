@@ -12,9 +12,9 @@
         android:padding="@dimen/dp_10">
 
         <TextView
+            android:id="@+id/id_iv_fragment_house_info_generalize_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="高新万达旁高新万达旁高新万达旁高新万达旁高新万达旁高新万达旁高新万达旁高新万达旁高新万达旁高新万达旁高新万达旁高新万达旁高新万达旁"
             android:textColor="#444"
             android:textSize="14sp" />
 
@@ -45,10 +45,10 @@
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/id_iv_fragment_house_info_generalize_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="119万"
                     android:textColor="@color/yellow"
                     android:textSize="16sp" />
 
@@ -69,15 +69,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="售价"
+                    android:text="户型"
                     android:textColor="#777"
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/id_iv_fragment_house_info_generalize_house_type"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="119万"
                     android:textColor="@color/yellow"
                     android:textSize="16sp" />
 
@@ -98,15 +98,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="售价"
+                    android:text="面积"
                     android:textColor="#777"
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/id_iv_fragment_house_info_generalize_area"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="119万"
                     android:textColor="@color/yellow"
                     android:textSize="16sp" />
 
@@ -141,9 +141,9 @@
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/id_iv_fragment_house_info_generalize_single_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1000"
                     android:textColor="#444"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -157,14 +157,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="单价："
+                    android:text="朝向："
                     android:textColor="#777"
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/id_iv_fragment_house_info_generalize_direct"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1000"
                     android:textColor="#444"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -185,14 +185,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="单价："
+                    android:text="楼层："
                     android:textColor="#777"
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/id_iv_fragment_house_info_generalize_floor_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1000"
                     android:textColor="#444"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -206,14 +206,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="单价："
+                    android:text="位置："
                     android:textColor="#777"
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/id_iv_fragment_house_info_generalize_address1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1000"
                     android:textColor="#444"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -266,14 +266,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="单价："
+                    android:text="房龄："
                     android:textColor="#777"
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/id_iv_fragment_house_info_generalize_house_year_old"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1000"
                     android:textColor="#444"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -287,14 +287,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="单价："
+                    android:text="产权："
                     android:textColor="#777"
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/id_iv_fragment_house_info_generalize_chanquan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1000"
                     android:textColor="#444"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -315,14 +315,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="单价："
+                    android:text="装修："
                     android:textColor="#777"
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/id_iv_fragment_house_info_generalize_decorate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1000"
                     android:textColor="#444"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -336,14 +336,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="单价："
+                    android:text="类型："
                     android:textColor="#777"
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/id_iv_fragment_house_info_generalize_house_type1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1000"
                     android:textColor="#444"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -357,9 +357,9 @@
             android:background="#eee" />
 
         <TextView
+            android:id="@+id/id_iv_fragment_house_info_generalize_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="asdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasdasdfjaosdjflasdjaosdulasjdasd"
             android:textColor="#444"
             android:textSize="14sp" />
     </LinearLayout>

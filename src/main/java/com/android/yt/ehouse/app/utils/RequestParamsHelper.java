@@ -192,6 +192,30 @@ public class RequestParamsHelper {
             requestParams.put("org_id", TextUtils.isEmpty(org_id) ? "" : org_id);
             return requestParams;
         }
+
+        /**
+         * 房产大厅列表
+         */
+        static final String GET_HOUSE_LIST = "houseList";
+
+        public static HashMap<String, Object> getHouseList(int page) {
+            HashMap<String, Object> requestParams = getRequestParams(MOD_NAME, GET_HOUSE_LIST);
+            requestParams.put("page", String.valueOf(page));
+            return requestParams;
+        }
+
+        /**
+         * 房产楼盘详情
+         */
+        static final String GET_HOUSE_DETAIL = "houseDetail";
+
+        public static HashMap<String, Object> getHouseDetail(String id) {
+            HashMap<String, Object> requestParams = getRequestParams(MOD_NAME, GET_HOUSE_DETAIL);
+            requestParams.put("id", id);
+            return requestParams;
+        }
+
+
     }
 
     public static final class RequestMod_USER {
