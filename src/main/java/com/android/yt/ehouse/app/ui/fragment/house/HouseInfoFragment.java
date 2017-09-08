@@ -124,7 +124,6 @@ public class HouseInfoFragment extends LroidBaseNetFragment implements AppBarLay
 
             houseInfoHouseGeneralizeFragment.onRefresh(houseInfo, descriptionBean);
             houseInfoVillageGeneralizeFragment.onRefresh(communityBean);
-
         }
     }
 

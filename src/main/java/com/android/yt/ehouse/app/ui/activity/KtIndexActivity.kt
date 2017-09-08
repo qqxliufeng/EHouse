@@ -40,7 +40,6 @@ public class MyIndexViewPagerAdapter(fm: FragmentManager) : FragmentStatePagerAd
 
 class KtIndexActivity : BaseActivity(), TabLayout.OnTabSelectedListener {
 
-
     private var exitTime = 0L
 
     override fun setPresentComponent() {
@@ -89,17 +88,13 @@ class KtIndexActivity : BaseActivity(), TabLayout.OnTabSelectedListener {
         }
     }
 
-
     override fun onTabUnselected(tab: TabLayout.Tab) {}
 
     override fun onTabReselected(tab: TabLayout.Tab) {}
 
-
     override fun getLayoutId(): Int {
         return R.layout.activity_index_layout
     }
-
-
 
     override fun onBackPressed() {
         if (System.currentTimeMillis() - exitTime > 2000) {
@@ -109,6 +104,5 @@ class KtIndexActivity : BaseActivity(), TabLayout.OnTabSelectedListener {
             finish()
         }
     }
-
 
 }
